@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.dashboard.DashboardFragment">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <RelativeLayout
+                android:id="@+id/frame_1"
+                android:layout_width="match_parent"
+                android:layout_height="54dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:clipToOutline="true"
+                android:background="@drawable/frame_1">
+
+                <TextView
+                    android:id="@+id/thisweek"
+                    android:layout_width="48dp"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:gravity="center_horizontal|top"
+                    android:text="@string/thisweek"
+                    android:textAppearance="@style/thisweek" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/down_chevro"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="250dp"
+                android:layout_marginTop="-40dp"
+                android:background="@drawable/down_chevron" />
+
+            <RelativeLayout
+                android:id="@+id/rectangle_7"
+                android:layout_width="389dp"
+                android:layout_height="325dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_gravity="center"
+                android:layout_marginTop="70dp"
+                android:background="@drawable/rectangle_7">
+
+                <RelativeLayout
+                    android:id="@+id/rectangle_6"
+                    android:layout_width="144dp"
+                    android:layout_height="27dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginLeft="40dp"
+                    android:layout_marginTop="15dp"
+                    android:background="@drawable/rectangle_6">
+
+                    <TextView
+                        android:id="@+id/taskfinish"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginLeft="0dp"
+                        android:layout_marginTop="5dp"
+                        android:gravity="center_horizontal|top"
+                        android:text="@string/taskfinish"
+                        android:textAppearance="@style/taskfinish" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/histo"
+                    android:layout_width="293dp"
+                    android:layout_height="235dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginLeft="60dp"
+                    android:layout_marginTop="37dp"
+                    android:background="@drawable/histo" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rectangle_9"
+                android:layout_width="389dp"
+                android:layout_height="325dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_gravity="center"
+                android:layout_marginTop="70dp"
+                android:background="@drawable/rectangle_9">
+                <RelativeLayout
+                    android:id="@+id/rectangle_10"
+                    android:layout_width="144dp"
+                    android:layout_height="27dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginLeft="40dp"
+                    android:layout_marginTop="15dp"
+                    android:background="@drawable/rectangle_6">
+
+                    <TextView
+                        android:id="@+id/taskfenbu"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginLeft="0dp"
+                        android:layout_marginTop="5dp"
+                        android:gravity="center_horizontal|top"
+                        android:text="@string/tasktype"
+                        android:textAppearance="@style/tasktype" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/pie_blue"
+                    android:layout_width="279dp"
+                    android:layout_height="279dp"
+                    android:layout_centerInParent="true"
+                    android:layout_marginLeft="56dp"
+                    android:layout_marginTop="80dp"
+                    android:background="@drawable/pie_blue" />
+            </RelativeLayout>
+
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

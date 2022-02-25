@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/AndroidStudio/MyApplication9/app/calendarview/src/main/res/layout/cv_week_bar.xml" value="0.20989583333333334" />
+        <entry key="..\:/AndroidStudio/MyApplication9/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.29010416666666666" />
+        <entry key="..\:/AndroidStudio/MyApplication9/app/src/main/res/drawable/_colors_accent.xml" value="0.1" />
+        <entry key="..\:/AndroidStudio/MyApplication9/app/src/main/res/drawable/_colors_dark.xml" value="0.1" />
+        <entry key="..\:/AndroidStudio/MyApplication9/app/src/main/res/drawable/_colors_dark_1.xml" value="0.1" />
+        <entry key="..\:/AndroidStudio/MyApplication9/app/src/main/res/drawable/_colors_dark_2.xml" value="0.1" />
+        <entry key="..\:/AndroidStudio/MyApplication9/app/src/main/res/drawable/_colors_dark_3.xml" value="0.1" />
+        <entry key="..\:/AndroidStudio/MyApplication9/app/src/main/res/drawable/_colors_dark_4.xml" value="0.1" />
+        <entry key="..\:/AndroidStudio/MyApplication9/app/src/main/res/drawable/_colors_dark_5.xml" value="0.1" />
+        <entry key="..\:/AndroidStudio/MyApplication9/app/src/main/res/drawable/_colors_primary.xml" value="0.1" />
+        <entry key="..\:/AndroidStudio/MyApplication9/app/src/main/res/drawable/_icon_color.xml" value="0.13333333333333333" />
+        <entry key="..\:/AndroidStudio/MyApplication9/app/src/main/res/drawable/add.xml" value="0.1" />
+        <entry key="..\:/AndroidStudio/MyApplication9/app/src/main/res/drawable/bg_ripple.xml" value="0.1" />
+        <entry key="..\:/AndroidStudio/MyApplication9/app/src/main/res/drawable/button_circle_shape.xml" value="0.13958333333333334" />
+        <entry key="..\:/AndroidStudio/MyApplication9/app/src/main/res/drawable/down_chevron.xml" value="0.1" />
+        <entry key="..\:/AndroidStudio/MyApplication9/app/src/main/res/drawable/footer.xml" value="0.1" />
+        <entry key="..\:/AndroidStudio/MyApplication9/app/src/main/res/drawable/frame_1.xml" value="0.1" />
+        <entry key="..\:/AndroidStudio/MyApplication9/app/src/main/res/drawable/frame_12.xml" value="0.1" />
+        <entry key="..\:/AndroidStudio/MyApplication9/app/src/main/res/drawable/frame_2.xml" value="0.1" />
+        <entry key="..\:/AndroidStudio/MyApplication9/app/src/main/res/drawable/frame_3.xml" value="0.1" />
+        <entry key="..\:/AndroidStudio/MyApplication9/app/src/main/res/drawable/gesturethreebuttons.xml" value="0.1" />
+        <entry key="..\:/AndroidStudio/MyApplication9/app/src/main/res/drawable/histo.xml" value="0.1" />
+        <entry key="..\:/AndroidStudio/MyApplication9/app/src/main/res/drawable/horizontal_.xml" value="0.1" />
+        <entry key="..\:/AndroidStudio/MyApplication9/app/src/main/res/drawable/ic_baseline_card_membership_24.xml" value="0.13854166666666667" />
+        <entry key="..\:/AndroidStudio/MyApplication9/app/src/main/res/drawable/ic_dashboard_black_24dp.xml" value="0.29010416666666666" />
+        <entry key="..\:/AndroidStudio/MyApplication9/app/src/main/res/drawable/ic_home_black_24dp.xml" value="0.29010416666666666" />
+        <entry key="..\:/AndroidStudio/MyApplication9/app/src/main/res/drawable/ic_launcher_background.xml" value="0.29010416666666666" />
+        <entry key="..\:/AndroidStudio/MyApplication9/app/src/main/res/drawable/ic_notifications_black_24dp (2).xml" value="0.24755555555555556" />
+        <entry key="..\:/AndroidStudio/MyApplication9/app/src/main/res/drawable/ic_notifications_black_24dp.xml" value="0.29010416666666666" />
+        <entry key="..\:/AndroidStudio/MyApplication9/app/src/main/res/drawable/ic_settings_black_24dp.xml" value="0.1" />
+        <entry key="..\:/AndroidStudio/MyApplication9/app/src/main/res/drawable/line_2.xml" value="0.1" />
+        <entry key="..\:/AndroidStudio/MyApplication9/app/src/main/res/drawable/pie_circular.xml" value="0.1" />
+        <entry key="..\:/AndroidStudio/MyApplication9/app/src/main/res/drawable/rectangle_6.xml" value="0.1" />
+        <entry key="..\:/AndroidStudio/MyApplication9/app/src/main/res/drawable/rectangle_7.xml" value="0.1" />
+        <entry key="..\:/AndroidStudio/MyApplication9/app/src/main/res/drawable/rectangle_9.xml" value="0.1" />
+        <entry key="..\:/AndroidStudio/MyApplication9/app/src/main/res/drawable/status_bar_common_android_default.xml" value="0.1" />
+        <entry key="..\:/AndroidStudio/MyApplication9/app/src/main/res/drawable/today.xml" value="0.1" />
+        <entry key="..\:/AndroidStudio/MyApplication9/app/src/main/res/drawable/union.xml" value="0.1" />
+        <entry key="..\:/AndroidStudio/MyApplication9/app/src/main/res/drawable/vector.xml" value="0.1" />
+        <entry key="..\:/AndroidStudio/MyApplication9/app/src/main/res/drawable/vector1.xml" value="0.19684684684684683" />
+        <entry key="..\:/AndroidStudio/MyApplication9/app/src/main/res/drawable/vector2.xml" value="0.19684684684684683" />
+        <entry key="..\:/AndroidStudio/MyApplication9/app/src/main/res/drawable/vector3.xml" value="0.19684684684684683" />
+        <entry key="..\:/AndroidStudio/MyApplication9/app/src/main/res/drawable/vector4.xml" value="0.19684684684684683" />
+        <entry key="..\:/AndroidStudio/MyApplication9/app/src/main/res/drawable/vector5.xml" value="0.19684684684684683" />
+        <entry key="..\:/AndroidStudio/MyApplication9/app/src/main/res/drawable/vector6.xml" value="0.19684684684684683" />
+        <entry key="..\:/AndroidStudio/MyApplication9/app/src/main/res/layout/activity_main.xml" value="0.264" />
+        <entry key="..\:/AndroidStudio/MyApplication9/app/src/main/res/layout/cv_layout_calendar_view.xml" value="0.4" />
+        <entry key="..\:/AndroidStudio/MyApplication9/app/src/main/res/layout/cv_week_bar.xml" value="0.21302083333333333" />
+        <entry key="..\:/AndroidStudio/MyApplication9/app/src/main/res/layout/dialog_date_picker.xml" value="0.14114583333333333" />
+        <entry key="..\:/AndroidStudio/MyApplication9/app/src/main/res/layout/fragment_dashboard.xml" value="0.1" />
+        <entry key="..\:/AndroidStudio/MyApplication9/app/src/main/res/layout/fragment_home.xml" value="0.176" />
+        <entry key="..\:/AndroidStudio/MyApplication9/app/src/main/res/layout/fragment_notifications.xml" value="0.1" />
+        <entry key="..\:/AndroidStudio/MyApplication9/app/src/main/res/layout/fragment_settings.xml" value="0.176" />
+        <entry key="..\:/AndroidStudio/MyApplication9/app/src/main/res/layout/input_page.xml" value="0.264" />
+        <entry key="..\:/AndroidStudio/MyApplication9/app/src/main/res/layout/layout_calendarselect.xml" value="0.264" />
+        <entry key="..\:/AndroidStudio/MyApplication9/app/src/main/res/layout/supermember.xml" value="0.11302083333333333" />
+        <entry key="..\:/AndroidStudio/MyApplication9/app/src/main/res/layout/test.xml" value="0.264" />
+        <entry key="..\:/AndroidStudio/MyApplication9/app/src/main/res/layout/test_1.xml" value="0.152" />
+        <entry key="..\:/AndroidStudio/MyApplication9/app/src/main/res/menu/bottom_nav_menu.xml" value="0.27395833333333336" />
+        <entry key="..\:/AndroidStudio/MyApplication9/app/src/main/res/menu/menu_main.xml" value="0.1359375" />
+        <entry key="..\:/AndroidStudio/MyApplication9/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.29010416666666666" />
+        <entry key="..\:/AndroidStudio/MyApplication9/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.29010416666666666" />
+        <entry key="..\:/AndroidStudio/Shedule_app1/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1" />
+        <entry key="..\:/AndroidStudio/Shedule_app1/app/src/main/res/drawable/vector1.xml" value="0.1" />
+        <entry key="..\:/AndroidStudio/Shedule_app1/app/src/main/res/layout/activity_main.xml" value="0.16893115942028986" />
+        <entry key="..\:/AndroidStudio/Shedule_app1/app/src/main/res/layout/dialog_date_picker.xml" value="0.16770833333333332" />
+        <entry key="..\:/AndroidStudio/Shedule_app1/app/src/main/res/layout/dialog_select_color.xml" value="0.136" />
+        <entry key="..\:/AndroidStudio/Shedule_app1/app/src/main/res/layout/dialog_select_date.xml" value="0.1" />
+        <entry key="..\:/AndroidStudio/Shedule_app1/app/src/main/res/layout/fragment_dashboard.xml" value="0.16770833333333332" />
+        <entry key="..\:/AndroidStudio/Shedule_app1/app/src/main/res/layout/fragment_home.xml" value="0.16770833333333332" />
+        <entry key="..\:/AndroidStudio/Shedule_app1/app/src/main/res/layout/fragment_notifications.xml" value="0.20118343195266272" />
+        <entry key="..\:/AndroidStudio/Shedule_app1/app/src/main/res/layout/fragment_settings.xml" value="0.19610507246376813" />
+        <entry key="..\:/AndroidStudio/Shedule_app1/app/src/main/res/layout/input_page.xml" value="0.2" />
+        <entry key="..\:/AndroidStudio/Shedule_app1/app/src/main/res/layout/layout_calendarselect.xml" value="0.176" />
+        <entry key="..\:/AndroidStudio/Shedule_app1/app/src/main/res/layout/layout_schedule.xml" value="0.2" />
+        <entry key="..\:/AndroidStudio/Shedule_app1/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1" />
+        <entry key="..\:/AndroidStudio/Shedule_app1/diary/src/main/res/layout/layout_schedule.xml" value="0.264" />
+        <entry key="..\:/AndroidStudio/Shedule_app1/myapplication/src/main/res/layout/activity_main.xml" value="0.1203125" />
+        <entry key="..\:/Android_SDK/platforms/android-31/data/res/layout/simple_dropdown_item_1line.xml" value="0.1421875" />
+        <entry key="..\:/Users/Pyrojewel/Downloads/SheduleManagement-0228536f9fcda748855c965098f4d8a40f37e317/SheduleManagement-0228536f9fcda748855c965098f4d8a40f37e317/app/src/main/res/layout/fragment_dashboard.xml" value="0.14427083333333332" />
+        <entry key="..\:/Users/Pyrojewel/Downloads/SheduleManagement-0228536f9fcda748855c965098f4d8a40f37e317/SheduleManagement-0228536f9fcda748855c965098f4d8a40f37e317/app/src/main/res/layout/fragment_notifications.xml" value="0.14427083333333332" />
+        <entry key="..\:/Users/Pyrojewel/Downloads/SheduleManagement-0228536f9fcda748855c965098f4d8a40f37e317/SheduleManagement-0228536f9fcda748855c965098f4d8a40f37e317/diary/src/main/res/layout/layout_schedule.xml" value="0.14427083333333332" />
+        <entry key="..\:/code/AndroidStudio/Shedule_app1/app/src/main/res/drawable/bg_add_event_set_item.xml" value="0.159375" />
+        <entry key="..\:/code/AndroidStudio/Shedule_app1/app/src/main/res/drawable/bg_select_date_dialog_edit_text_focus.xml" value="0.159375" />
+        <entry key="..\:/code/AndroidStudio/Shedule_app1/app/src/main/res/drawable/blue_circle.xml" value="0.159375" />
+        <entry key="..\:/code/AndroidStudio/Shedule_app1/app/src/main/res/drawable/btn_add_event_set.xml" value="0.159375" />
+        <entry key="..\:/code/AndroidStudio/Shedule_app1/app/src/main/res/layout/activity_add_event_set.xml" value="0.2203125" />
+        <entry key="..\:/code/AndroidStudio/Shedule_app1/app/src/main/res/layout/dialog_confirm.xml" value="0.2203125" />
+        <entry key="..\:/code/AndroidStudio/Shedule_app1/app/src/main/res/layout/dialog_select_color.xml" value="0.22447916666666667" />
+        <entry key="..\:/code/AndroidStudio/Shedule_app1/app/src/main/res/layout/dialog_select_date.xml" value="0.22447916666666667" />
+        <entry key="..\:/code/AndroidStudio/Shedule_app1/app/src/main/res/layout/fragment_dashboard.xml" value="0.22447916666666667" />
+        <entry key="..\:/code/AndroidStudio/Shedule_app1/app/src/main/res/layout/fragment_event_set.xml" value="0.2203125" />
+        <entry key="..\:/code/AndroidStudio/Shedule_app1/app/src/main/res/layout/fragment_home.xml" value="0.2203125" />
+        <entry key="..\:/code/AndroidStudio/Shedule_app1/app/src/main/res/layout/fragment_notifications.xml" value="0.22447916666666667" />
+        <entry key="..\:/code/AndroidStudio/Shedule_app1/app/src/main/res/layout/fragment_settings.xml" value="0.22447916666666667" />
+        <entry key="..\:/code/AndroidStudio/Shedule_app1/app/src/main/res/layout/main_input.xml" value="0.1" />
+        <entry key="..\:/code/AndroidStudio/Shedule_app1/app/src/main/res/layout/simple_title_bar.xml" value="0.1" />
+        <entry key="..\:/code/AndroidStudio/Shedule_app1/diary/src/main/res/layout/layout_schedule.xml" value="0.2" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

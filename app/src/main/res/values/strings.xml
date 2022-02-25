@@ -1,0 +1,110 @@
+<resources>
+    <string name="app_name">bugu</string>
+    <string name="title_home">主页</string>
+    <string name="title_dashboard">ddl日历</string>
+    <string name="title_notifications">统计分析</string>
+    <string name="title_settings">设置</string>
+    <string name="action_settings">设置</string>
+    <string name="task">事项：</string>
+    <string name="task_color">事项颜色：</string>
+    <string name="place">地点：</string>
+    <string name="phone">电话：</string>
+    <string name="email">邮箱：</string>
+    <string name="home_page">主页：</string>
+    <string name="memo">备注：</string>
+    <string name="register">注册</string>
+    <string name="cancel">取消</string>
+    <string name="title">请选择时间</string>
+    <string name="confirm">确定</string>
+    <string name="year">年</string>
+    <string name="month">月</string>
+    <string name="day">日</string>
+    <string name="hour">时</string>
+    <string name="minute">分</string>
+    <string name="select_date">选择日期</string>
+    <string name="current_date">当前日期</string>
+    <string name="select_time">选择时间</string>
+    <string name="current_time">当前时间</string>
+    <string name="thisweek">本周</string>
+    <string name="taskfinish">任务完成情况</string>
+    <string name="tasktype">任务类型分布</string>
+    <string name="timeline">Timeline</string>
+    <string name="place1">s201</string>
+    <string name="place2">报告厅</string>
+    <string name="place3">课堂派</string>
+    <string name="time1">8am</string>
+    <string name="time2">15pm</string>
+    <string name="time3">20pm</string>
+    <string name="course1">学术交流</string>
+    <string name="course2">电子学导论公开课</string>
+    <string name="course3">作业提交</string>
+    <string name="settings">设置</string>
+    <string name="name_id">时间管理达人</string>
+    <string name="ddl_">不拖DDL 从我做起</string>
+    <string name="text1">个性化</string>
+    <string name="text2">导入课程表</string>
+    <string name="text3">标签库</string>
+    <string name="text4">日程习惯偏好</string>
+    <string name="text5">帮助</string>
+    <string name="text6">反馈</string>
+    <string-array name="calendar_week">
+        <item>Sun</item>
+        <item>Mon</item>
+        <item>Tues</item>
+        <item>Wed</item>
+        <item>Thur</item>
+        <item>Fri</item>
+        <item>Sat</item>
+    </string-array>
+
+    <string name="calendar_today">Today</string>
+    <string-array name="calendar_month">
+        <item>January</item>
+        <item>February</item>
+        <item>March</item>
+        <item>April</item>
+        <item>May</item>
+        <item>June</item>
+        <item>July</item>
+        <item>August</item>
+        <item>September</item>
+        <item>October</item>
+        <item>November</item>
+        <item>December</item>
+    </string-array>
+    <string name="calendar_day">%d day</string>
+    <string name="calendar_year">%d-</string>
+
+    <!--schedule-->
+    <string name="schedule_input_you_do_thing">Input what to do</string>
+    <string name="schedule_input_content_is_no_null">Content can\'t be empty.</string>
+    <string name="schedule_event_detail_setting">Detail setting</string>
+    <string name="schedule_title">Schedule title</string>
+    <string name="schedule_show_finish_task">Show completed</string>
+    <string name="schedule_hide_finish_task">Hide completed</string>
+    <string name="schedule_delete_this_schedule">Delete the schedule?</string>
+
+    <!--menu-->
+    <string name="menu_schedule">Schedule</string>
+    <string name="menu_event_set">Events</string>
+    <string name="menu_add_event_set">Add event list</string>
+    <string name="menu_no_category">Unclassified </string>
+
+    <!--event.set-->
+    <string name="event_set_list_name">List name</string>
+    <string name="event_set_color">Color</string>
+    <string name="event_set_name_is_not_null">List name can\'t be empty.</string>
+    <string name="event_set_select_color">Choose color</string>
+    <string name="event_set_delete_this_event_set">Delete events?</string>
+
+    <string name="remarks">Reminders</string>
+    <string name="please_input_desc">Input the reminders</string>
+    <string name="date_format">yyyy-MM-dd HH:mm</string>
+    <string name="date_format_no_time">%1$s-%2$s-%3$s</string>
+    <string name="click_here_select_date">Click to choose time</string>
+    <string name="click_here_select_location">Click to select location</string>
+    <string name="click_input_location">Click to input location</string>
+    <string name="add_location">Add spot</string>
+    <string name="select_event_set">Choose events</string>
+    <string name="finish">finish</string>
+</resources>
