@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.home.HomeFragment">
+    tools:context="com.pyrojewel.ui.home.HomeFragment">
 
 
 
@@ -92,7 +92,8 @@
             android:layout_marginLeft="157dp"
             android:layout_marginTop="50dp"
             android:layout_marginRight="157dp"
-            android:background="@drawable/add" />
+            android:background="@drawable/add"
+            android:onClick="onClickInput"/>
 
 
     </LinearLayout>

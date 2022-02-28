@@ -3,11 +3,11 @@
 ```java
 package com.example.common.data;
 
-public interface JeekDBConfig {
+public interface exampleDBConfig {
 
     int DATABASE_VERSION = 3;
 
-    String DATABASE_NAME = "JeekCalendarDB";
+    String DATABASE_NAME = "exampleCalendarDB";
 
     String EVENT_SET_ID = "id";
     String EVENT_SET_NAME = "name";

@@ -31,7 +31,7 @@
                 android:gravity="center"
                 android:text="@string/cancel"
                 android:textColor="@color/simple_title_bar_text_color"
-                android:textSize="@dimen/text_size_16sp"/>
+                android:textSize="@dimen/text_size_16sp" />
 
             <TextView
                 android:id="@+id/tvTitle"
@@ -45,7 +45,7 @@
                 android:text="@string/schedule_event_detail_setting"
                 android:textColor="@color/colorWrite"
                 android:textSize="@dimen/text_size_18sp"
-                android:textStyle="bold"/>
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/tvFinish"
@@ -56,7 +56,7 @@
                 android:gravity="center"
                 android:text="@string/finish"
                 android:textColor="@color/simple_title_bar_text_color"
-                android:textSize="@dimen/text_size_16sp"/>
+                android:textSize="@dimen/text_size_16sp" />
 
         </RelativeLayout>
 

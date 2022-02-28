@@ -1,5 +1,5 @@
 ```java
-package com.jeek.calendar.activity;
+package com.example.calendar.activity;
 
 import android.content.Intent;
 import android.os.AsyncTask;
@@ -8,11 +8,11 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import com.jeek.calendar.R;
+import com.example.calendar.R;
 import com.example.common.bean.EventSet;
-import com.jeek.calendar.dialog.SelectColorDialog;
-import com.jeek.calendar.task.eventset.AddEventSetTask;
-import com.jeek.calendar.utils.JeekUtils;
+import com.example.calendar.dialog.SelectColorDialog;
+import com.example.calendar.task.eventset.AddEventSetTask;
+import com.example.calendar.utils.exampleUtils;
 import com.example.common.base.app.BaseActivity;
 import com.example.common.listener.OnTaskFinishedListener;
 import com.example.common.util.ToastUtils;
@@ -87,7 +87,7 @@ public class AddEventSetActivity extends BaseActivity implements View.OnClickLis
     @Override
     public void onSelectColor(int color) {
         mColor = color;
-        vEventSetColor.setBackgroundResource(JeekUtils.getkEventSetCircle(color));
+        vEventSetColor.setBackgroundResource(exampleUtils.getkEventSetCircle(color));
     }
 }
 
