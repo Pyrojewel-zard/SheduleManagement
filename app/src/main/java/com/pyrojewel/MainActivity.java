@@ -1,11 +1,11 @@
-package com.example.myapplication;
+package com.pyrojewel;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
-import android.widget.ImageButton;
 
+import com.pyrojewel.EventDeal.InputActivity;
+import com.example.myapplication.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -34,6 +34,10 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(binding.navView, navController);
 
+    }
+    public void onClickInput(View view){
+        Intent intent=new Intent(this, InputActivity.class);
+        startActivity(intent);
     }
 
 }

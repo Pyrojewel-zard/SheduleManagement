@@ -10,7 +10,7 @@
   <color name="black">#FF000000</color>
   <color name="white">#FFFFFFFF</color>
   <color name="gray">#979797</color>
-  <color name="colorPrimary">#ffffff</color>
+  <color name="colorPrimary">#FFDE90</color>
   <color name="date_picker_bg">#FFFFFF</color>
   <color name="date_picker_divider">#11112233</color>
   <color name="date_picker_text_light">#59B29C</color>

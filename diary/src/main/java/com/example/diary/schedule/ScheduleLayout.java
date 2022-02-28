@@ -137,7 +137,6 @@ public class ScheduleLayout extends FrameLayout {
             wcvCalendar.setOnCalendarClickListener(mWeekCalendarClickListener);
         }
 
-        @Override
         public void onPageChange(int year, int month, int day) {
             computeCurrentRowsIsSix(year, month);
         }
@@ -194,14 +193,6 @@ public class ScheduleLayout extends FrameLayout {
             }
         }
 
-        @Override
-        public void onPageChange(int year, int month, int day) {
-            if (mIsAutoChangeMonthRow) {
-                if (mCurrentSelectMonth != month) {
-                    mCurrentRowsIsSix = CalendarUtils.getMonthRows(year, month) == 6;
-                }
-            }
-        }
     };
 
     private void resetMonthView() {

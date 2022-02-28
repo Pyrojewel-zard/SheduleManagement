@@ -1,4 +1,4 @@
-package com.example.myapplication.ui.notifications;
+package com.pyrojewel.ui.notifications;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;

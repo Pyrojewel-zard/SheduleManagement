@@ -1,4 +1,4 @@
-package com.example.myapplication.ui.dashboard;
+package com.pyrojewel.ui.dashboard;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -10,7 +10,6 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.example.myapplication.databinding.FragmentDashboardBinding;
-import com.example.myapplication.databinding.FragmentNotificationsBinding;
 
 public class DashboardFragment extends Fragment {
 

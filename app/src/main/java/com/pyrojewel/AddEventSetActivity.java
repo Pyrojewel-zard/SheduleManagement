@@ -1,6 +1,4 @@
-```java
-package com.example.calendar.activity;
-
+package com.pyrojewel;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.text.TextUtils;
@@ -8,17 +6,17 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import com.example.calendar.R;
-import com.example.common.bean.EventSet;
-import com.example.calendar.dialog.SelectColorDialog;
-import com.example.calendar.task.eventset.AddEventSetTask;
-import com.example.calendar.utils.exampleUtils;
 import com.example.common.base.app.BaseActivity;
 import com.example.common.listener.OnTaskFinishedListener;
 import com.example.common.util.ToastUtils;
+import com.example.myapplication.R;
+import com.example.common.bean.EventSet;
+import com.pyrojewel.dialog.SelectColorDialog;
+import com.pyrojewel.task.eventset.AddEventSetTask;
+import com.pyrojewel.utils.JeekUtils;
 
 /**
- * Created by example on 2016/10/12 0012.
+ * Created by Jimmy on 2016/10/12 0012.
  */
 public class AddEventSetActivity extends BaseActivity implements View.OnClickListener, OnTaskFinishedListener<EventSet>, SelectColorDialog.OnSelectColorListener {
 
@@ -87,8 +85,6 @@ public class AddEventSetActivity extends BaseActivity implements View.OnClickLis
     @Override
     public void onSelectColor(int color) {
         mColor = color;
-        vEventSetColor.setBackgroundResource(exampleUtils.getkEventSetCircle(color));
+        vEventSetColor.setBackgroundResource(JeekUtils.getEventSetCircle(color));
     }
 }
-
-```

@@ -1,4 +1,4 @@
-package com.example.myapplication.ui.home;
+package com.pyrojewel.ui.home;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
