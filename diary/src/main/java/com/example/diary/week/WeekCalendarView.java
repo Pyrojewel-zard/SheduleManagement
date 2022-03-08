@@ -37,7 +37,7 @@ public class WeekCalendarView extends ViewPager implements OnWeekClickListener{
         }
     }
 
-    private OnPageChangeListener mOnPageChangeListener = new OnPageChangeListener() {
+    private final OnPageChangeListener mOnPageChangeListener = new OnPageChangeListener() {
         @Override
         public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
 

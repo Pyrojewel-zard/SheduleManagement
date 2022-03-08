@@ -42,7 +42,7 @@ public class MonthView extends View {
     private int mDaySize;
     private int mLunarTextSize;
     private int mWeekRow; // 当前月份第几周
-    private int mCircleRadius = 6;
+    private final int mCircleRadius = 6;
     private int[][] mDaysText;
     private int[] mHolidays;
     private String[][] mHolidayOrLunarText;
@@ -180,7 +180,7 @@ public class MonthView extends View {
         initSize();
         clearData();
         drawLastMonth(canvas);
-        int selected[] = drawThisMonth(canvas);
+        int[] selected = drawThisMonth(canvas);
         drawNextMonth(canvas);
         drawHintCircle(canvas);
         drawLunarText(canvas, selected);
@@ -225,7 +225,7 @@ public class MonthView extends View {
 
     private int[] drawThisMonth(Canvas canvas) {
         String dayString;
-        int selectedPoint[] = new int[2];
+        int[] selectedPoint = new int[2];
         int monthDays = CalendarUtils.getMonthDays(mSelYear, mSelMonth);
         int weekNumber = CalendarUtils.getFirstDayWeek(mSelYear, mSelMonth);
         for (int day = 0; day < monthDays; day++) {

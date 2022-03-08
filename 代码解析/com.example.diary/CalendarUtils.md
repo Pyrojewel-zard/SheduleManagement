@@ -19,7 +19,7 @@ import java.util.Map;
 public class CalendarUtils {
     private static CalendarUtils sUtils;
     private Map<String,int[]> sAllHolidays=new HashMap<>();
-    private Map<String, List<Integer>> sMonthTaskHint=new HashMap<>();
+    private final Map<String, List<Integer>> sMonthTaskHint=new HashMap<>();
     public static synchronized CalendarUtils getInstance(Context context){
         if(sUtils==null){
             sUtils=new CalendarUtils();
@@ -263,7 +263,7 @@ public class CalendarUtils {
     }
 
     public int[] getHolidays(int year, int month) {
-        int holidays[];
+        int[] holidays;
         if (sUtils.sAllHolidays != null) {
             holidays = sUtils.sAllHolidays.get(year + "" + month);
             if (holidays == null) {

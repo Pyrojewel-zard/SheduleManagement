@@ -41,7 +41,7 @@ public class ScheduleLayout extends FrameLayout {
     private int mMinDistance;
     private int mAutoScrollDistance;
     private int mDefaultView;
-    private float mDownPosition[] = new float[2];
+    private final float[] mDownPosition = new float[2];
     private boolean mIsScrolling = false;
     private boolean mIsAutoChangeMonthRow;
     private boolean mCurrentRowsIsSix = true;
@@ -87,11 +87,11 @@ public class ScheduleLayout extends FrameLayout {
     @Override
     protected void onFinishInflate() {
         super.onFinishInflate();
-        mcvCalendar = (MonthCalendarView) findViewById(R.id.mcvCalendar);
-        wcvCalendar = (WeekCalendarView) findViewById(R.id.wcvCalendar);
-        rlMonthCalendar = (RelativeLayout) findViewById(R.id.rlMonthCalendar);
-        rlScheduleList = (RelativeLayout) findViewById(R.id.rlScheduleList);
-        rvScheduleList = (ScheduleRecyclerView) findViewById(R.id.rvScheduleList);
+        mcvCalendar = findViewById(R.id.mcvCalendar);
+        wcvCalendar = findViewById(R.id.wcvCalendar);
+        rlMonthCalendar = findViewById(R.id.rlMonthCalendar);
+        rlScheduleList = findViewById(R.id.rlScheduleList);
+        rvScheduleList = findViewById(R.id.rvScheduleList);
         bindingMonthAndWeekCalendar();
     }
 
@@ -123,7 +123,7 @@ public class ScheduleLayout extends FrameLayout {
         mCurrentSelectMonth = month;
         mCurrentSelectDay = day;
     }
-    private OnCalendarClickListener mMonthCalendarClickListener = new OnCalendarClickListener() {
+    private final OnCalendarClickListener mMonthCalendarClickListener = new OnCalendarClickListener() {
         @Override
         public void onClickDate(int year, int month, int day) {
             wcvCalendar.setOnCalendarClickListener(null);
@@ -176,7 +176,7 @@ public class ScheduleLayout extends FrameLayout {
         }
     }
 
-    private OnCalendarClickListener mWeekCalendarClickListener = new OnCalendarClickListener() {
+    private final OnCalendarClickListener mWeekCalendarClickListener = new OnCalendarClickListener() {
         @Override
         public void onClickDate(int year, int month, int day) {
             mcvCalendar.setOnCalendarClickListener(null);

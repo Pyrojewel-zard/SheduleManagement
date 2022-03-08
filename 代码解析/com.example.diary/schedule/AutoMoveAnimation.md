@@ -1,5 +1,3 @@
-
-
 ```java
 package com.example.diary.schedule;
 
@@ -9,9 +7,10 @@ import android.view.animation.DecelerateInterpolator;
 import android.view.animation.Transformation;
 
 public class AutoMoveAnimation extends Animation {
-    private View mView;
-    private int mDistance;
-    private float mPositionY;
+    private final View mView;
+    private final int mDistance;
+    private final float mPositionY;
+
     public AutoMoveAnimation(View view, int distance) {
         mView = view;
         mDistance = distance;

@@ -42,7 +42,7 @@ public class ScheduleLayout extends FrameLayout {
     private int mMinDistance;
     private int mAutoScrollDistance;
     private int mDefaultView;
-    private float mDownPosition[] = new float[2];
+    private final float[] mDownPosition = new float[2];
     private boolean mIsScrolling = false;
     private boolean mIsAutoChangeMonthRow;
     private boolean mCurrentRowsIsSix = true;
@@ -124,7 +124,7 @@ public class ScheduleLayout extends FrameLayout {
         mCurrentSelectMonth = month;
         mCurrentSelectDay = day;
     }
-    private OnCalendarClickListener mMonthCalendarClickListener = new OnCalendarClickListener() {
+    private final OnCalendarClickListener mMonthCalendarClickListener = new OnCalendarClickListener() {
         @Override
         public void onClickDate(int year, int month, int day) {
             wcvCalendar.setOnCalendarClickListener(null);
@@ -178,7 +178,7 @@ public class ScheduleLayout extends FrameLayout {
         }
     }
 
-    private OnCalendarClickListener mWeekCalendarClickListener = new OnCalendarClickListener() {
+    private final OnCalendarClickListener mWeekCalendarClickListener = new OnCalendarClickListener() {
         @Override
         public void onClickDate(int year, int month, int day) {
             mcvCalendar.setOnCalendarClickListener(null);

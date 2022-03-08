@@ -13,10 +13,10 @@ import com.example.diary.R;
 import org.joda.time.DateTime;
 
 public class WeekAdapter extends PagerAdapter {
-    private SparseArray<WeekView> mViews;
-    private Context mContext;
-    private TypedArray mArray;
-    private WeekCalendarView mWeekCalendarView;
+    private final SparseArray<WeekView> mViews;
+    private final Context mContext;
+    private final TypedArray mArray;
+    private final WeekCalendarView mWeekCalendarView;
     private DateTime mStartDate;
     private int mWeekCount = 220;
     public WeekAdapter(Context context, TypedArray array, WeekCalendarView weekCalendarView) {

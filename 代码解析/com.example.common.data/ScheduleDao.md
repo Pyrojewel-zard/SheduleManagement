@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ScheduleDao {
-    private exampleSQLiteHelper mHelper;
+    private final exampleSQLiteHelper mHelper;
     private ScheduleDao(Context context) {
         mHelper = new exampleSQLiteHelper(context);
     }

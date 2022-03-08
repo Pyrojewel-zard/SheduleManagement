@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ScheduleDao {
-    private JeekSQLiteHelper mHelper;
+    private final JeekSQLiteHelper mHelper;
     private ScheduleDao(Context context) {
         mHelper = new JeekSQLiteHelper(context);
     }

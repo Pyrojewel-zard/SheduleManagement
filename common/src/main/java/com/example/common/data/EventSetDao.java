@@ -13,7 +13,7 @@ import java.util.List;
 import java.util.Map;
 
 public class EventSetDao {
-    private JeekSQLiteHelper mHelper;
+    private final JeekSQLiteHelper mHelper;
 
     private EventSetDao(Context context) {
         mHelper = new JeekSQLiteHelper(context);

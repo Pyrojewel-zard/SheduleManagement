@@ -1,123 +1,114 @@
 package com.pyrojewel.EventDeal;
 
-import android.content.Intent;
-import android.os.AsyncTask;
-import android.text.TextUtils;
-import android.view.View;
-import android.widget.EditText;
-import android.widget.ImageView;
-import android.widget.TextView;
 
-import com.example.common.base.app.BaseActivity;
-import com.example.common.bean.EventSet;
-import com.example.common.bean.Schedule;
-import com.example.common.listener.OnTaskFinishedListener;
-import com.example.common.util.ToastUtils;
+
+import android.app.DatePickerDialog;
+import android.content.ContentValues;
+import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
+import android.os.Bundle;
+import android.view.MotionEvent;
+import android.view.View;
+import android.widget.DatePicker;
+import android.widget.EditText;
+import android.widget.RatingBar;
+import android.widget.TextView;
+import android.widget.Toast;
 import com.example.myapplication.R;
 import com.pyrojewel.MainActivity;
-import com.pyrojewel.dialog.InputLocationDialog;
-import com.pyrojewel.dialog.SelectDateDialog;
-import com.pyrojewel.dialog.SelectEventSetDialog;
-import com.pyrojewel.task.eventset.LoadEventSetMapTask;
-import com.pyrojewel.task.schedule.UpdateScheduleTask;
-import com.pyrojewel.utils.DateUtils;
-import com.pyrojewel.utils.JeekUtils;
+import com.pyrojewel.Model.DBOpenHelper;
+import com.pyrojewel.Model.DatabaseModel;
 
-import java.util.HashMap;
-import java.util.Map;
+import androidx.appcompat.app.AppCompatActivity;
 
-public class InputActivity extends BaseActivity implements View.OnClickListener {
+import java.util.Calendar;
 
-    public static int UPDATE_SCHEDULE_CANCEL = 1;
-    public static int UPDATE_SCHEDULE_FINISH = 2;
-    public static String SCHEDULE_OBJ = "schedule.obj";
-    public static String CALENDAR_POSITION = "calendar.position";
-
-    private View vScheduleColor;
-    private EditText etScheduleTitle, etScheduleDesc;
-    private ImageView ivScheduleEventSetIcon;
-    private TextView tvScheduleEventSet, tvScheduleTime, tvScheduleLocation;
-    private SelectEventSetDialog mSelectEventSetDialog;
-    private SelectDateDialog mSelectDateDialog;
-    private InputLocationDialog mInputLocationDialog;
-
-    private Map<Integer, EventSet> mEventSetsMap;
-    private Schedule mSchedule;
-    private int mPosition = -1;
-
-    private int mColor = 0;
-
+public class InputActivity extends AppCompatActivity implements View.OnClickListener{
+    private EditText nameEt;
+    private EditText mDDLDate;
+    private RatingBar diffLevel;
+    private EditText downTime;
+    private EditText upTime;
+    private TextView cancel;
+    private TextView confirm;
     @Override
-    protected void bindView() {
-
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
         setContentView(R.layout.layout_input);
-        TextView tvTitle = searchViewById(R.id.tvTitle);
-        tvTitle.setText(getString(R.string.schedule_event_detail_setting));
-        searchViewById(R.id.tvCancel).setOnClickListener(this);
-        searchViewById(R.id.tvFinish).setOnClickListener(this);
-        searchViewById(R.id.llScheduleEventSet).setOnClickListener(this);
-        searchViewById(R.id.llScheduleTime).setOnClickListener(this);
-        searchViewById(R.id.llScheduleLocation).setOnClickListener(this);
-        vScheduleColor = searchViewById(R.id.vScheduleColor);
-        ivScheduleEventSetIcon = searchViewById(R.id.ivScheduleEventSetIcon);
-        etScheduleTitle = searchViewById(R.id.etScheduleTitle);
-        etScheduleDesc = searchViewById(R.id.etScheduleDesc);
-        tvScheduleEventSet = searchViewById(R.id.tvScheduleEventSet);
-        tvScheduleTime = searchViewById(R.id.tvScheduleTime);
-        tvScheduleLocation = searchViewById(R.id.tvScheduleLocation);    }
+        nameEt= findViewById(R.id.name);
+        mDDLDate = findViewById(R.id.editDDLDate);
+        diffLevel= findViewById(R.id.diffLevel);
+        downTime= findViewById(R.id.downTime);
+        upTime= findViewById(R.id.Uptime);
+        cancel= findViewById(R.id.tvCancel);
+        confirm= findViewById(R.id.tvConfirm);
+        cancel.setOnClickListener(this);
+        confirm.setOnClickListener(this);
+        mDDLDate.setOnTouchListener(new View.OnTouchListener() {
 
-    @Override
-    public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.tvCancel:
-                setResult(UPDATE_SCHEDULE_CANCEL);
-                finish();
-                break;
-            case R.id.tvFinish:
-                confirm();
-                break;
-        }
-    }
-    private void confirm() {
-        if (etScheduleTitle.getText().length() != 0) {
-            mSchedule.setTitle(etScheduleTitle.getText().toString());
-            mSchedule.setDesc(etScheduleDesc.getText().toString());
-            new UpdateScheduleTask(this, new OnTaskFinishedListener<Boolean>() {
-                @Override
-                public void onTaskFinished(Boolean data) {
-                    setResult(UPDATE_SCHEDULE_FINISH);
-                    finish();
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                if (event.getAction() == MotionEvent.ACTION_DOWN) {
+                    showDatePickDlg();
+                    return true;
                 }
-            }, mSchedule).executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
-            Intent intent=new Intent(this, MainActivity.class);
-            startActivity(intent);
-        } else {
-            ToastUtils.showShortToast(this, R.string.schedule_input_content_is_no_null);
-            Intent intent=new Intent(this, MainActivity.class);
-            startActivity(intent);
-        }
-    }
-    private void showSelectEventSetDialog() {
-        if (mSelectEventSetDialog == null) {
-            mSelectEventSetDialog = new SelectEventSetDialog(this, (SelectEventSetDialog.OnSelectEventSetListener) this, mSchedule.getEventSetId());
-        }
-        mSelectEventSetDialog.show();
-    }
-    private void showSelectDateDialog() {
-        if (mSelectDateDialog == null) {
-            mSelectDateDialog = new SelectDateDialog(this, (SelectDateDialog.OnSelectDateListener) this, mSchedule.getYear(), mSchedule.getMonth(), mSchedule.getDay(), mPosition);
-        }
-        mSelectDateDialog.show();
+                return false;
+            }
+        });
+        mDDLDate.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                if (hasFocus) {
+                    showDatePickDlg();
+                }
+            }
+        });
     }
 
-    private void showInputLocationDialog() {
-        if (mInputLocationDialog == null) {
-            mInputLocationDialog = new InputLocationDialog(this, (InputLocationDialog.OnLocationBackListener) this);
-        }
-        mInputLocationDialog.show();
+    protected void showDatePickDlg() {
+        Calendar calendar = Calendar.getInstance();
+        DatePickerDialog datePickerDialog = new DatePickerDialog(InputActivity.this, new DatePickerDialog.OnDateSetListener() {
+
+            @Override
+            public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
+                InputActivity.this.mDDLDate.setText(year + "-" + (monthOfYear+1) + "-" + dayOfMonth);
+            }
+        }, calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH), calendar.get(Calendar.DAY_OF_MONTH));
+        datePickerDialog.show();
     }
-
-
-
-
+    @Override
+    public void onClick(View view){
+        switch(view.getId()){
+            case R.id.tvCancel:
+                Intent intent=new Intent(this, MainActivity.class);
+                startActivity(intent);
+                break;
+            case R.id.tvConfirm:
+                if(nameEt.getText().toString().equals(""))
+                    Toast.makeText(this, "未输入项目名称", Toast.LENGTH_LONG).show();
+                else if(mDDLDate.getText().toString().equals(""))
+                    Toast.makeText(this, "未输入DDL截止日期", Toast.LENGTH_LONG).show();
+                else if(diffLevel.getRating()==0)
+                    Toast.makeText(this, "未输入难度评级", Toast.LENGTH_LONG).show();
+                    //Toast.makeText(this, valueOf((int)diffLevel.getRating()), Toast.LENGTH_LONG).show();
+                else if(downTime.getText().toString()=="")
+                    Toast.makeText(this, "未输入完成预期下限时间", Toast.LENGTH_LONG).show();
+                else if(upTime.getText().toString()=="")
+                    Toast.makeText(this, "未输入完成预期上限时间", Toast.LENGTH_LONG).show();
+                else {
+                    DBOpenHelper dbHelper = new DBOpenHelper(this);
+                    SQLiteDatabase db = dbHelper.getWritableDatabase();
+                    ContentValues values=new ContentValues();
+                    values.put(DatabaseModel.COLUMN_NAME,nameEt.getText().toString());
+                    values.put(DatabaseModel.COLUMN_DDL,mDDLDate.getText().toString());
+                    values.put(DatabaseModel.COLUMN_LEVEL,(int)diffLevel.getRating());
+                    values.put(DatabaseModel.COLUMN_FINISH,false);
+                    values.put(DatabaseModel.COLUMN_DURATIOND,Integer.parseInt(downTime.getText().toString()));
+                    values.put(DatabaseModel.COLUMN_DURATIONU,Integer.parseInt(upTime.getText().toString()));
+                    long newRowId = db.insert(DatabaseModel.TABLE_NAME, null, values);
+                    System.out.println(newRowId);
+                }
+        }
+    }
 }

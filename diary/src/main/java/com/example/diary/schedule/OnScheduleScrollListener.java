@@ -4,7 +4,7 @@ import android.view.GestureDetector;
 import android.view.MotionEvent;
 
 public class OnScheduleScrollListener extends GestureDetector.SimpleOnGestureListener {
-    private ScheduleLayout mScheduleLayout;
+    private final ScheduleLayout mScheduleLayout;
 
     public OnScheduleScrollListener(ScheduleLayout scheduleLayout) {
         mScheduleLayout = scheduleLayout;

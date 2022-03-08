@@ -13,11 +13,11 @@ import com.example.diary.R;
 import org.joda.time.DateTime;
 
 public class MonthAdapter extends PagerAdapter {
-    private SparseArray<MonthView> mViews;
-    private Context mContext;
-    private TypedArray mArray;
-    private MonthCalendarView mMonthCalendarView;
-    private int mMonthCount;
+    private final SparseArray<MonthView> mViews;
+    private final Context mContext;
+    private final TypedArray mArray;
+    private final MonthCalendarView mMonthCalendarView;
+    private final int mMonthCount;
 
     public MonthAdapter(Context context, TypedArray array, MonthCalendarView monthCalendarView) {
         mContext = context;
@@ -35,7 +35,7 @@ public class MonthAdapter extends PagerAdapter {
     @Override
     public Object instantiateItem(ViewGroup container, int position) {
         if (mViews.get(position) == null) {
-            int date[] = getYearAndMonth(position);
+            int[] date = getYearAndMonth(position);
             MonthView monthView = new MonthView(mContext, mArray, date[0], date[1]);
             monthView.setId(position);
             monthView.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
@@ -48,7 +48,7 @@ public class MonthAdapter extends PagerAdapter {
     }
 
     private int[] getYearAndMonth(int position) {
-        int date[] = new int[2];
+        int[] date = new int[2];
         DateTime time = new DateTime();
         time = time.plusMonths(position - mMonthCount / 2);
         date[0] = time.getYear();

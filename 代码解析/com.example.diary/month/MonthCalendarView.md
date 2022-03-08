@@ -64,7 +64,7 @@ public class MonthCalendarView extends ViewPager implements OnMonthClickListener
         setCurrentItem(getCurrentItem() + 1, true);
     }
 
-    private OnPageChangeListener mOnPageChangeListener = new OnPageChangeListener() {
+    private final OnPageChangeListener mOnPageChangeListener = new OnPageChangeListener() {
         @Override
         public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
         }

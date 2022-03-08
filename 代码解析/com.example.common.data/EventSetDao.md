@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.Map;
 
 public class EventSetDao {
-    private exampleSQLiteHelper mHelper;
+    private final exampleSQLiteHelper mHelper;
 
     private EventSetDao(Context context) {
         mHelper = new exampleSQLiteHelper(context);

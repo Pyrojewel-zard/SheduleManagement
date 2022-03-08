@@ -6,9 +6,9 @@ import android.view.animation.DecelerateInterpolator;
 import android.view.animation.Transformation;
 
 public class ScheduleAnimation extends Animation {
-    private ScheduleLayout mScheduleLayout;
-    private ScheduleState mState;
-    private float mDistanceY;
+    private final ScheduleLayout mScheduleLayout;
+    private final ScheduleState mState;
+    private final float mDistanceY;
 
     public ScheduleAnimation(ScheduleLayout scheduleLayout, ScheduleState state, float distanceY) {
         mScheduleLayout = scheduleLayout;

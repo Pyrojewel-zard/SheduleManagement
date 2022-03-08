@@ -40,9 +40,9 @@ public class WeekView extends View {
     private int mColumnSize, mRowSize, mSelectCircleSize;
     private int mDaySize;
     private int mLunarTextSize;
-    private int mCircleRadius = 6;
+    private final int mCircleRadius = 6;
     private int[] mHolidays;
-    private String mHolidayOrLunarText[];
+    private String[] mHolidayOrLunarText;
     private boolean mIsShowLunar;
     private boolean mIsShowHint;
     private boolean mIsShowHolidayHint;
@@ -112,7 +112,7 @@ public class WeekView extends View {
         mStartDate = dateTime;
         mRestBitmap = BitmapFactory.decodeResource(getResources(), R.mipmap.ic_rest_day);
         mWorkBitmap = BitmapFactory.decodeResource(getResources(), R.mipmap.ic_work_day);
-        int holidays[] = CalendarUtils.getInstance(getContext()).getHolidays(mStartDate.getYear(), mStartDate.getMonthOfYear());
+        int[] holidays = CalendarUtils.getInstance(getContext()).getHolidays(mStartDate.getYear(), mStartDate.getMonthOfYear());
         int row = CalendarUtils.getWeekRow(mStartDate.getYear(), mStartDate.getMonthOfYear() - 1, mStartDate.getDayOfMonth());
         mHolidays = new int[7];
         System.arraycopy(holidays, row * 7, mHolidays, 0, mHolidays.length);

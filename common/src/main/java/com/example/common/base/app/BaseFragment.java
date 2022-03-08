@@ -59,7 +59,7 @@ public abstract class BaseFragment extends Fragment {
     protected <VT extends View> VT searchViewById(int id) {
         if (mView == null)
             throw new NullPointerException("Fragment content view is null.");
-        VT view = (VT) mView.findViewById(id);
+        VT view = mView.findViewById(id);
         if (view == null)
             throw new NullPointerException("This resource id is invalid.");
         return view;

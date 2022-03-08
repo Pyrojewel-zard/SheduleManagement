@@ -8,7 +8,6 @@
     app:elevation="0dp">
 
     <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:background="@color/colorPrimary"
@@ -34,7 +33,6 @@
                 android:textSize="@dimen/text_size_16sp" />
 
             <TextView
-                android:id="@+id/tvTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
@@ -48,7 +46,7 @@
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/tvFinish"
+                android:id="@+id/tvConfirm"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_alignParentRight="true"
