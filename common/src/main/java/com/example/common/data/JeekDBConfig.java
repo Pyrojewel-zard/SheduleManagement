@@ -2,10 +2,10 @@ package com.example.common.data;
 
 public interface JeekDBConfig {
 
-    int DATABASE_VERSION = 3;
+    int DATABASE_VERSION = 1;
 
-    String DATABASE_NAME = "JeekCalendarDB";
-
+    String DATABASE_NAME = "SheduleManagement";
+    //暂时无法删除的内容，不需要这些东西
     String EVENT_SET_ID = "id";
     String EVENT_SET_NAME = "name";
     String EVENT_SET_COLOR = "color";
@@ -20,34 +20,30 @@ public interface JeekDBConfig {
             + EVENT_SET_ICON + " INTEGER" + ")";
 
     String DROP_EVENT_SET_TABLE_SQL = "DROP TABLE " + EVENT_SET_TABLE_NAME;
+//以上
+String TABLE_NAME = "SheduleManagement";
+    String COLUMN_ID = "_ID";
+    String COLUMN_NAME = "name";
+    String COLUMN_DDL_YEAR = "YEAR";
+    String COLUMN_DDL_MONTH = "MONTH";
+    String COLUMN_DDL_DAY= "DAY";
+    String COLUMN_FINISH = "ISFINISH";
+    String COLUMN_LEVEL = "DIFLEVEL";
+    String COLUMN_DURATIONU = "FINISHDURATIONUP";
+    String COLUMN_DURATIOND = "FINISHDURATIONDOWN";
 
-    String SCHEDULE_ID = "id";
-    String SCHEDULE_COLOR = "color";
-    String SCHEDULE_TITLE = "title";
-    String SCHEDULE_DESC = "desc";
-    String SCHEDULE_STATE = "state";
-    String SCHEDULE_TIME = "time";
-    String SCHEDULE_YEAR = "year";
-    String SCHEDULE_MONTH = "month";
-    String SCHEDULE_DAY = "day";
-    String SCHEDULE_LOCATION = "location";
-    String SCHEDULE_EVENT_SET_ID = "eid";
+    String CREATE_SCHEDULE_TABLE_SQL = "CREATE TABLE " + TABLE_NAME + "("
+            + COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
+            + COLUMN_NAME + " TEXT,"
+            + COLUMN_DDL_YEAR + " INTEGER, "
+            + COLUMN_DDL_MONTH + " INTEGER, "
+            + COLUMN_DDL_DAY + " INTEGER, "
+            + COLUMN_FINISH + " NUMERIC,"
+            + COLUMN_LEVEL + " INTEGER,"
+            + COLUMN_DURATIONU+" INTEGER,"
+            + COLUMN_DURATIOND+" INTEGER"
+            + ")";
 
-    String SCHEDULE_TABLE_NAME = "Schedule";
-
-    String CREATE_SCHEDULE_TABLE_SQL = "CREATE TABLE " + SCHEDULE_TABLE_NAME + "("
-            + SCHEDULE_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
-            + SCHEDULE_COLOR + " INTEGER, "
-            + SCHEDULE_TITLE + " VARCHAR(128), "
-            + SCHEDULE_LOCATION + " VARCHAR(48), "
-            + SCHEDULE_DESC + " VARCHAR(255), "
-            + SCHEDULE_STATE + " INTEGER, "
-            + SCHEDULE_TIME + " LONG, "
-            + SCHEDULE_YEAR + " INTEGER, "
-            + SCHEDULE_MONTH + " INTEGER, "
-            + SCHEDULE_DAY + " INTEGER, "
-            + SCHEDULE_EVENT_SET_ID + " INTEGER" + ")";
-
-    String DROP_SCHEDULE_TABLE_SQL = "DROP TABLE " + SCHEDULE_TABLE_NAME;
+    String DROP_SCHEDULE_TABLE_SQL = "DROP TABLE " + TABLE_NAME;
 
 }

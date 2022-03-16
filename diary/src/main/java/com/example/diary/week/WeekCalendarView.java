@@ -34,6 +34,7 @@ public class WeekCalendarView extends ViewPager implements OnWeekClickListener{
     public void onClickDate(int year, int month, int day) {
         if (mOnCalendarClickListener != null) {
             mOnCalendarClickListener.onClickDate(year, month, day);
+            System.out.println(year+"-"+month+"-"+"day");
         }
     }
 

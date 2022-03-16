@@ -15,12 +15,61 @@
     <string name="text1">个性化</string>
     <string name="text2">导入课程表</string>
     <string name="text3">标签库</string>
+    <string name="MonthTitleName">July</string>
+    <string name="DayTitleName">23rd</string>
     <string name="text4">日程习惯偏好</string>
     <string name="text5">帮助</string>
+    <string name="calendar_today">Today</string>
 
     <!--schedule-->
     <string name="schedule_event_detail_setting">Detail setting</string>
-
+    <string-array name="calendar_month">
+        <item>January</item>
+        <item>February</item>
+        <item>March</item>
+        <item>April</item>
+        <item>May</item>
+        <item>June</item>
+        <item>July</item>
+        <item>August</item>
+        <item>September</item>
+        <item>October</item>
+        <item>November</item>
+        <item>December</item>
+    </string-array>
+    <string-array name="calendar_day">
+        <item>1st</item>
+        <item>2nd</item>
+        <item>3rd</item>
+        <item>4th</item>
+        <item>5th</item>
+        <item>6th</item>
+        <item>7th</item>
+        <item>8th</item>
+        <item>9th</item>
+        <item>10th</item>
+        <item>11th</item>
+        <item>12th</item>
+        <item>13th</item>
+        <item>14th</item>
+        <item>15th</item>
+        <item>16th</item>
+        <item>17th</item>
+        <item>18th</item>
+        <item>19th</item>
+        <item>20th</item>
+        <item>21st</item>
+        <item>22nd</item>
+        <item>23rd</item>
+        <item>24th</item>
+        <item>25th</item>
+        <item>26th</item>
+        <item>27th</item>
+        <item>28th</item>
+        <item>29th</item>
+        <item>30th</item>
+        <item>31st</item>
+    </string-array>
     <!--menu-->
 
     <!--event.set-->

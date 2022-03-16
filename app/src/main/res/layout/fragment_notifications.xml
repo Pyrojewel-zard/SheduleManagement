@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -18,23 +19,35 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="35dp"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentRight="true"
+            <LinearLayout
+                android:id="@+id/llTitleDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:orientation="vertical"
                 android:background="@drawable/frame_1"
-                android:clipToOutline="true">
+                android:visibility="visible">
 
                 <TextView
+                    android:id="@+id/tvTitleMonth"
                     android:layout_width="wrap_content"
-                    android:layout_height="20dp"
-                    android:layout_centerInParent="true"
-                    android:gravity="center_horizontal|top"
-                    android:text="@string/timeline"
-                    android:textAppearance="@style/today" />
-            </RelativeLayout>
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="九月"
+                    android:textColor="@color/colorWrite"
+                    android:textSize="@dimen/text_size_16sp"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:id="@+id/tvTitleDay"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="今天"
+                    android:textColor="@color/colorWrite"
+                    android:textSize="@dimen/text_size_14sp"/>
+
+            </LinearLayout>
 
 <include layout="@layout/layout_schedule"/>
 
