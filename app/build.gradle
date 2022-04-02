@@ -46,6 +46,7 @@ dependencies {
     implementation 'com.android.support:support-annotations:28.0.0'
     implementation 'androidx.recyclerview:recyclerview:1.2.0'
     implementation 'androidx.viewpager:viewpager:1.0.0'
+    implementation 'com.github.clans:fab:1.6.4'
     implementation project(path: ':common')
     implementation files('D:\\Users\\Pyrojewel\\Downloads\\android5xlsx-master\\android5xlsx-master\\poi-3.12-android-a.jar')
     implementation files('D:\\Users\\Pyrojewel\\Downloads\\android5xlsx-master\\android5xlsx-master\\poi-ooxml-schemas-3.12-20150511-a.jar')
