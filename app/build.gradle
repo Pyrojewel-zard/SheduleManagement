@@ -48,8 +48,16 @@ dependencies {
     implementation 'androidx.viewpager:viewpager:1.0.0'
     implementation 'com.github.clans:fab:1.6.4'
     implementation project(path: ':common')
-    implementation files('D:\\Users\\Pyrojewel\\Downloads\\android5xlsx-master\\android5xlsx-master\\poi-3.12-android-a.jar')
-    implementation files('D:\\Users\\Pyrojewel\\Downloads\\android5xlsx-master\\android5xlsx-master\\poi-ooxml-schemas-3.12-20150511-a.jar')
+    implementation files('..\\Resource\\poi-3.12-android-a.jar')
+    implementation files('..\\Resource\\poi-ooxml-schemas-3.12-20150511-a.jar')
+    implementation files('..\\Resource\\commons-logging-1.2.jar')
+    implementation files('..\\Resource\\gson-2.2.4.jar')
+    implementation files('..\\Resource\\ini4j-0.5.4.jar')
+    implementation files('..\\Resource\\jaxb-api-2.3.0.jar')
+    implementation files('..\\Resource\\logging-interceptor-2.7.5.jar')
+    implementation files('..\\Resource\\okhttp-2.5.0.jar')
+    implementation files('..\\Resource\\okio-1.12.0.jar')
+
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
