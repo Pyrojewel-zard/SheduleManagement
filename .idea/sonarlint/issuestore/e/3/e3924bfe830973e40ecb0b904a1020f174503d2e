@@ -1,0 +1,36 @@
+
+`
+java:S1124"EReorder the modifiers to comply with the Java Language Specification.(ô‚Ó—úÿÿÿÿ
+`
+java:S1124"EReorder the modifiers to comply with the Java Language Specification.(í¯«§ùÿÿÿÿ
+[
+java:S1124"EReorder the modifiers to comply with the Java Language Specification.(ÛÍëÒ
+L
+java:S1854&"6Remove this useless assignment to local variable "wb".(Ïü¸
+L
+java:S1854("6Remove this useless assignment to local variable "wb".(úÆëİ
+Q
+java:S1854*"6Remove this useless assignment to local variable "wb".(ÑŸšÌşÿÿÿÿ
+B
+java:S1481"'Remove this unused "wb" local variable.(ƒÃå—ÿÿÿÿÿ
+Z
+java:S2147/"DCombine this catch with the one at line 45, which has the same body.(ï­£Ä
+t
+java:S3776g"RRefactor this method to reduce its Cognitive Complexity from 20 to the 15 allowed.(áŸ©•ÿÿÿÿÿ8ÒŞğÀş/
+I
+java:S1168"+Return an empty collection instead of null.(¥¹ï8—ÜŸÂş/
+]
+java:S1075“"ARefactor your code to get this URI from a customizable parameter.(Ï‰°Èşÿÿÿÿ
+D
+java:S1121&".Extract the assignment out of this expression.(Ïü¸
+D
+java:S1121(".Extract the assignment out of this expression.(úÆëİ
+I
+java:S1121*".Extract the assignment out of this expression.(ÑŸšÌşÿÿÿÿ
+‹
+java:S1319g"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(áŸ©•ÿÿÿÿÿ
+n
+java:S1488\"YImmediately return this expression instead of assigning it to the temporary variable "a".(ƒ¥—x
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(§”ÿñ
+h
+java:S2095$"MUse try-with-resources or close this "FileInputStream" in a "finally" clause.(òÎøÌûÿÿÿÿ

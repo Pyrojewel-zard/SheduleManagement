@@ -15,6 +15,9 @@ import com.fexli.portable.todosqlite.models.ToDoTask;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * @author Pyrojewel
+ */
 public class ToDoDataBaseHelper extends SQLiteOpenHelper {
     public static final int VERSION = 1;
     public static final String TAG = "ToDoDatabaseHelper";
@@ -23,7 +26,7 @@ public class ToDoDataBaseHelper extends SQLiteOpenHelper {
 
     public ToDoDataBaseHelper(Context ctx, String name) {
         super(ctx, name, null, VERSION);
-        this.TABLE_NAME = "toda_user";
+        this.TABLE_NAME = "todo_user";
     }
 
     @Override

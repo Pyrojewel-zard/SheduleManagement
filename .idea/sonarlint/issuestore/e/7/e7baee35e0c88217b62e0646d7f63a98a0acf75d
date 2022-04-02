@@ -1,0 +1,19 @@
+
+|
+java:S1450*"ZRemove the "imageButton" field and declare it as a local variable in the relevant methods.(óè×¡ıÿÿÿÿ8á©Áş/
+{
+java:S1450("`Remove the "settingsViewModel" field and declare it as a local variable in the relevant methods.(Œê½ßúÿÿÿÿ
+P
+java:S1068("5Remove this unused "settingsViewModel" private field.(Œê½ßúÿÿÿÿ
+J
+java:S1066P"/Merge this if statement with the enclosing one.(™ã†ãşÿÿÿÿ
+J
+java:S1604:"(Make this anonymous inner class a lambda(ËÍøÿÿÿÿÿ8ú©Áş/
+~
+java:S14882"\Immediately return this expression instead of assigning it to the temporary variable "root".(ö±îúÿÿÿÿ8ƒ°¨Áş/
+X
+java:S2259S"BA "NullPointerException" could be thrown; "file" is nullable here.(Õ–Ä
+_
+java:S2095n"IUse try-with-resources or close this "InputStream" in a "finally" clause.(¼ëºˆ
+i
+java:S2095T"MUse try-with-resources or close this "ModelOpenHelper" in a "finally" clause.(‰œ´m8Ÿ°¨Áş/

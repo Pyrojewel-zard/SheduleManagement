@@ -1,17 +1,10 @@
 package com.fexli.portable.schedule;
 
-import androidx.annotation.NonNull;
-
 import com.fexli.portable.todosqlite.models.ToDoTask;
 
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.HashMap;
-import java.util.Objects;
-import java.util.TreeSet;
-import java.util.function.Consumer;
-import java.util.function.Predicate;
-import java.util.stream.Stream;
 
 class TimeFinder {
     int day;
@@ -114,7 +107,7 @@ public class TimeScheduler {
         return 0;
     }
 
-    // FindEmpty 尝试从日程安排中寻找一个空闲时间。
+    /** FindEmpty 尝试从日程安排中寻找一个空闲时间。*/
     public TimeFinder FindEmpty(int timecost) {
         for (int i = 0; i < 7; i++) {
             ArrayList<Long> table = this.TimeTable.get(i + 1);
