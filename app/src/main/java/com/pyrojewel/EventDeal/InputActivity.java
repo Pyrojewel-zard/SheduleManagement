@@ -2,12 +2,8 @@ package com.pyrojewel.EventDeal;
 
 
 
-import android.app.Activity;
 import android.app.DatePickerDialog;
-import android.content.ContentValues;
 import android.content.Intent;
-import android.database.sqlite.SQLiteDatabase;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
@@ -17,17 +13,18 @@ import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.example.common.bean.Schedule;
 import com.example.common.data.ScheduleDao;
-import com.example.common.listener.OnTaskFinishedListener;
 import com.example.myapplication.R;
 import com.pyrojewel.MainActivity;
-import com.pyrojewel.schedule.AddScheduleTask;
-
-import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.Calendar;
 
+/**
+ * @author Pyrojewel
+ */
 public class InputActivity extends AppCompatActivity implements View.OnClickListener{
 
     private EditText nameEt;
@@ -109,18 +106,18 @@ public class InputActivity extends AppCompatActivity implements View.OnClickList
                 }
         }
     private void addSchedule(){
-        if(nameEt.getText().toString().equals(""))
+        if(nameEt.getText().toString().equals("")) {
             Toast.makeText(this, "未输入项目名称", Toast.LENGTH_LONG).show();
-        else if(DDLDate.getText().toString().equals(""))
+        } else if(DDLDate.getText().toString().equals("")) {
             Toast.makeText(this, "未输入DDL截止日期", Toast.LENGTH_LONG).show();
-        else if(diffLevel.getRating()==0)
+        } else if(diffLevel.getRating()==0) {
             Toast.makeText(this, "未输入难度评级", Toast.LENGTH_LONG).show();
-            //Toast.makeText(this, valueOf((int)diffLevel.getRating()), Toast.LENGTH_LONG).show();
-        else if(downTime.getText().toString()=="")
+        }
+        else if(downTime.getText().toString()=="") {
             Toast.makeText(this, "未输入完成预期下限时间", Toast.LENGTH_LONG).show();
-        else if(upTime.getText().toString()=="")
+        } else if(upTime.getText().toString()=="") {
             Toast.makeText(this, "未输入完成预期上限时间", Toast.LENGTH_LONG).show();
-        else {
+        } else {
             Schedule schedule=new Schedule();
             Toast.makeText(this, mYear+"-"+mMonth, Toast.LENGTH_LONG).show();
             schedule.setName(nameEt.getText().toString());

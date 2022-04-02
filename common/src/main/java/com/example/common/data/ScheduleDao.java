@@ -10,6 +10,9 @@ import com.example.common.bean.Schedule;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * @author Pyrojewel
+ */
 public class ScheduleDao {
 
     private static final String DB_NAME = "ScheduleManagement";
@@ -138,7 +141,10 @@ public class ScheduleDao {
     }
 
     public int choose(int a){//处理value must be >=0真的笑死我了
-        if(a>=0)return a;
-        else return 0;
+        if(a>=0) {
+            return a;
+        } else {
+            return 0;
+        }
     }
 }
