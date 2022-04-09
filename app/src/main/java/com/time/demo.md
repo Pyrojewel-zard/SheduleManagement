@@ -14,6 +14,7 @@ Button btn;
                 String input=txInput.getText().toString();
                 System.out.println(input);
                 if(input!=""){
+                    //这里是把第一个input的默认值设为了空
                 txOutput.setText(deal(input));
             }else {
                     Toast t = Toast.makeText(MainActivity.this, "没有输入内容", Toast.LENGTH_LONG);
@@ -31,7 +32,9 @@ Button btn;
         String a=str;
         if(unit.length!=0) {
             a = stringPreHandlingModule.numberTranslator(a).replace(unit[0].Time_Expression, "");
+            //删除掉原本内容中的时间部分，余下的作为task
             return DateUtil.formatDateDefault(unit[0].getTime())+a;
+            //方便显示我就又加在一起了，只要其中一项，或者两项分开，改一下就好
         }else{
             Toast t = Toast.makeText(MainActivity.this, "没有识别到时间关键词", Toast.LENGTH_LONG);
             t.show();
@@ -42,3 +45,5 @@ Button btn;
 还没想到怎么加进去，毕竟还有地方没搞好
 
 卡了很久的是在TimeNormalizer，关于pattern的初始化那边
+
+使用的时候，也就是说，直接就复制粘贴deal函数，把要改的细节改改就好

@@ -65,3 +65,15 @@ g
 7app/src/main/java/com/fexli/portable/ocr/OcrClient.java,2\c\2c238c676b6abfb36ba6be8951a40f323f6bd6a5
 i
 9app/src/main/java/com/fexli/portable/ocr/model/Coord.java,b\e\be7177cc850ba342c7a1cfd61bc9fdf4a681a250
+l
+<app/src/main/java/com/pyrojewel/EventDeal/InputActivity.java,2\7\27ba1706f8a9ea6ea2111dcd822964eb26bef0fd
+<
+build.gradle,f\0\f07866736216be0ee2aba49e392191aeae700a35
+w
+Gapp/src/main/java/com/fexli/portable/todosqlite/ToDoDataBaseHelper.java,1\9\19064a5a5c99d0f72dc147bb69d4776399b107af
+p
+@app/src/main/java/com/fexli/portable/schedule/TimeScheduler.java,7\d\7d0b1a97584243cdc6a15dca6a644062d09d8fc9
+B
+Resource/TimeExp.m,e\c\ec8a67390ce9aecc2ffcb778500652c42f0895b7
+\
+,.idea/inspectionProfiles/Project_Default.xml,4\9\496a238a6afa168dbaf6efd37bb459331589579c
