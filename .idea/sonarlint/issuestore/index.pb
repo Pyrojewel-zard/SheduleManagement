@@ -67,8 +67,6 @@ i
 9app/src/main/java/com/fexli/portable/ocr/model/Coord.java,b\e\be7177cc850ba342c7a1cfd61bc9fdf4a681a250
 l
 <app/src/main/java/com/pyrojewel/EventDeal/InputActivity.java,2\7\27ba1706f8a9ea6ea2111dcd822964eb26bef0fd
-<
-build.gradle,f\0\f07866736216be0ee2aba49e392191aeae700a35
 w
 Gapp/src/main/java/com/fexli/portable/todosqlite/ToDoDataBaseHelper.java,1\9\19064a5a5c99d0f72dc147bb69d4776399b107af
 p
