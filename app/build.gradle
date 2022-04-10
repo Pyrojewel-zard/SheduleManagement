@@ -52,7 +52,7 @@ dependencies {
     implementation files('..\\Resource\\poi-3.12-android-a.jar')
     implementation files('..\\Resource\\poi-ooxml-schemas-3.12-20150511-a.jar')
     implementation files('..\\Resource\\commons-logging-1.2.jar')
-    implementation files('..\\Resource\\gson-2.2.4.jar')
+    implementation 'com.google.code.gson:gson:2.7'
     implementation files('..\\Resource\\ini4j-0.5.4.jar')
     implementation files('..\\Resource\\jaxb-api-2.3.0.jar')
     implementation files('..\\Resource\\logging-interceptor-2.7.5.jar')

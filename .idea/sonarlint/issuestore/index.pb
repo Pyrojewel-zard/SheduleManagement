@@ -75,3 +75,7 @@ B
 Resource/TimeExp.m,e\c\ec8a67390ce9aecc2ffcb778500652c42f0895b7
 \
 ,.idea/inspectionProfiles/Project_Default.xml,4\9\496a238a6afa168dbaf6efd37bb459331589579c
+c
+3app/src/main/java/com/time/enums/RangeTimeEnum.java,a\d\adf9bbfddae5320727b9269f4f46bd0a3bdb3b57
+k
+;app/src/main/java/com/time/nlp/stringPreHandlingModule.java,a\9\a99f667b7407ca4019cc62b84c740aed2d16eb04
