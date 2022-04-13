@@ -1,8 +1,0 @@
-
-U
-java:S1118":Add a private constructor to hide the implicit public one.(ת׳€¼üÿÿÿÿ
-e
-java:S1192"JDefine a constant instead of duplicating this literal " INTEGER," 4 times.(דבת׳תÿÿÿÿ
-b
-java:S1192"GDefine a constant instead of duplicating this literal " TEXT," 3 times.(¼ׂÝûÿÿÿÿ
-o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(§”ÿס

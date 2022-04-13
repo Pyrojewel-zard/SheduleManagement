@@ -15,6 +15,7 @@ public class CourseConfig {
     public static final String COLUMN_DAYS = "dayOfWeek";
     public static final String COLUMN_TIMES = "timeStart";
     public static final String TIME_LENGTH = "timeLength";
+    public static final String COURSE_DIFFICULTY = "courseDifficulty";
 
     public static final String CREATE_TABLE = "CREATE TABLE " + TABLE_NAME + "("
             + COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
@@ -25,6 +26,7 @@ public class CourseConfig {
             + COLUMN_PLACE + " TEXT,"
             + COLUMN_DAYS+" INTEGER,"
             + COLUMN_TIMES+" INTEGER,"
+            + COURSE_DIFFICULTY+"INTEGER,"
             + TIME_LENGTH +" INTEGER"
             + ")";
 }

@@ -50,6 +50,7 @@ public class ModelOpenHelper extends SQLiteOpenHelper {
         values.put(CourseConfig.COLUMN_DAYS, courseModel.getDayOfWeek());
         values.put(CourseConfig.COLUMN_TIMES, courseModel.getTimeStart());
         values.put(CourseConfig.TIME_LENGTH, courseModel.getTimeLength());
+        values.put(CourseConfig.COURSE_DIFFICULTY, courseModel.getDiff());
 
         long id = db.insert(CourseConfig.TABLE_NAME, null, values);
         db.close();
@@ -72,7 +73,8 @@ public class ModelOpenHelper extends SQLiteOpenHelper {
                 CourseConfig.COLUMN_PLACE,
                 CourseConfig.COLUMN_DAYS,
                 CourseConfig.COLUMN_TIMES,
-                CourseConfig.TIME_LENGTH
+                CourseConfig.TIME_LENGTH,
+                CourseConfig.COURSE_DIFFICULTY
         };
         Cursor cursor = db.query(CourseConfig.TABLE_NAME,
                 columnArray,
@@ -89,6 +91,7 @@ public class ModelOpenHelper extends SQLiteOpenHelper {
             int dayOfWeek=cursor.getInt(choose(cursor.getColumnIndex(CourseConfig.COLUMN_DAYS)));
             int timeStart=cursor.getInt(choose(cursor.getColumnIndex(CourseConfig.COLUMN_TIMES)));
             int timeLength=cursor.getInt(choose(cursor.getColumnIndex(CourseConfig.TIME_LENGTH)));
+            int diff=cursor.getInt(choose(cursor.getColumnIndex(CourseConfig.COURSE_DIFFICULTY)));
 
             courseModel.setId(id);
             courseModel.setName(name);
@@ -99,6 +102,7 @@ public class ModelOpenHelper extends SQLiteOpenHelper {
             courseModel.setDayOfWeek(dayOfWeek);
             courseModel.setTimeStart(timeStart);
             courseModel.setTimeLength(timeLength);
+            courseModel.setDiff(diff);
 
             cursor.close();
             return courseModel;
@@ -137,6 +141,7 @@ public class ModelOpenHelper extends SQLiteOpenHelper {
                 int dayOfWeek=cursor.getInt(choose(cursor.getColumnIndex(CourseConfig.COLUMN_DAYS)));
                 int timeStart=cursor.getInt(choose(cursor.getColumnIndex(CourseConfig.COLUMN_TIMES)));
                 int timeLength=cursor.getInt(choose(cursor.getColumnIndex(CourseConfig.TIME_LENGTH)));
+                int diff=cursor.getInt(choose(cursor.getColumnIndex(CourseConfig.COURSE_DIFFICULTY)));
 
                 courseModel.setId(id);
                 courseModel.setName(name);
@@ -147,6 +152,7 @@ public class ModelOpenHelper extends SQLiteOpenHelper {
                 courseModel.setDayOfWeek(dayOfWeek);
                 courseModel.setTimeStart(timeStart);
                 courseModel.setTimeLength(timeLength);
+                courseModel.setDiff(diff);
 
                 courseModelsList.add(courseModel);
             }
@@ -186,6 +192,7 @@ public class ModelOpenHelper extends SQLiteOpenHelper {
         values.put(CourseConfig.COLUMN_DAYS, courseModel.getDayOfWeek());
         values.put(CourseConfig.COLUMN_TIMES, courseModel.getTimeStart());
         values.put(CourseConfig.TIME_LENGTH, courseModel.getTimeLength());
+        values.put(CourseConfig.COURSE_DIFFICULTY, courseModel.getDiff());
 
         int idReturnByUpdate = db.update(CourseConfig.TABLE_NAME, values, CourseConfig.COLUMN_ID + " =? ", new String[]{String.valueOf(id)});
         db.close();

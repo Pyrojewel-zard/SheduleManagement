@@ -20,7 +20,8 @@ public class CourseModel implements Serializable {
     int timeStart;
     /**节次持续长度*/
     int timeLength;
-
+    /**课程难度0-10,默认值为5*/
+    int diff=5;
     public void setId(int id) {
         this.id = id;
     }
@@ -92,6 +93,15 @@ public class CourseModel implements Serializable {
     public int getTimeLength() {
         return timeLength;
     }
+
+    public int getDiff() {
+        return diff;
+    }
+
+    public void setDiff(int diff) {
+        this.diff = diff;
+    }
+
     public void printAll(){
         System.out.println(name+"+"+teacher+"+"+weekStart+"+"+weekLength+"+"+place+"+"+dayOfWeek+"+"+timeStart+"+"+timeLength);
     }

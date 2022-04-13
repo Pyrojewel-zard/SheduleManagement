@@ -1,4 +1,5 @@
-```    private final static int SELECT_PIC = 100;
+```
+       private final static int SELECT_PIC = 100;
        private final static int SELECT_ORIG_PIC = 100;
        public static String ADD_EVENT_SET_ACTION = "action.add.event.set";
        private ActivityMainBinding binding;
@@ -65,4 +66,5 @@
                    }
                    break;
            }
-       }```
+       }
+```
