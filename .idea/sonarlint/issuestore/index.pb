@@ -6,12 +6,6 @@ Cdiary/src/main/java/com/example/diary/week/OnWeekClickListener.java,b\0\b0b7cf
 m
 =common/src/main/java/com/example/common/data/EventSetDao.java,8\0\80e4f66ed84c3c01a8559a0c417fcba2d9518bdf
 n
->app/src/main/java/com/pyrojewel/schedule/LoadScheduleTask.java,a\2\a2685a1d3611b6e6e4ffc1593d4a79dc4308a03b
-p
-@app/src/main/java/com/pyrojewel/schedule/RemoveScheduleTask.java,4\f\4f9334e2f264c699741cc95dba2b31a4a249e061
-p
-@app/src/main/java/com/pyrojewel/schedule/UpdateScheduleTask.java,3\e\3e5d0115d8c267b067ca57ff54879406aa6cf72f
-n
 >common/src/main/java/com/example/common/data/JeekDBConfig.java,c\9\c9549f24576899b03036ddbc078e01dabe71e804
 t
 Dapp/src/main/java/com/pyrojewel/ui/dashboard/DashboardViewModel.java,7\6\769e9c64ef7d349fae581778cf4db4b678643944
@@ -39,8 +33,6 @@ o
 ?app/src/main/java/com/tencentcloudapi/common/AbstractModel.java,7\3\734ac5c5c98381aae034506d791d005493691f43
 n
 >app/src/main/java/com/tencentcloudapi/common/CommonClient.java,0\b\0b1b973351b306ba9f1fef83304cfa2d82aefcc3
-C
-common/build.gradle,5\c\5c23a73f3b1be7d6214194048e5ccd4842575f5c
 g
 7app/src/main/java/com/tencentcloudapi/common/TCLog.java,8\3\832ba158f711cb7175c31f701a3a6829c1309924
 u
@@ -51,8 +43,6 @@ Bapp/src/main/java/com/tencentcloudapi/ocr/v20181119/OcrClient.java,d\7\d7400ef
 Wapp/src/main/java/com/tencentcloudapi/ocr/v20181119/models/DriverLicenseOCRRequest.java,a\6\a61be85c0f2461a5e5c4df63a1c09bb6e1d314b8
 i
 9app/src/main/java/com/fexli/portable/ocr/model/Coord.java,b\e\be7177cc850ba342c7a1cfd61bc9fdf4a681a250
-l
-<app/src/main/java/com/pyrojewel/EventDeal/InputActivity.java,2\7\27ba1706f8a9ea6ea2111dcd822964eb26bef0fd
 w
 Gapp/src/main/java/com/fexli/portable/todosqlite/ToDoDataBaseHelper.java,1\9\19064a5a5c99d0f72dc147bb69d4776399b107af
 p
@@ -79,5 +69,3 @@ b
 -app/src/main/java/com/time/nlp/TimePoint.java,0\5\05cf14f39e2d68f99fdf199c958be16f1f8d9456
 _
 /app/src/main/java/com/time/util/StringUtil.java,2\0\20aac93bc29c8d5f4a33750103b8153375336864
-B
-diary/build.gradle,e\f\efbbc5222df934f3e80248b74c22f8c8b45d8820

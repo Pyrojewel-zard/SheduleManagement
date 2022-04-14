@@ -14,13 +14,15 @@
     <string name="ddl_">不拖DDL 从我做起</string>
     <string name="text1">个性化</string>
     <string name="text2">导入课程表</string>
-    <string name="text3">标签库</string>
+    <string name="text3">课程细节</string>
     <string name="MonthTitleName">July</string>
     <string name="DayTitleName">23rd</string>
     <string name="text4">日程习惯偏好</string>
     <string name="text5">帮助</string>
     <string name="calendar_today">Today</string>
-
+    <string name="Course">课程名称</string>
+    <string name="place">上课地点</string>
+    <string name="diff">课程难度</string>
     <!--schedule-->
     <string name="schedule_event_detail_setting">Detail setting</string>
     <string-array name="calendar_month">

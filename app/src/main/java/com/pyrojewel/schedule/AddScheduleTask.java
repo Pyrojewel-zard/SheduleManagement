@@ -7,8 +7,9 @@ import com.example.common.bean.Schedule;
 import com.example.common.data.ScheduleDao;
 import com.example.common.listener.OnTaskFinishedListener;
 
+
 /**
- * Created by Jimmy on 2016/10/11 0011.
+ * @author Pyrojewel
  */
 public class AddScheduleTask extends BaseAsyncTask<Schedule> {
 

@@ -9,5 +9,6 @@
     <dimen name="schedule_hint_dash_line_width">1dp</dimen>
 
     <dimen name="space_12dp">12dp</dimen>
-
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
 </resources>

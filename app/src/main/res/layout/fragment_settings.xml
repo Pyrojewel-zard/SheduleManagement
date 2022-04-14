@@ -98,7 +98,7 @@
 
 
             <ImageButton
-                android:id="@+id/model_13"
+                android:id="@+id/Course_detail"
                 android:layout_width="90dp"
                 android:layout_height="90dp"
                 android:layout_alignParentRight="true"
@@ -122,7 +122,7 @@
                 android:id="@+id/model_23"
                 android:layout_width="90dp"
                 android:layout_height="90dp"
-                android:layout_alignStart="@id/model_13"
+                android:layout_alignStart="@id/Course_detail"
                 android:layout_alignParentRight="false"
                 android:layout_marginTop="150dp"
                 android:background="@drawable/rectangle_13"
@@ -136,9 +136,9 @@
                 android:layout_alignParentTop="true"
                 android:layout_centerHorizontal="true"
                 android:background="@drawable/rectangle_13"
+                android:onClick="onClickImport"
                 android:scaleType="center"
                 android:src="@drawable/vector2"
-                android:onClick="onClickImport"
                 tools:layout_centerHorizontal="true" />
 
 
@@ -179,13 +179,15 @@
                 android:text="@string/text2"
                 android:textColor="@color/black"
                 android:textStyle="bold" />
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/Course"
-                android:layout_alignStart="@id/model_13"
+                android:layout_alignStart="@id/Course_detail"
+                android:layout_marginStart="20dp"
                 android:layout_marginLeft="30dp"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="9dp"
                 android:background="@color/white"
                 android:rotationX="0"
                 android:text="@string/text3"
