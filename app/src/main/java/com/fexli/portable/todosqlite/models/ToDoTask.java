@@ -2,8 +2,6 @@ package com.fexli.portable.todosqlite.models;
 
 import android.content.ContentValues;
 
-import java.util.Random;
-
 public class ToDoTask {
     public int id;
     public String name, description, category;// 名称，描述，分类
@@ -45,7 +43,8 @@ public class ToDoTask {
     }
 
     public int Arrange() {
-        this.increaseTs = 5000;//测试时默认5000s，正式模型需要进行Arrange函数构建对于当前项目的用时模型
+        this.increaseTs = 5000;
+        //测试时默认5000s，正式模型需要进行Arrange函数构建对于当前项目的用时模型
         return this.increaseTs;
     }
 

@@ -85,6 +85,17 @@ public class InputText extends Fragment {
                 }
             }
         });
+        try {
+            Intent intent = getActivity().getIntent();
+            Bundle bundle=intent.getExtras();
+            String time=bundle.getString("time");
+            String task=bundle.getString("task");
+            nameEt.setText(task);
+            DDLDate.setText(time);
+        }catch (Exception e){
+            System.out.println(e);
+        }
+
     }
 
     protected void showDatePickDlg() {

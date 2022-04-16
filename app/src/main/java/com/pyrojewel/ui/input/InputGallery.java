@@ -118,6 +118,10 @@ public class InputGallery extends Fragment {
                         if(task!=null){
                         System.out.println(task[0]+task[1]);
                         Intent intent=new Intent(getActivity(), InputActivity.class);
+                        Bundle bundle = new Bundle();
+                        bundle.putString("time",task[0]);
+                        bundle.putString("task",task[1]);
+                        intent.putExtras(bundle);
                         startActivity(intent);
                         }
                     } catch (TencentCloudSDKException e) {

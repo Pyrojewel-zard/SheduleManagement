@@ -156,7 +156,7 @@ public class DateUtil extends CommonDateUtil {
      * @return
      */
     public static String formatDateDefault(Date date) {
-        return DateUtil.formatDate(date, "yyyy-MM-dd HH:mm:ss");
+        return DateUtil.formatDate(date, "yyyy-MM-dd");
     }
 
     /**

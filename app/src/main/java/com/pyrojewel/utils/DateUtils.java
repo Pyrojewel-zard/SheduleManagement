@@ -20,7 +20,7 @@ public class DateUtils {
             return "";
         }
         if (format == null || format.isEmpty()) {
-            format = "yyyy-MM-dd HH:mm:ss";
+            format = "yyyy-MM-dd";
         }
         SimpleDateFormat sdf = new SimpleDateFormat(format);
         return sdf.format(new Date(time));
@@ -30,7 +30,7 @@ public class DateUtils {
      * 日期格式字符串转换成时间戳
      *
      * @param date   字符串日期
-     * @param format 如：yyyy-MM-dd HH:mm:ss
+     * @param format 如：yyyy-MM-dd
      * @return
      */
     public static long date2TimeStamp(String date, String format) {
