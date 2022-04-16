@@ -67,5 +67,9 @@ t
 Dapp/src/main/java/com/pyrojewel/ui/dashboard/DashboardViewModel.java,7\6\769e9c64ef7d349fae581778cf4db4b678643944
 {
 Kapp/src/main/java/com/pyrojewel/ui/notifications/NotificationsFragment.java,a\a\aa4e85e622084df696b1e761952f645737e334ad
-q
-Aapp/src/main/java/com/pyrojewel/ui/settings/SettingsFragment.java,e\7\e7baee35e0c88217b62e0646d7f63a98a0acf75d
+k
+;app/src/main/java/com/example/myapplication/InputVoice.java,9\4\94d4106d98ce45b0a614511e3dfa1c0069ed7f63
+m
+=app/src/main/java/com/example/myapplication/InputGallery.java,f\2\f2baa3025ff8f6996b3568d09f4eb7c81bcf772b
+@
+app/build.gradle,f\4\f4a01d6a4fcb971362ec00a83903fd3902f52164

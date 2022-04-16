@@ -10,14 +10,15 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
-import com.example.myapplication.InputGallery;
-import com.example.myapplication.InputText;
-import com.example.myapplication.InputVoice;
+import com.pyrojewel.ui.input.InputGallery;
+import com.pyrojewel.ui.input.InputText;
+import com.pyrojewel.ui.input.InputVoice;
 import com.example.myapplication.R;
 import com.google.android.material.tabs.TabLayout;
 
 /**
  * @author Pyrojewel
+ * 输入任务的界面
  */
 public class InputActivity extends AppCompatActivity {
 

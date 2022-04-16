@@ -1,4 +1,4 @@
-package com.example.myapplication;
+package com.pyrojewel.ui.input;
 
 import android.app.DatePickerDialog;
 import android.content.Intent;
@@ -19,6 +19,7 @@ import androidx.fragment.app.Fragment;
 
 import com.example.common.bean.Schedule;
 import com.example.common.data.ScheduleDao;
+import com.example.myapplication.R;
 import com.example.myapplication.databinding.FragmentInputTextBinding;
 import com.pyrojewel.MainActivity;
 
@@ -42,10 +43,7 @@ public class InputText extends Fragment {
     private int mYear;
     private int mMonth;
     private int mDay;
-    private int mLevel;
-    private int mFinished;
-    private int mDurationUp;
-    private int mDurationDown;
+
     private FragmentInputTextBinding binding;
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater,
