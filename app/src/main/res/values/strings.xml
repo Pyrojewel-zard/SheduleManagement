@@ -23,6 +23,11 @@
     <string name="Course">课程名称</string>
     <string name="place">上课地点</string>
     <string name="diff">课程难度</string>
+
+    <!--Input界面的String-->
+    <string name="Text">文字</string>
+    <string name="Voice">语音</string>
+    <string name="Gallery">图片</string>
     <!--schedule-->
     <string name="schedule_event_detail_setting">Detail setting</string>
     <string-array name="calendar_month">
@@ -77,4 +82,6 @@
     <!--event.set-->
 
     <string name="finish">完成</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

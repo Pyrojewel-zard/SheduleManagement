@@ -33,7 +33,7 @@ public class CommonDateUtil {
 	public static final long ONE_WEEK_MILLISECOND = 604800000L;
 	public static final long ONE_MONTH_MILLISECOND = 2592000000L;
 	public static final long ONE_YEAR_MILLISECOND = 31536000000L;
-	private static final String[] SMART_DATE_FORMATS = { "yyyy-MM-dd HH:mm:ss", "yyyy.MM.dd HH:mm:ss",
+	private static final String[] SMART_DATE_FORMATS = { "yyyy-MM-dd", "yyyy.MM.dd HH:mm:ss",
 			"yyyy-MM-dd HH:mm", "yyyy.MM.dd HH:mm", "yyyyMMddHHmmss", "yyyyMMddHHmm", "yyyy-MM-dd", "yyyy.MM.dd",
 			"yyyyMMdd" };
 

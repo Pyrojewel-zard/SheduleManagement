@@ -76,6 +76,7 @@
             android:background="@drawable/down_chevron" />
 
         <RelativeLayout
+            android:id="@+id/InputAc"
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:layout_alignParentLeft="true"
@@ -85,8 +86,7 @@
             android:layout_marginLeft="157dp"
             android:layout_marginTop="50dp"
             android:layout_marginRight="157dp"
-            android:background="@drawable/add"
-            android:onClick="onClickInput"/>
+            android:background="@drawable/add" />
 
 
     </LinearLayout>

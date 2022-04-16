@@ -1,7 +1,7 @@
 
-o	java:S116"URename this field "TABLE_NAME" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(²ØúÈûÿÿÿÿ
-f	java:S116"QRename this field "cur_db" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÖŒ¶¸
 E
 java:S1066D"/Merge this if statement with the enclosing one.(é¼Œô
 q
 java:S1104"VMake TABLE_NAME a static final constant or non-public and provide accessors if needed.(²ØúÈûÿÿÿÿ
+o	java:S116"URename this field "TABLE_NAME" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(²ØúÈûÿÿÿÿ
+f	java:S116"QRename this field "cur_db" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÖŒ¶¸
