@@ -44,7 +44,7 @@ public class ToDoDataBaseHelper extends SQLiteOpenHelper {
 
     public ToDoDataBaseHelper openDataBase() {
         cur_db = this.getWritableDatabase();
-        Log.i(TAG, "openDataBase at "+cur_db.getPath());
+        Log.i(TAG, "openDataBase at " + cur_db.getPath());
         return this;
     }
 
@@ -67,13 +67,17 @@ public class ToDoDataBaseHelper extends SQLiteOpenHelper {
             if (cur != null) {
                 if (cur.moveToFirst()) {
                     do {
-                        taskList.add(new ToDoTask(cur.getInt(cur.getColumnIndex(ToDoTask.ID)),
+                        ToDoTask u = new ToDoTask(
+                                cur.getInt(cur.getColumnIndex(ToDoTask.ID)),
                                 cur.getString(cur.getColumnIndex(ToDoTask.NAME)),
                                 cur.getString(cur.getColumnIndex(ToDoTask.DESCRIPTION)),
                                 cur.getInt(cur.getColumnIndex(ToDoTask.DONE_TS)),
                                 cur.getString(cur.getColumnIndex(ToDoTask.CATEGORY)),
                                 cur.getInt(cur.getColumnIndex(ToDoTask.IS_EMERGENCY)) != 0,
-                                cur.getInt(cur.getColumnIndex(ToDoTask.IS_FINISHED)) != 0));
+                                cur.getInt(cur.getColumnIndex(ToDoTask.IS_FINISHED)) != 0,
+                                cur.getInt(cur.getColumnIndex(ToDoTask.DIFFICULTY))
+                        );
+                        taskList.add(u);
                     } while (cur.moveToNext());
                 }
             }

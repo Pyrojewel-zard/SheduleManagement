@@ -8,7 +8,7 @@ public class ToDoTask {
     public int id;
     public String name, description, category;// 名称，描述，分类
     public boolean isEmergency, isFinished; // 是否紧急任务，是否已完成
-    public int doneTs;// 任务完成的时间戳
+    public int doneTs, difficulty;// 任务完成的时间戳，任务难度分数
     public int increaseTs, taskDay; // 需要的时间(秒) 任务进行日期
     public long taskAt;// 开启任务的时间和
     public static String CREATE_TABLE_INFO = "(" +
@@ -19,6 +19,7 @@ public class ToDoTask {
             "emerg BOOLEAN," +//是否为紧急事件
             "describ VARCHAR," +//任务描述
             "category VARCHAR," +//任务分类，暂时使用string分类，由程序区分
+            "diff INTEGER," +//手动难度
             "finished BOOLEAN)";//是否已完成
 
     public static final String ID = "_id";
@@ -28,9 +29,10 @@ public class ToDoTask {
     public static final String IS_EMERGENCY = "emerg";
     public static final String DESCRIPTION = "describ";
     public static final String CATEGORY = "category";
+    public static final String DIFFICULTY = "diff";
     public static final String IS_FINISHED = "finished";
 
-    public ToDoTask(int id, String name, String description, int doneTs, String category, boolean isEmergency, boolean isFinished) {
+    public ToDoTask(int id, String name, String description, int doneTs, String category, boolean isEmergency, boolean isFinished, int diff) {
         this.id = id;
         this.name = name;
         this.description = description;
@@ -38,13 +40,14 @@ public class ToDoTask {
         this.doneTs = doneTs;
         this.isEmergency = isEmergency;
         this.isFinished = isFinished;
+        this.difficulty = diff;
     }
 
-    public ToDoTask(String name, String description, int doneTs, String category, boolean isEmergency, boolean isFinished) {
-        new ToDoTask(0, name, description, doneTs, category, isEmergency, isFinished);
+    public ToDoTask(String name, String description, int doneTs, String category, boolean isEmergency, boolean isFinished, int diff) {
+        new ToDoTask(0, name, description, doneTs, category, isEmergency, isFinished, diff);
     }
 
-    public int Arrange() {
+    public int Arrange() {//TODO:timecost
         this.increaseTs = 5000;//测试时默认5000s，正式模型需要进行Arrange函数构建对于当前项目的用时模型
         return this.increaseTs;
     }
