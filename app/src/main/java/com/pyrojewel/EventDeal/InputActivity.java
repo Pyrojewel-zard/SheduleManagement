@@ -1,138 +1,72 @@
 package com.pyrojewel.EventDeal;
 
 
-
-import android.app.DatePickerDialog;
-import android.content.Intent;
 import android.os.Bundle;
-import android.view.MotionEvent;
-import android.view.View;
-import android.widget.DatePicker;
-import android.widget.EditText;
-import android.widget.RatingBar;
-import android.widget.TextView;
-import android.widget.Toast;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentPagerAdapter;
+import androidx.viewpager.widget.ViewPager;
 
-import com.example.common.bean.Schedule;
-import com.example.common.data.ScheduleDao;
+import com.example.myapplication.InputGallery;
+import com.example.myapplication.InputText;
+import com.example.myapplication.InputVoice;
 import com.example.myapplication.R;
-import com.pyrojewel.MainActivity;
-
-import java.util.Calendar;
+import com.google.android.material.tabs.TabLayout;
 
 /**
  * @author Pyrojewel
  */
-public class InputActivity extends AppCompatActivity implements View.OnClickListener{
+public class InputActivity extends AppCompatActivity {
 
-    private EditText nameEt;
-    private EditText DDLDate;
-    private RatingBar diffLevel;
-    private EditText downTime;
-    private EditText upTime;
-    private TextView cancel;
-    private TextView confirm;
 
-    private String mName;
-    private int mYear;
-    private int mMonth;
-    private int mDay;
-    private int mLevel;
-    private int mFinished;
-    private int mDurationUp;
-    private int mDurationDown;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.layout_input);
-        nameEt= findViewById(R.id.name);
-        DDLDate = findViewById(R.id.editDDLDate);
-        diffLevel= findViewById(R.id.diffLevel);
-        downTime= findViewById(R.id.downTime);
-        upTime= findViewById(R.id.Uptime);
-        cancel= findViewById(R.id.tvCancel);
-        confirm= findViewById(R.id.tvConfirm);
-        cancel.setOnClickListener(this);
-        confirm.setOnClickListener(this);
-        DDLDate.setOnTouchListener(new View.OnTouchListener() {
-
-            @Override
-            public boolean onTouch(View v, MotionEvent event) {
-                if (event.getAction() == MotionEvent.ACTION_DOWN) {
-                    showDatePickDlg();
-                    return true;
-                }
-                return false;
-            }
-        });
-        DDLDate.setOnFocusChangeListener(new View.OnFocusChangeListener() {
-
-            @Override
-            public void onFocusChange(View v, boolean hasFocus) {
-                if (hasFocus) {
-                    showDatePickDlg();
-                }
-            }
-        });
+        SectionsPagerAdapter pagerAdapter=new SectionsPagerAdapter(getSupportFragmentManager());
+        ViewPager pager=(ViewPager) findViewById(R.id.pager);
+        pager.setAdapter(pagerAdapter);
+        TabLayout tabLayout=(TabLayout) findViewById(R.id.tabs);
+        tabLayout.setupWithViewPager(pager);
     }
 
-    protected void showDatePickDlg() {
-        Calendar calendar = Calendar.getInstance();
-        DatePickerDialog datePickerDialog = new DatePickerDialog(InputActivity.this, new DatePickerDialog.OnDateSetListener() {
+    private class SectionsPagerAdapter extends FragmentPagerAdapter {
+        public SectionsPagerAdapter(FragmentManager fragmentManager) {
+            super(fragmentManager,FragmentPagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT);
+        }
 
-            @Override
-            public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
-                InputActivity.this.DDLDate.setText(year + "-" + (monthOfYear+1) + "-" + dayOfMonth);
-                mYear=year;
-                mMonth=monthOfYear;
-                mDay=dayOfMonth;
+        @Override
+        public int getCount() {
+            return 3;
+        }
+
+        @Override
+        public Fragment getItem(int position) {
+            switch (position) {
+                case 0:
+                    return new InputText();
+                case 1:
+                    return new InputGallery();
+                case 2:
+                    return new InputVoice();
             }
-        }, calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH), calendar.get(Calendar.DAY_OF_MONTH));
-        datePickerDialog.show();
-    }
-    @Override
-    public void onClick(View view){
-        Intent intent=new Intent(this, MainActivity.class);
-        switch(view.getId()){
-            case R.id.tvCancel:
-
-                startActivity(intent);
-                break;
-            case R.id.tvConfirm:
-                addSchedule();
-                    startActivity(intent);
-                }
+            return null;
         }
-    private void addSchedule(){
-        if(nameEt.getText().toString().equals("")) {
-            Toast.makeText(this, "未输入项目名称", Toast.LENGTH_LONG).show();
-        } else if(DDLDate.getText().toString().equals("")) {
-            Toast.makeText(this, "未输入DDL截止日期", Toast.LENGTH_LONG).show();
-        } else if(diffLevel.getRating()==0) {
-            Toast.makeText(this, "未输入难度评级", Toast.LENGTH_LONG).show();
+        @Nullable
+        @Override
+        public CharSequence getPageTitle(int position) {
+            switch (position) {
+                case 0:
+                    return getResources().getText(R.string.Text);
+                case 1:
+                    return getResources().getText(R.string.Gallery);
+                case 2:
+                    return getResources().getText(R.string.Voice);
+            }
+            return null;
         }
-        else if(downTime.getText().toString()=="") {
-            Toast.makeText(this, "未输入完成预期下限时间", Toast.LENGTH_LONG).show();
-        } else if(upTime.getText().toString()=="") {
-            Toast.makeText(this, "未输入完成预期上限时间", Toast.LENGTH_LONG).show();
-        } else {
-            Schedule schedule=new Schedule();
-            Toast.makeText(this, mYear+"-"+mMonth, Toast.LENGTH_LONG).show();
-            schedule.setName(nameEt.getText().toString());
-            schedule.setYear(mYear);
-            schedule.setMonth(mMonth);
-            schedule.setDay(mDay);
-            schedule.setFinish(0);
-            schedule.setDiffLevel((int)diffLevel.getRating());
-            schedule.setFinishDurationUp(Integer.parseInt(upTime.getText().toString()));
-            schedule.setFinishDurationDown(Integer.parseInt(downTime.getText().toString()));
-
-            ScheduleDao scheduleDao=new ScheduleDao(this);
-            long id=scheduleDao.addSchedule(schedule);
-            System.out.println(id);
-        }
-
     }
 }

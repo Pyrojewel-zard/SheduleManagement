@@ -1,4 +1,8 @@
 
+>
+java:S16049"(Make this anonymous inner class a lambda(¾ë†…
+w
+java:S1488."\Immediately return this expression instead of assigning it to the temporary variable "root".(ö±Žîúÿÿÿÿ
 œ
 java:S1186Q"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ìÙØðüÿÿÿÿ
 C
@@ -15,7 +19,3 @@ Q
 java:S1068""6Remove this unused "rvMenuEventSetList" private field.(‘‘¯Šûÿÿÿÿ
 K
 java:S1068%"6Remove this unused "mCurrentSelectYear" private field.(ÀëÈ1
->
-java:S16049"(Make this anonymous inner class a lambda(¾ë†…
-w
-java:S1488."\Immediately return this expression instead of assigning it to the temporary variable "root".(ö±Žîúÿÿÿÿ

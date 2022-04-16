@@ -7,16 +7,8 @@ m
 =common/src/main/java/com/example/common/data/EventSetDao.java,8\0\80e4f66ed84c3c01a8559a0c417fcba2d9518bdf
 n
 >common/src/main/java/com/example/common/data/JeekDBConfig.java,c\9\c9549f24576899b03036ddbc078e01dabe71e804
-t
-Dapp/src/main/java/com/pyrojewel/ui/dashboard/DashboardViewModel.java,7\6\769e9c64ef7d349fae581778cf4db4b678643944
-s
-Capp/src/main/java/com/pyrojewel/ui/dashboard/DashboardFragment.java,d\3\d3f41c26dcb7d2123f80786d1dabb2e363ba596b
-i
-9app/src/main/java/com/pyrojewel/ui/home/HomeFragment.java,5\e\5ef9232f43db811553d74e3d84206177fe3c99fa
 |
 Lapp/src/main/java/com/pyrojewel/ui/notifications/NotificationsViewModel.java,c\a\cad14838be6082835751c19df28f8282d3b6691e
-{
-Kapp/src/main/java/com/pyrojewel/ui/notifications/NotificationsFragment.java,a\a\aa4e85e622084df696b1e761952f645737e334ad
 m
 =common/src/main/java/com/example/common/data/ScheduleDao.java,0\0\00e818c9c043458391ac8e04c8a6231046339e14
 r
@@ -27,8 +19,6 @@ f
 6app/src/main/java/com/tencentcloudapi/common/Sign.java,f\7\f70afa86ec4661c9b69a245bdcb1b11742191525
 s
 Capp/src/main/java/com/tencentcloudapi/common/JsonResponseModel.java,f\b\fb52f2ae2d4d95f95218f51d3274e7fa2992b0f3
-o
-?app/src/main/java/com/tencentcloudapi/common/AbstractModel.java,7\3\734ac5c5c98381aae034506d791d005493691f43
 n
 >app/src/main/java/com/tencentcloudapi/common/CommonClient.java,0\b\0b1b973351b306ba9f1fef83304cfa2d82aefcc3
 g
@@ -41,8 +31,6 @@ Bapp/src/main/java/com/tencentcloudapi/ocr/v20181119/OcrClient.java,d\7\d7400ef
 Wapp/src/main/java/com/tencentcloudapi/ocr/v20181119/models/DriverLicenseOCRRequest.java,a\6\a61be85c0f2461a5e5c4df63a1c09bb6e1d314b8
 i
 9app/src/main/java/com/fexli/portable/ocr/model/Coord.java,b\e\be7177cc850ba342c7a1cfd61bc9fdf4a681a250
-w
-Gapp/src/main/java/com/fexli/portable/todosqlite/ToDoDataBaseHelper.java,1\9\19064a5a5c99d0f72dc147bb69d4776399b107af
 p
 @app/src/main/java/com/fexli/portable/schedule/TimeScheduler.java,7\d\7d0b1a97584243cdc6a15dca6a644062d09d8fc9
 B
@@ -67,3 +55,17 @@ b
 -app/src/main/java/com/time/nlp/TimePoint.java,0\5\05cf14f39e2d68f99fdf199c958be16f1f8d9456
 _
 /app/src/main/java/com/time/util/StringUtil.java,2\0\20aac93bc29c8d5f4a33750103b8153375336864
+`
+0app/src/main/java/com/fexli/portable/ocr/demo.md,d\2\d25314b4e55ba87ca1d2719df80003b92d3b68a7
+P
+ app/src/main/AndroidManifest.xml,8\c\8c55c3ccc257e5907959013f99656e4c8ec3903e
+w
+Gapp/src/main/java/com/fexli/portable/todosqlite/ToDoDataBaseHelper.java,1\9\19064a5a5c99d0f72dc147bb69d4776399b107af
+o
+?app/src/main/java/com/tencentcloudapi/common/AbstractModel.java,7\3\734ac5c5c98381aae034506d791d005493691f43
+t
+Dapp/src/main/java/com/pyrojewel/ui/dashboard/DashboardViewModel.java,7\6\769e9c64ef7d349fae581778cf4db4b678643944
+{
+Kapp/src/main/java/com/pyrojewel/ui/notifications/NotificationsFragment.java,a\a\aa4e85e622084df696b1e761952f645737e334ad
+q
+Aapp/src/main/java/com/pyrojewel/ui/settings/SettingsFragment.java,e\7\e7baee35e0c88217b62e0646d7f63a98a0acf75d
