@@ -21,8 +21,6 @@ m
 =common/src/main/java/com/example/common/data/ScheduleDao.java,0\0\00e818c9c043458391ac8e04c8a6231046339e14
 r
 Bcommon/src/main/java/com/example/common/data/JeekSQLiteHelper.java,f\2\f284241dc869dfb1354d845d494c1071b08330b6
-P
- app/src/main/AndroidManifest.xml,8\c\8c55c3ccc257e5907959013f99656e4c8ec3903e
 l
 <app/src/main/java/com/tencentcloudapi/common/Credential.java,a\a\aaf176c054bb35625e4e14793c9883acd9495cfc
 f
