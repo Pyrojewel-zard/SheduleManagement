@@ -10,7 +10,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.ListView;
 
-import com.zhuangfei.android_timetableview.sample.R;
+import com.zhuangfei.timetable.R;
 import com.zhuangfei.timetable.listener.ISchedule;
 import com.zhuangfei.timetable.model.Schedule;
 import com.zhuangfei.timetable.model.ScheduleEnable;

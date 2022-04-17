@@ -1,40 +1,85 @@
-package com.pyrojewel.Course;//设计课程的格式
+package com.pyrojewel.Course;
 
-import java.io.Serializable;
+import com.zhuangfei.timetable.model.Schedule;
+import com.zhuangfei.timetable.model.ScheduleEnable;
+
+import java.util.List;
+
+;
 
 /**
  * @author Pyrojewel
  */
-public class CourseModel implements Serializable {
+public class CourseModel implements ScheduleEnable {
 
-    int id;
-    String name;
-    String teacher;
+    public static final String EXTRAS_ID="extras_id";
+
+    private int id;
+    private String name;
+    private String teacher;
+    /**当前年月日*/
+    private String time;
     /**
      * 起始周
      */
-    int weekStart;
+    private int weekStart;
     /**
      * 持续周长度
      */
-    int weekLength;
-    String place;
+    private int weekLength;
+    /**
+     * 第几周至第几周上
+     */
+    private List<Integer> weekList;
+    private String place;
+    //mark一下room=place
     /**
      * 哪一天上课
      */
-    int dayOfWeek;
+    private int dayOfWeek;
+    //即day
     /**
      * 开始时间节次
      */
-    int timeStart;
+    private int timeStart;
     /**
      * 节次持续长度
      */
-    int timeLength;
+    private int timeLength;
     /**
      * 课程难度0-10,默认值为5
      */
-    int diff = 5;
+    private String term;
+    /**
+     *  一个随机数，用于对应课程的颜色
+     */
+    private int colorRandom = 0;
+    private int diff = 5;
+
+
+    public int getColorRandom() {
+        return colorRandom;
+    }
+
+    public void setColorRandom(int colorRandom) {
+        this.colorRandom = colorRandom;
+    }
+
+    public String getTerm() {
+        return term;
+    }
+
+    public void setTerm(String term) {
+        this.term = term;
+    }
+
+    public List<Integer> getWeekList() {
+        return weekList;
+    }
+
+    public void setWeekList(List<Integer> weekList) {
+        this.weekList = weekList;
+    }
 
     public void setId(int id) {
         this.id = id;
@@ -116,8 +161,46 @@ public class CourseModel implements Serializable {
         this.diff = diff;
     }
 
+    public String getTime() {
+        return time;
+    }
+
+    public void setTime(String time) {
+        this.time = time;
+    }
+
     public void printAll() {
         System.out.println(name + "+" + teacher + "+" + weekStart + "+" + weekLength + "+" + place + "+" + dayOfWeek + "+" + timeStart + "+" + timeLength);
+    }
+    public CourseModel(String term,String name, String place, String teacher, List<Integer> weekList, int timeStart, int timeLength, int dayOfWeek, int colorRandom,String time) {
+        super();
+        this.term=term;
+        this.name = name;
+        this.place = place;
+        this.teacher = teacher;
+        this.weekList=weekList;
+        this.timeStart = timeStart;
+        this.timeLength = timeLength;
+        this.dayOfWeek = dayOfWeek;
+        this.colorRandom = colorRandom;
+        this.time=time;
+    }
+    public CourseModel(){
+        super();
+    }
+    @Override
+    public Schedule getSchedule() {
+        Schedule schedule=new Schedule();
+        schedule.setDay(getDayOfWeek());
+        schedule.setName(getName());
+        schedule.setRoom(getPlace());
+        schedule.setStart(getTimeStart());
+        schedule.setStep(getTimeLength());
+        schedule.setTeacher(getTeacher());
+        schedule.setWeekList(getWeekList());
+        schedule.setColorRandom(2);
+        schedule.putExtras(EXTRAS_ID,getId());
+        return schedule;
     }
 
     @Override

@@ -9,7 +9,7 @@ import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.zhuangfei.android_timetableview.sample.R;
+import com.zhuangfei.timetable.R;
 import com.zhuangfei.timetable.model.ScheduleSupport;
 import com.zhuangfei.timetable.utils.ColorUtils;
 

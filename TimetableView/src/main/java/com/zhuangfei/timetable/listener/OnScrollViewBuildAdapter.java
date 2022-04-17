@@ -3,7 +3,7 @@ package com.zhuangfei.timetable.listener;
 import android.view.LayoutInflater;
 import android.view.View;
 
-import com.zhuangfei.android_timetableview.sample.R;
+import com.zhuangfei.timetable.R;
 
 /**
  * 滚动布局构建监听的默认实现

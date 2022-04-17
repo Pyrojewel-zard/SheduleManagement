@@ -12,7 +12,7 @@ import android.widget.TextView;
 
 import androidx.core.content.ContextCompat;
 
-import com.zhuangfei.android_timetableview.sample.R;
+import com.zhuangfei.timetable.R;
 import com.zhuangfei.timetable.listener.IWeekView;
 import com.zhuangfei.timetable.listener.OnWeekItemClickedAdapter;
 import com.zhuangfei.timetable.listener.OnWeekLeftClickedAdapter;

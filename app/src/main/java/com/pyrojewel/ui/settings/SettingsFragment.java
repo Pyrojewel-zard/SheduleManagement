@@ -14,7 +14,7 @@ import androidx.lifecycle.ViewModelProvider;
 
 import com.example.myapplication.R;
 import com.example.myapplication.databinding.FragmentSettingsBinding;
-import com.pyrojewel.Course.CourseDetailActivity;
+import com.pyrojewel.BaseFuncActivity;
 
 /**
  * @author Pyrojewel
@@ -43,7 +43,7 @@ public class SettingsFragment extends Fragment {
 
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(getActivity(), CourseDetailActivity.class);
+                Intent intent=new Intent(getActivity(), BaseFuncActivity.class);
                 startActivity(intent);
             }
         });

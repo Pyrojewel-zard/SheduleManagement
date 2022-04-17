@@ -5,7 +5,7 @@ import android.graphics.Color;
 
 import androidx.core.content.ContextCompat;
 
-import com.zhuangfei.android_timetableview.sample.R;
+import com.zhuangfei.timetable.R;
 import com.zhuangfei.timetable.utils.ColorUtils;
 
 import java.util.ArrayList;
