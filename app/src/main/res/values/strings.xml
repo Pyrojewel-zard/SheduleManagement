@@ -13,7 +13,7 @@
     <string name="name_id">时间管理达人</string>
     <string name="ddl_">不拖DDL 从我做起</string>
     <string name="text1">个性化</string>
-    <string name="text2">导入课程表</string>
+    <string name="text2">课程表</string>
     <string name="text3">课程细节</string>
     <string name="MonthTitleName">July</string>
     <string name="DayTitleName">23rd</string>
@@ -84,4 +84,6 @@
     <string name="finish">完成</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="courses">课程表</string>
+    <string name="Camera">相机</string>
 </resources>

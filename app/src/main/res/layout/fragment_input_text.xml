@@ -11,11 +11,6 @@
         android:layout_height="693dp"
         android:orientation="vertical">
 
-        <include
-            layout="@layout/simple_title_bar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-        <!--项目名称-->
         <!--DDL时间输入-->
 
 
@@ -59,22 +54,24 @@
             android:gravity="center">
 
             <TextView
+                android:id="@+id/difftxt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="任务难度  " />
+                android:text="任务难度: 0 星" />
+
 
             <SeekBar
-                android:id="@+id/sb_normal"
+                android:id="@+id/sbNormal"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.491"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.67"
-                android:layout_width="310dp"
+                android:layout_width="250dp"
                 android:layout_height="71dp"
-                android:max="100"
-                android:progress="30" />
+                android:max="10"
+                android:progress="0" />
         </LinearLayout>
 
         <LinearLayout
@@ -83,22 +80,23 @@
             android:gravity="center">
 
             <TextView
+                android:id="@+id/time_txt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="预计完成时间" />
+                android:text="预计完成时间: 0（h）" />
 
             <SeekBar
-                android:id="@+id/suibian"
+                android:id="@+id/exTime"
+                android:layout_width="200dp"
+                android:layout_height="48dp"
+                android:max="10"
+                android:progress="0"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.491"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.67"
-                android:layout_width="288dp"
-                android:layout_height="48dp"
-                android:max="100"
-                android:progress="30" />
+                app:layout_constraintVertical_bias="0.67" />
 
         </LinearLayout>
 
@@ -111,7 +109,7 @@
                 android:hint="详细"/>
 
             <EditText
-                android:id="@+id/balabalabal"
+                android:id="@+id/mContext_text"
                 android:layout_width="333dp"
                 android:layout_height="185dp"
                 android:hint="输入任务详细说明" />
@@ -120,6 +118,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="95dp">
+
             <TextView
                 android:layout_width="128dp"
                 android:layout_height="51dp"
@@ -131,7 +130,7 @@
             android:layout_height="202dp">
 
             <Button
-                android:id="@+id/button"
+                android:id="@+id/tvConfirm"
                 android:layout_width="120dp"
                 android:layout_height="50dp"
                 android:layout_marginEnd="68dp"
@@ -141,10 +140,11 @@
                 tools:ignore="MissingConstraints"></Button>
 
             <Button
+                android:id="@+id/tvCancel"
                 android:layout_width="120dp"
                 android:layout_height="50dp"
-                android:text="完成"
-                app:layout_constraintEnd_toStartOf="@+id/button"
+                android:text="取消"
+                app:layout_constraintEnd_toStartOf="@+id/tvConfirm"
                 app:layout_constraintStart_toStartOf="parent"
                 tools:ignore="MissingConstraints"></Button>
 

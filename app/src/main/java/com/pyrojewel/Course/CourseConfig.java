@@ -9,7 +9,7 @@ public class CourseConfig {
     public static final String COLUMN_ID = "_ID";
     public static final String COLUMN_NAME = "name";
     public static final String COLUMN_TEACHER = "teacher";
-    public static final String COLUMN_WEEKS= "weekStart";
+    public static final String COLUMN_WEEKS = "weekStart";
     public static final String WEEK_LENGTH = "weekLength";
     public static final String COLUMN_PLACE = "place";
     public static final String COLUMN_DAYS = "dayOfWeek";
@@ -24,9 +24,9 @@ public class CourseConfig {
             + COLUMN_WEEKS + " INTEGER,"
             + WEEK_LENGTH + " INTEGER,"
             + COLUMN_PLACE + " TEXT,"
-            + COLUMN_DAYS+" INTEGER,"
-            + COLUMN_TIMES+" INTEGER,"
-            + COURSE_DIFFICULTY+"INTEGER,"
-            + TIME_LENGTH +" INTEGER"
+            + COLUMN_DAYS + " INTEGER,"
+            + COLUMN_TIMES + " INTEGER,"
+            + COURSE_DIFFICULTY + "INTEGER,"
+            + TIME_LENGTH + " INTEGER"
             + ")";
 }

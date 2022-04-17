@@ -3,9 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.pyrojewel.ui.input.InputVoice">
-    <include
-        layout="@layout/simple_title_bar"/>
+    tools:context="com.pyrojewel.ui.input.InputGallery">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"

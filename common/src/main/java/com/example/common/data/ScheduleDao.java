@@ -31,8 +31,7 @@ public class ScheduleDao {
         values.put(JeekDBConfig.COLUMN_NAME, schedule.getName());
         values.put(JeekDBConfig.COLUMN_FINISH, schedule.getFinished());
         values.put(JeekDBConfig.COLUMN_LEVEL, schedule.getDiffLevel());
-        values.put(JeekDBConfig.COLUMN_DURATIONU, schedule.getFinishDurationUp());
-        values.put(JeekDBConfig.COLUMN_DURATIOND, schedule.getFinishDurationDown());
+        values.put(JeekDBConfig.COLUMN_DURATION, schedule.getFinishtime());
         values.put(JeekDBConfig.COLUMN_DDL_YEAR, schedule.getYear());
         values.put(JeekDBConfig.COLUMN_DDL_MONTH, schedule.getMonth());
         values.put(JeekDBConfig.COLUMN_DDL_DAY, schedule.getDay());
@@ -68,8 +67,7 @@ public class ScheduleDao {
             schedule.setDay(cursor.getInt(choose(cursor.getColumnIndex(JeekDBConfig.COLUMN_DDL_DAY))));
             schedule.setFinish(cursor.getInt(choose(cursor.getColumnIndex(JeekDBConfig.COLUMN_FINISH))));
             schedule.setDiffLevel(cursor.getInt(choose(cursor.getColumnIndex(JeekDBConfig.COLUMN_LEVEL))));
-            schedule.setFinishDurationUp(cursor.getInt(choose(cursor.getColumnIndex(JeekDBConfig.COLUMN_DURATIONU))));
-            schedule.setFinishDurationDown(cursor.getInt(choose(cursor.getColumnIndex(JeekDBConfig.COLUMN_DURATIOND))));
+            schedule.setFinishtime(cursor.getInt(choose(cursor.getColumnIndex(JeekDBConfig.COLUMN_DURATION))));
             schedules.add(schedule);
         }
         cursor.close();
@@ -129,8 +127,7 @@ public class ScheduleDao {
         values.put(JeekDBConfig.COLUMN_NAME, schedule.getName());
         values.put(JeekDBConfig.COLUMN_FINISH, schedule.getFinished());
         values.put(JeekDBConfig.COLUMN_LEVEL, schedule.getDiffLevel());
-        values.put(JeekDBConfig.COLUMN_DURATIONU, schedule.getFinishDurationUp());
-        values.put(JeekDBConfig.COLUMN_DURATIOND, schedule.getFinishDurationDown());
+        values.put(JeekDBConfig.COLUMN_DURATION, schedule.getFinishtime());
         values.put(JeekDBConfig.COLUMN_DDL_YEAR, schedule.getYear());
         values.put(JeekDBConfig.COLUMN_DDL_MONTH, schedule.getMonth());
         values.put(JeekDBConfig.COLUMN_DDL_DAY, schedule.getDay());

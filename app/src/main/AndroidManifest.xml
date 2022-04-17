@@ -31,5 +31,7 @@
             </intent-filter>
         </activity>
         <activity android:name="com.pyrojewel.EventDeal.InputActivity"/>
+        <activity android:name="com.pyrojewel.Course.CourseDetailActivity"/>
+
     </application>
 </manifest>

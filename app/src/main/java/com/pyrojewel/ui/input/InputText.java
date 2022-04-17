@@ -9,7 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.DatePicker;
 import android.widget.EditText;
-import android.widget.RatingBar;
+import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -30,12 +30,12 @@ import java.util.Calendar;
  * @author Pyrojewel
  */
 public class InputText extends Fragment {
-
+    private SeekBar sbNormal;
+    private SeekBar exTime;
+    private TextView txtDiff,txtTime;
+    private EditText mContext;
     private EditText nameEt;
     private EditText DDLDate;
-    private RatingBar diffLevel;
-    private EditText downTime;
-    private EditText upTime;
     private TextView cancel;
     private TextView confirm;
 
@@ -57,12 +57,14 @@ public class InputText extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         nameEt= getActivity().findViewById(R.id.name);
+        txtDiff =getActivity().findViewById(R.id.difftxt);
         DDLDate = getActivity().findViewById(R.id.editDDLDate);
-        diffLevel= getActivity().findViewById(R.id.diffLevel);
-        downTime= getActivity().findViewById(R.id.downTime);
-        upTime= getActivity().findViewById(R.id.Uptime);
+        sbNormal = getActivity().findViewById(R.id.sbNormal);
+        exTime=getActivity().findViewById(R.id.exTime);
+        txtTime=getActivity().findViewById(R.id.time_txt);
         cancel= getActivity().findViewById(R.id.tvCancel);
         confirm= getActivity().findViewById(R.id.tvConfirm);
+        mContext=getActivity().findViewById(R.id.mContext_text);
         cancel.setOnClickListener(this::onClick);
         confirm.setOnClickListener(this::onClick);
         DDLDate.setOnTouchListener(new View.OnTouchListener() {
@@ -95,9 +97,41 @@ public class InputText extends Fragment {
         }catch (Exception e){
             System.out.println(e);
         }
+        sbNormal.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                txtDiff.setText("任务难度:" + progress + " 星");
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+
+            }
+        });
+        exTime.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                txtTime.setText("预计完成时间:" + progress + " （h）");
+
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+
+            }
+        });
 
     }
-
     protected void showDatePickDlg() {
         Calendar calendar = Calendar.getInstance();
         DatePickerDialog datePickerDialog = new DatePickerDialog(getActivity(), new DatePickerDialog.OnDateSetListener() {
@@ -133,15 +167,12 @@ public class InputText extends Fragment {
         } else if(DDLDate.getText().toString().equals("")) {
             Toast.makeText(getActivity(), "未输入DDL截止日期", Toast.LENGTH_LONG).show();
             return false;
-        } else if(diffLevel.getRating()==0) {
+        } else if(sbNormal.getProgress()==0) {
             Toast.makeText(getActivity(), "未输入难度评级", Toast.LENGTH_LONG).show();
             return false;
         }
-        else if(downTime.getText().toString()=="") {
-            Toast.makeText(getActivity(), "未输入完成预期下限时间", Toast.LENGTH_LONG).show();
-            return false;
-        } else if(upTime.getText().toString()=="") {
-            Toast.makeText(getActivity(), "未输入完成预期上限时间", Toast.LENGTH_LONG).show();
+        else if(exTime.getProgress()==0) {
+            Toast.makeText(getActivity(), "未输入完成预期时间", Toast.LENGTH_LONG).show();
             return false;
         } else {
             Schedule schedule=new Schedule();
@@ -150,9 +181,8 @@ public class InputText extends Fragment {
             schedule.setMonth(mMonth);
             schedule.setDay(mDay);
             schedule.setFinish(0);
-            schedule.setDiffLevel((int)diffLevel.getRating());
-            schedule.setFinishDurationUp(Integer.parseInt(upTime.getText().toString()));
-            schedule.setFinishDurationDown(Integer.parseInt(downTime.getText().toString()));
+            schedule.setDiffLevel((int)sbNormal.getProgress());
+            schedule.setFinishtime((int)exTime.getProgress());
             ScheduleDao scheduleDao=new ScheduleDao(getActivity());
             long id=scheduleDao.addSchedule(schedule);
             System.out.println(id);

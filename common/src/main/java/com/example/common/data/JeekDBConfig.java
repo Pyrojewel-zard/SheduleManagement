@@ -29,8 +29,7 @@ String TABLE_NAME = "SheduleManagement";
     String COLUMN_DDL_DAY= "DAY";
     String COLUMN_FINISH = "ISFINISH";
     String COLUMN_LEVEL = "DIFLEVEL";
-    String COLUMN_DURATIONU = "FINISHDURATIONUP";
-    String COLUMN_DURATIOND = "FINISHDURATIONDOWN";
+    String COLUMN_DURATION = "FINISHTIME";
 
     String CREATE_SCHEDULE_TABLE_SQL = "CREATE TABLE " + TABLE_NAME + "("
             + COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
@@ -40,8 +39,7 @@ String TABLE_NAME = "SheduleManagement";
             + COLUMN_DDL_DAY + " INTEGER, "
             + COLUMN_FINISH + " NUMERIC,"
             + COLUMN_LEVEL + " INTEGER,"
-            + COLUMN_DURATIONU+" INTEGER,"
-            + COLUMN_DURATIOND+" INTEGER"
+            + COLUMN_DURATION+" INTEGER "
             + ")";
 
     String DROP_SCHEDULE_TABLE_SQL = "DROP TABLE " + TABLE_NAME;

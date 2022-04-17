@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context="com.pyrojewel.ui.home.HomeFragment">
-
 
 
     <ScrollView
@@ -13,82 +12,64 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:fillViewport="true"
-        >
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
-        <RelativeLayout
-            xmlns:android="http://schemas.android.com/apk/res/android"
+        tools:layout_editor_absoluteX="181dp"
+        tools:layout_editor_absoluteY="33dp">
+
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="54dp"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentTop="true"
-            android:clipToOutline="true"
-            android:background="@drawable/frame_1">
-            <TextView
-                android:layout_width="48dp"
-                android:layout_height="20dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="54dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentRight="true"
+                android:background="@drawable/frame_1"
+                android:clipToOutline="true">
+
+                <TextView
+                    android:layout_width="48dp"
+                    android:layout_height="20dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:gravity="center_horizontal|top"
+                    android:text="@string/today"
+                    android:textAppearance="@style/today" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="79dp"
                 android:layout_centerHorizontal="true"
                 android:layout_centerVertical="true"
-                android:text="@string/today"
-                android:textAppearance="@style/today"
-                android:gravity="center_horizontal|top"
-                />
-        </RelativeLayout>
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/frame_3" />
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                >
 
-        <RelativeLayout
-            android:layout_width="wrap_content"
-            android:layout_height="79dp"
-            android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"
-            android:layout_gravity="center"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/frame_3" />
+                <TextView
+                    android:id="@+id/taksout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="47dp"
+                    android:autoLink="phone"
+                    android:gravity="center"
+                    android:hint="time"
+                    android:textColor="#F87461"
+                    android:textSize="25sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintHorizontal_bias="0.59"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.269" />
+            </RelativeLayout>
 
-        <RelativeLayout
-            android:layout_width="216dp"
-            android:layout_height="216dp"
-            android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"
-            android:layout_gravity="center"
-            android:layout_marginTop="30dp"
-            android:background="@drawable/pie_circular" />
-
-        <RelativeLayout
-            android:layout_width="129.8dp"
-            android:layout_height="18.46dp"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
-            android:layout_gravity="center"
-            android:layout_marginLeft="-20dp"
-            android:layout_marginTop="40dp"
-            android:background="@drawable/union" />
-
-        <RelativeLayout
-            android:layout_width="24dp"
-            android:layout_height="24dp"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginLeft="290dp"
-            android:layout_marginTop="-23dp"
-            android:background="@drawable/down_chevron" />
-
-        <RelativeLayout
-            android:id="@+id/InputAc"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentRight="true"
-            android:layout_centerVertical="true"
-            android:layout_gravity="center"
-            android:layout_marginLeft="157dp"
-            android:layout_marginTop="50dp"
-            android:layout_marginRight="157dp"
-            android:background="@drawable/add" />
-
-
-    </LinearLayout>
+        </LinearLayout>
     </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -13,14 +13,12 @@ public class JeekSQLiteHelper extends SQLiteOpenHelper {
     }
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL(JeekDBConfig.CREATE_EVENT_SET_TABLE_SQL);
         db.execSQL(JeekDBConfig.CREATE_SCHEDULE_TABLE_SQL);
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         if (oldVersion != newVersion) {
-            db.execSQL(JeekDBConfig.DROP_EVENT_SET_TABLE_SQL);
             db.execSQL(JeekDBConfig.DROP_SCHEDULE_TABLE_SQL);
             onCreate(db);
         }

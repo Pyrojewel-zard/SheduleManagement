@@ -1,4 +1,5 @@
 package com.pyrojewel.Course;//设计课程的格式
+
 import java.io.Serializable;
 
 /**
@@ -9,19 +10,32 @@ public class CourseModel implements Serializable {
     int id;
     String name;
     String teacher;
-    /**起始周*/
+    /**
+     * 起始周
+     */
     int weekStart;
-    /**持续周长度*/
+    /**
+     * 持续周长度
+     */
     int weekLength;
     String place;
-    /**哪一天上课*/
+    /**
+     * 哪一天上课
+     */
     int dayOfWeek;
-    /**开始时间节次*/
+    /**
+     * 开始时间节次
+     */
     int timeStart;
-    /**节次持续长度*/
+    /**
+     * 节次持续长度
+     */
     int timeLength;
-    /**课程难度0-10,默认值为5*/
-    int diff=5;
+    /**
+     * 课程难度0-10,默认值为5
+     */
+    int diff = 5;
+
     public void setId(int id) {
         this.id = id;
     }
@@ -102,24 +116,25 @@ public class CourseModel implements Serializable {
         this.diff = diff;
     }
 
-    public void printAll(){
-        System.out.println(name+"+"+teacher+"+"+weekStart+"+"+weekLength+"+"+place+"+"+dayOfWeek+"+"+timeStart+"+"+timeLength);
+    public void printAll() {
+        System.out.println(name + "+" + teacher + "+" + weekStart + "+" + weekLength + "+" + place + "+" + dayOfWeek + "+" + timeStart + "+" + timeLength);
     }
+
     @Override
     public boolean equals(Object obj) {
-        if(obj==null) {
+        if (obj == null) {
             return false;
         }
-        if(this==obj) {
+        if (this == obj) {
             return true;
         }
-        if(obj instanceof CourseModel) {
-            CourseModel t = (CourseModel)obj;
-            if(t.getName().equals(this.getName())&&t.getTeacher().equals(this.getTeacher())&&
-            t.weekStart==this.weekStart&&t.weekLength==this.weekLength&&t.getPlace().equals(this.getPlace())&&
-            t.dayOfWeek==this.dayOfWeek&&t.timeStart==this.timeStart&&t.timeLength==this.timeLength) {
+        if (obj instanceof CourseModel) {
+            CourseModel t = (CourseModel) obj;
+            if (t.getName().equals(this.getName()) && t.getTeacher().equals(this.getTeacher()) &&
+                    t.weekStart == this.weekStart && t.weekLength == this.weekLength && t.getPlace().equals(this.getPlace()) &&
+                    t.dayOfWeek == this.dayOfWeek && t.timeStart == this.timeStart && t.timeLength == this.timeLength) {
                 return true;
-            }else {
+            } else {
                 return false;
             }
         }

@@ -1,6 +1,5 @@
 package com.fexli.portable.todosqlite.models;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 
 public class TodoClass {
@@ -73,10 +72,12 @@ public class TodoClass {
         put("形势与政策1", 10L);
         put("安全教育", 10L);
     }};
-    public int startTs, endTs, weekday;//课程开始时间，结束时间，星期。
+    public int startTs, endTs, weekday;
+    //课程开始时间，结束时间，星期。
     // 其中开始/结束时间：单位为秒，范围为0-86400
     // 星期为1-7 = 周一 ~ 周日
-    public String name;// 课程名称，根据课程名称计算难度
+    public String name;
+    // 课程名称，根据课程名称计算难度
 
 
     public TodoClass(int startTs, int endTs, int weekday, String name) {

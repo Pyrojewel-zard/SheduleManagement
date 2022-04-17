@@ -20,22 +20,24 @@ public class ModelOpenHelper extends SQLiteOpenHelper {
 
     public ModelOpenHelper(Context context) {
         super(context, DB_NAME, null, DB_VERSION);
-        mContext=context;
+        mContext = context;
     }
+
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(CourseConfig.CREATE_TABLE);
         //之后可以在这里新建那个课程表的数据集
-        Toast.makeText(mContext,"Create succeeded", Toast.LENGTH_SHORT).show();
+        Toast.makeText(mContext, "Create succeeded", Toast.LENGTH_SHORT).show();
 
     }
+
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        Log.i("生活小助手","--版本更新"+oldVersion+"-->"+newVersion);
+        Log.i("生活小助手", "--版本更新" + oldVersion + "-->" + newVersion);
 
     }
+
     /**
-     *
      * @param courseModel
      * @return 返回新插入的行的ID，发生错误，插入不成功，则返回-1
      */
@@ -56,8 +58,8 @@ public class ModelOpenHelper extends SQLiteOpenHelper {
         db.close();
         return id;
     }
+
     /**
-     *
      * @param searchName query database by name
      * @return CourseModel
      */
@@ -84,14 +86,14 @@ public class ModelOpenHelper extends SQLiteOpenHelper {
         if (cursor != null && cursor.moveToNext()) {
             int id = cursor.getInt(choose(cursor.getColumnIndex(CourseConfig.COLUMN_ID)));
             String name = cursor.getString(choose(cursor.getColumnIndex(CourseConfig.COLUMN_NAME)));
-            String teacher=cursor.getString(choose(cursor.getColumnIndex(CourseConfig.COLUMN_TEACHER)));
-            int weekStart=cursor.getInt(choose(cursor.getColumnIndex(CourseConfig.COLUMN_WEEKS)));
-            int weekLength=cursor.getInt(choose(cursor.getColumnIndex(CourseConfig.WEEK_LENGTH)));
-            String place=cursor.getString(choose(cursor.getColumnIndex(CourseConfig.COLUMN_PLACE)));
-            int dayOfWeek=cursor.getInt(choose(cursor.getColumnIndex(CourseConfig.COLUMN_DAYS)));
-            int timeStart=cursor.getInt(choose(cursor.getColumnIndex(CourseConfig.COLUMN_TIMES)));
-            int timeLength=cursor.getInt(choose(cursor.getColumnIndex(CourseConfig.TIME_LENGTH)));
-            int diff=cursor.getInt(choose(cursor.getColumnIndex(CourseConfig.COURSE_DIFFICULTY)));
+            String teacher = cursor.getString(choose(cursor.getColumnIndex(CourseConfig.COLUMN_TEACHER)));
+            int weekStart = cursor.getInt(choose(cursor.getColumnIndex(CourseConfig.COLUMN_WEEKS)));
+            int weekLength = cursor.getInt(choose(cursor.getColumnIndex(CourseConfig.WEEK_LENGTH)));
+            String place = cursor.getString(choose(cursor.getColumnIndex(CourseConfig.COLUMN_PLACE)));
+            int dayOfWeek = cursor.getInt(choose(cursor.getColumnIndex(CourseConfig.COLUMN_DAYS)));
+            int timeStart = cursor.getInt(choose(cursor.getColumnIndex(CourseConfig.COLUMN_TIMES)));
+            int timeLength = cursor.getInt(choose(cursor.getColumnIndex(CourseConfig.TIME_LENGTH)));
+            int diff = cursor.getInt(choose(cursor.getColumnIndex(CourseConfig.COURSE_DIFFICULTY)));
 
             courseModel.setId(id);
             courseModel.setName(name);
@@ -109,8 +111,9 @@ public class ModelOpenHelper extends SQLiteOpenHelper {
         }
         return null;
     }
-    public int choose(int a){//处理value must be >=0真的emmmm
-        if(a>=0) {
+
+    public int choose(int a) {//处理value must be >=0真的emmmm
+        if (a >= 0) {
             return a;
         } else {
             return 0;
@@ -119,7 +122,6 @@ public class ModelOpenHelper extends SQLiteOpenHelper {
 
 
     /**
-     *
      * @return 读取数据库，返回一个 CourseConfig 类型的 ArrayList
      */
     public ArrayList<CourseModel> getAllCourseConModels() {
@@ -134,14 +136,14 @@ public class ModelOpenHelper extends SQLiteOpenHelper {
                 CourseModel courseModel = new CourseModel();
                 int id = cursor.getInt(choose(cursor.getColumnIndex(CourseConfig.COLUMN_ID)));
                 String name = cursor.getString(choose(cursor.getColumnIndex(CourseConfig.COLUMN_NAME)));
-                String teacher=cursor.getString(choose(cursor.getColumnIndex(CourseConfig.COLUMN_TEACHER)));
-                int weekStart=cursor.getInt(choose(cursor.getColumnIndex(CourseConfig.COLUMN_WEEKS)));
-                int weekLength=cursor.getInt(choose(cursor.getColumnIndex(CourseConfig.WEEK_LENGTH)));
-                String place=cursor.getString(choose(cursor.getColumnIndex(CourseConfig.COLUMN_PLACE)));
-                int dayOfWeek=cursor.getInt(choose(cursor.getColumnIndex(CourseConfig.COLUMN_DAYS)));
-                int timeStart=cursor.getInt(choose(cursor.getColumnIndex(CourseConfig.COLUMN_TIMES)));
-                int timeLength=cursor.getInt(choose(cursor.getColumnIndex(CourseConfig.TIME_LENGTH)));
-                int diff=cursor.getInt(choose(cursor.getColumnIndex(CourseConfig.COURSE_DIFFICULTY)));
+                String teacher = cursor.getString(choose(cursor.getColumnIndex(CourseConfig.COLUMN_TEACHER)));
+                int weekStart = cursor.getInt(choose(cursor.getColumnIndex(CourseConfig.COLUMN_WEEKS)));
+                int weekLength = cursor.getInt(choose(cursor.getColumnIndex(CourseConfig.WEEK_LENGTH)));
+                String place = cursor.getString(choose(cursor.getColumnIndex(CourseConfig.COLUMN_PLACE)));
+                int dayOfWeek = cursor.getInt(choose(cursor.getColumnIndex(CourseConfig.COLUMN_DAYS)));
+                int timeStart = cursor.getInt(choose(cursor.getColumnIndex(CourseConfig.COLUMN_TIMES)));
+                int timeLength = cursor.getInt(choose(cursor.getColumnIndex(CourseConfig.TIME_LENGTH)));
+                int diff = cursor.getInt(choose(cursor.getColumnIndex(CourseConfig.COURSE_DIFFICULTY)));
 
                 courseModel.setId(id);
                 courseModel.setName(name);
@@ -163,7 +165,6 @@ public class ModelOpenHelper extends SQLiteOpenHelper {
     }
 
     /**
-     *
      * @return 返回数据库行数
      */
     public int getCourseModelCount() {
@@ -174,9 +175,9 @@ public class ModelOpenHelper extends SQLiteOpenHelper {
         cursor.close();
         return count;
     }
+
     /**
-     *
-     * @param id update row id （需要更新的ID）
+     * @param id          update row id （需要更新的ID）
      * @param courseModel update value （去更新数据库的内容）
      * @return the number of rows affected (影响到的行数，如果没更新成功，返回0。所以当return 0时，需要告诉用户更新不成功)
      */
@@ -209,6 +210,7 @@ public class ModelOpenHelper extends SQLiteOpenHelper {
 
     /**
      * 删除所有行，whereClause 传入 String "1"
+     *
      * @return 返回删除掉的行数总数（比如：删除了四行就返回4）
      */
     public int deleteAllCourseModel() {
