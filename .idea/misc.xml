@@ -133,15 +133,21 @@
         <entry key="..\:/code/AndroidStudio/Shedule_app1/diary/src/main/res/layout/layout_schedule.xml" value="0.2" />
         <entry key="..\:/code/BUGU/SheduleManagement/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.2265" />
         <entry key="..\:/code/BUGU/SheduleManagement/app/src/main/res/drawable/add.xml" value="0.2265" />
-        <entry key="..\:/code/BUGU/SheduleManagement/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
+        <entry key="..\:/code/BUGU/SheduleManagement/app/src/main/res/drawable/green_schedule_left_block.xml" value="0.1235" />
+        <entry key="..\:/code/BUGU/SheduleManagement/app/src/main/res/drawable/ic_notifications_black_24dp.xml" value="0.1235" />
+        <entry key="..\:/code/BUGU/SheduleManagement/app/src/main/res/layout/activity_main.xml" value="0.3" />
         <entry key="..\:/code/BUGU/SheduleManagement/app/src/main/res/layout/fragment_dashboard.xml" value="0.25416666666666665" />
         <entry key="..\:/code/BUGU/SheduleManagement/app/src/main/res/layout/fragment_home.xml" value="0.25416666666666665" />
-        <entry key="..\:/code/BUGU/SheduleManagement/app/src/main/res/layout/fragment_input_image.xml" value="0.1125" />
-        <entry key="..\:/code/BUGU/SheduleManagement/app/src/main/res/layout/fragment_input_text.xml" value="0.25416666666666665" />
+        <entry key="..\:/code/BUGU/SheduleManagement/app/src/main/res/layout/fragment_input_gallery.xml" value="0.11197916666666667" />
+        <entry key="..\:/code/BUGU/SheduleManagement/app/src/main/res/layout/fragment_input_image.xml" value="0.2" />
+        <entry key="..\:/code/BUGU/SheduleManagement/app/src/main/res/layout/fragment_input_text.xml" value="0.2" />
         <entry key="..\:/code/BUGU/SheduleManagement/app/src/main/res/layout/fragment_input_voice.xml" value="0.2" />
         <entry key="..\:/code/BUGU/SheduleManagement/app/src/main/res/layout/fragment_notifications.xml" value="0.25416666666666665" />
         <entry key="..\:/code/BUGU/SheduleManagement/app/src/main/res/layout/fragment_settings.xml" value="0.25416666666666665" />
         <entry key="..\:/code/BUGU/SheduleManagement/app/src/main/res/layout/item.xml" value="0.25416666666666665" />
+        <entry key="..\:/code/BUGU/SheduleManagement/app/src/main/res/layout/layout_course_detail.xml" value="0.11197916666666667" />
+        <entry key="..\:/code/BUGU/SheduleManagement/app/src/main/res/layout/layout_input.xml" value="0.11197916666666667" />
+        <entry key="..\:/code/BUGU/SheduleManagement/app/src/main/res/layout/simple_title_bar.xml" value="0.268" />
       </map>
     </option>
   </component>

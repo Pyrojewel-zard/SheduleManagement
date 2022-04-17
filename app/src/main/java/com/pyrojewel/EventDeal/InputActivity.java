@@ -1,28 +1,32 @@
 package com.pyrojewel.EventDeal;
 
 
-import android.os.Bundle;
 
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import android.os.Bundle;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.viewpager.widget.ViewPager;
-
+import com.example.myapplication.R;
+import com.google.android.material.tabs.TabLayout;
 import com.pyrojewel.ui.input.InputGallery;
 import com.pyrojewel.ui.input.InputText;
 import com.pyrojewel.ui.input.InputVoice;
-import com.example.myapplication.R;
-import com.google.android.material.tabs.TabLayout;
+import android.widget.SeekBar;
+import android.widget.TextView;
+import android.content.Context;
+import android.widget.Toast;
 
 /**
  * @author Pyrojewel
  * 输入任务的界面
  */
 public class InputActivity extends AppCompatActivity {
-
-
+    private SeekBar sb_normal;
+    private TextView txt_cur;
+    private Context mContext;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

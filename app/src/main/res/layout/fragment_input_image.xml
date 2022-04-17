@@ -15,12 +15,12 @@
 
 
         <ImageButton
-            android:id="@+id/voiceInput"
+            android:id="@+id/photoInput"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:background="@color/white"
-            android:src="@drawable/voice"
+            android:src="@drawable/photo"
 
             />
 
@@ -28,7 +28,7 @@
             android:layout_width="match_parent"
             android:layout_height="200px"
             android:gravity="center"
-            android:text="点击录音" />
+            android:text="点击拍照上传" />
     </LinearLayout>
 
 </FrameLayout>
