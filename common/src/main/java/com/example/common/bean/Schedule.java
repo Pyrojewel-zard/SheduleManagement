@@ -13,6 +13,8 @@ public class Schedule implements Serializable {
     private int diffLevel;
     private int finishDurationUp;//上限完成预期时间
     private int finishDurationDown;//下限
+    private int weekDay;// 周几
+    private long timeSecond;// 几点
 
     public int getId() {
         return id;
@@ -85,5 +87,17 @@ public class Schedule implements Serializable {
 
     public void setFinishDurationDown(int finishDurationDown) {
         this.finishDurationDown = finishDurationDown;
+    }
+
+    public int Arrange() { // 多长时间
+        return 5000;
+    }
+
+    public void setWeekDayAndTime(int day, long time) {
+        this.weekDay = day; // FIXME: 需要在这里从周适配到年月日
+        this.timeSecond = time;
+    }
+    public void setWeekDay(int day) {
+        this.weekDay = day;
     }
 }

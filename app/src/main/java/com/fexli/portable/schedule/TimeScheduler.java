@@ -1,7 +1,6 @@
 package com.fexli.portable.schedule;
-
-import com.fexli.portable.todosqlite.models.ToDoTask;
-import com.fexli.portable.todosqlite.models.TodoClass;
+import com.example.common.bean.Schedule;
+import com.pyrojewel.Course.CourseModel;
 
 import java.util.ArrayList;
 import java.util.Comparator;
@@ -21,7 +20,7 @@ class TimeFinder {
 
 public class TimeScheduler {
     public HashMap<Integer, ArrayList<Long>> TimeTable; // 当前规划的时间表，日期1-7为周一-周日
-    public ArrayList<ToDoTask> Scheduled; //已经规划的任务列表
+    public ArrayList<Schedule> Scheduled; //已经规划的任务列表
 
     public TimeScheduler() {
         this.TimeTable = new HashMap<>();
@@ -36,7 +35,7 @@ public class TimeScheduler {
         this.Scheduled = new ArrayList<>();
     }
 
-    public TimeScheduler(HashMap<Integer, ArrayList<Long>> table, ArrayList<ToDoTask> scheduled) {
+    public TimeScheduler(HashMap<Integer, ArrayList<Long>> table, ArrayList<Schedule> scheduled) {
         this.TimeTable = table;
         this.Scheduled = scheduled;
     }
@@ -57,7 +56,7 @@ public class TimeScheduler {
         return ((long) (begin) * 100000) + ((long) cost);
     }
 
-    public ParseResult StartScheduleManaged(ToDoTask[] tasks, TodoClass[] classes, int totalDayOfWeek) {
+    public ParseResult StartScheduleManaged(Schedule[] tasks, CourseModel[] classes, int totalDayOfWeek) {
         // 现在的目标是把所有任务全部获取
         // 然后优先进行计算，通过平均的方法进行安排
         // 然后在对每一个任务进行填入
@@ -87,19 +86,19 @@ public class TimeScheduler {
 
 
         // 获取全部任务，转换为时间排序对象
-        for (ToDoTask task : tasks) {
+        for (Schedule task : tasks) {
             // 获取当前任务的需求时间
             allTask.add(new MissionTimeTable(task));
-            totalDiff += (long) (task.difficulty);
+            totalDiff += (long) (task.getDiffLevel());
         }
 
         // 获取全部课程，转换为时间排序对象
-        for (TodoClass todoClass : classes) {
-            long diff = todoClass.getDIfficulty();
+        for (CourseModel course : classes) {
+            long diff = course.getDiff();
             totalDiff += diff;
-            weekDiff.set(todoClass.weekday - 1, weekDiff.get(todoClass.weekday - 1) + diff);
-            weekTimeCost.set(todoClass.weekday - 1, weekTimeCost.get(todoClass.weekday - 1) + todoClass.endTs - todoClass.startTs);
-            Objects.requireNonNull(this.TimeTable.get(todoClass.weekday)).add(this.PackTime(todoClass.startTs, todoClass.endTs - todoClass.startTs));
+            weekDiff.set(course.getDayOfWeek() - 1, weekDiff.get(course.getDayOfWeek() - 1) + diff);
+            weekTimeCost.set(course.getDayOfWeek() - 1, weekTimeCost.get(course.getDayOfWeek() - 1) + course.getTimeLength());
+            Objects.requireNonNull(this.TimeTable.get(course.getDayOfWeek())).add(this.PackTime(course.getTimeStart(), course.getTimeLength()));
         }
 
 //        for (int i = 1; i <= 7; i++) { // 已存在时间表中的项目，未知难度，忽略
@@ -136,8 +135,9 @@ public class TimeScheduler {
                     lowDay = i;
                 }
             }
-            task.weekday = task.ownTask.taskDay = lowDay + 1;
-            weekDiff.set(lowDay, weekDiff.get(lowDay) + task.ownTask.difficulty);
+            task.weekday = lowDay + 1;
+            task.ownTask.setWeekDay(lowDay + 1);
+            weekDiff.set(lowDay, weekDiff.get(lowDay) + task.ownTask.getDiffLevel());
             weekTask.get(lowDay).add(task);
             weekTimeCost.set(lowDay, weekTimeCost.get(lowDay) + task.timeCost);
         }
@@ -161,7 +161,7 @@ public class TimeScheduler {
                             return aLong.compareTo(t1);
                         }
                     });
-                    table.ownTask.taskAt = timed;
+                    table.ownTask.setWeekDayAndTime(i + 1, timed);
                     this.Scheduled.add(table.ownTask);
                 }
             }
@@ -208,15 +208,14 @@ public class TimeScheduler {
     }
 
     // StartScheduleDefault 开启常规任务规划
-    public boolean StartScheduleDefault(ToDoTask[] tasks) {
-        for (ToDoTask task : tasks) {
+    public boolean StartScheduleDefault(Schedule[] tasks) {
+        for (Schedule task : tasks) {
             int timeCost = task.Arrange();
             TimeFinder emptyTs = this.FindEmpty(timeCost);
             if (emptyTs == null) {
                 return false;
             }
-            task.taskDay = emptyTs.day;
-            task.taskAt = emptyTs.time;
+            task.setWeekDayAndTime(emptyTs.day, emptyTs.time); // FIXME:replace to weekday
             this.Scheduled.add(task);
         }
         return true;
@@ -294,13 +293,13 @@ public class TimeScheduler {
     }
 
     public static class MissionTimeTable implements Comparable<MissionTimeTable> {
-        public ToDoTask ownTask;
+        public Schedule ownTask;
         public int timeCost;
         public ParsedTime arrange;
         public boolean isClass;
         public int weekday;
 
-        public MissionTimeTable(ToDoTask task) {
+        public MissionTimeTable(Schedule task) {
             this.ownTask = task;
             this.timeCost = task.Arrange();
             this.isClass = false;
