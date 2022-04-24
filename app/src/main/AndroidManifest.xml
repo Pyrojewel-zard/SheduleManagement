@@ -32,7 +32,6 @@
             </intent-filter>
         </activity>
         <activity android:name="com.pyrojewel.EventDeal.InputActivity" />
-        <activity android:name="com.pyrojewel.Course.CourseDetailActivity" />
         <activity android:name="com.pyrojewel.BaseFuncActivity"/>
     </application>
 

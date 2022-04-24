@@ -92,7 +92,7 @@
                 android:orientation="vertical">
 
                 <ImageView
-                    android:id="@+id/model_21"
+                    android:id="@+id/courseImport"
                     android:layout_width="90dp"
                     android:layout_height="90dp"
                     android:layout_gravity="center"
