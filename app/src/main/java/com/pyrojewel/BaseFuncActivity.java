@@ -1,21 +1,32 @@
 package com.pyrojewel;
 
+import android.app.Activity;
+import android.content.ContentResolver;
+import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.graphics.Color;
+import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
+import android.os.FileUtils;
 import android.view.MenuItem;
 import android.view.View;
+import android.webkit.MimeTypeMap;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.PopupMenu;
 
 import com.example.myapplication.R;
 import com.pyrojewel.Course.CourseModel;
+import com.pyrojewel.Course.Csv;
 import com.pyrojewel.Course.ModelOpenHelper;
 import com.zhuangfei.timetable.TimetableView;
 import com.zhuangfei.timetable.listener.ISchedule;
@@ -24,6 +35,11 @@ import com.zhuangfei.timetable.listener.OnSlideBuildAdapter;
 import com.zhuangfei.timetable.model.Schedule;
 import com.zhuangfei.timetable.view.WeekView;
 
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -35,14 +51,15 @@ public class BaseFuncActivity extends AppCompatActivity {
     /**控件*/
     TimetableView mTimetableView;
     WeekView mWeekView;
-
+ImageButton imageButton;
     Button moreButton;
     LinearLayout layout;
     TextView titleTextView;
     List<CourseModel> mySubjects;
 
-    //记录切换的周次，不一定是当前周
+    /**记录切换的周次，不一定是当前周*/
     int target = -1;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,13 +73,69 @@ public class BaseFuncActivity extends AppCompatActivity {
                 showPopmenu();
             }
         });
+        imageButton=findViewById(R.id.importCourse);
+        imageButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
+                intent.setType("*/*");//无类型限制
+                intent.addCategory(Intent.CATEGORY_OPENABLE);
+                startActivityForResult(intent, 1);
+            }
+        });
         ModelOpenHelper modelOpenHelper=new ModelOpenHelper(this);
         mySubjects = modelOpenHelper.getAllCourseConModels();
 //        System.out.println("111"+modelOpenHelper.getCourseModelQueryByName("高等数学A(下)"));
         titleTextView = findViewById(R.id.id_title);
         initTimetableView();
+
+    }
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (resultCode == Activity.RESULT_OK) {
+            if (requestCode == 1) {
+                Uri uri = data.getData();
+                File file = uriToFileApiQ(uri, this);
+                ArrayList<CourseModel> courseModels = Csv.course(file.getPath());
+                ModelOpenHelper dbHelper = new ModelOpenHelper(this);
+                for (int k = 0; k < courseModels.size(); k++) {
+                    dbHelper.insertCourseModel(courseModels.get(k));
+                }
+
+            }
+        }
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.Q)
+    public static File uriToFileApiQ(Uri uri, Context context) {
+        File file = null;
+        if (uri == null) {
+            return null;
+        }
+        //android10以上转换
+        if (uri.getScheme().equals(ContentResolver.SCHEME_FILE)) {
+            file = new File(uri.getPath());
+        } else if (uri.getScheme().equals(ContentResolver.SCHEME_CONTENT)) {
+            //把文件复制到沙盒目录
+            ContentResolver contentResolver = context.getContentResolver();
+            String displayName = System.currentTimeMillis() + Math.round((Math.random() + 1) * 1000)
+                    + "." + MimeTypeMap.getSingleton().getExtensionFromMimeType(contentResolver.getType(uri));
+
+            try {
+                InputStream is = contentResolver.openInputStream(uri);
+                File cache = new File(context.getCacheDir().getAbsolutePath(), displayName);
+                FileOutputStream fos = new FileOutputStream(cache);
+                FileUtils.copy(is, fos);
+                file = cache;
+                fos.close();
+                is.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        return file;
+    }
     /**
      * 初始化课程控件
      */

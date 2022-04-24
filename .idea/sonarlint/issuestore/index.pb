@@ -168,8 +168,6 @@ l
 <app/src/main/java/com/pyrojewel/EventDeal/InputActivity.java,2\7\27ba1706f8a9ea6ea2111dcd822964eb26bef0fd
 ~
 NTimetableView/src/main/java/com/zhuangfei/timetable/model/ScheduleSupport.java,b\2\b235ce3de73a16339a3294c29dda3c8c2405ea7a
-a
-1app/src/main/java/com/pyrojewel/MainActivity.java,5\7\572ac11d505944eb8dc46839af06fb9fb0499e5d
 y
 ITimetableView/src/main/java/com/zhuangfei/timetable/view/PerWeekView.java,7\1\7119b06c059e33dbff9ebf3f1f962bbc78f31b15
 
