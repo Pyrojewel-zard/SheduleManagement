@@ -22,6 +22,7 @@ public class Csv {
     final static int DATA_START =3;
     final static int DATA_END =16;
     final static int WEEK =5;
+
     /**读取Excel*/
     public static Workbook readExcel(String filePath) {
         Workbook wb = null;
@@ -48,32 +49,6 @@ public class Csv {
             e.printStackTrace();
         }
         return null;
-    }
-    public static int weeks(String str){
-        str=str.replace("[周]","");
-        String[]arr;
-        String key=",";
-        if(str.contains(key)){
-            arr=str.split(",");
-        }else{
-            arr=str.split("-");
-        }
-        return Integer.valueOf(arr[0]);
-    }
-    public static int weekLength(String str){
-        str=str.replace("[周]","");
-        String[]arr;
-        String key=",";
-        if(str.contains(key)){
-            arr=str.split(",");
-        }else{
-            arr=str.split("-");
-        }
-        if(arr.length==1) {
-            return 1;
-        } else {
-            return Integer.valueOf(arr[arr.length-1])-Integer.valueOf(arr[0]);
-        }
     }
     public static int days(String str){
         str=str.replace("[","");

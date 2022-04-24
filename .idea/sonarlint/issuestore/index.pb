@@ -176,3 +176,13 @@ p
 @app/src/test/java/com/example/myapplication/ExampleUnitTest.java,f\7\f7b02976154252e44c8b6f323b0f856285e18e7d
 <
 build.gradle,f\0\f07866736216be0ee2aba49e392191aeae700a35
+v
+FTimetableView/src/main/java/com/zhuangfei/timetable/view/WeekView.java,2\d\2d8fb5847416066f1117d54d9da98c4ff160ab13
+J
+TimetableView/build.gradle,0\3\033869c0b44fa1acccd34fa7b53922182287d8f3
+Z
+*TimetableView/src/main/AndroidManifest.xml,4\e\4e6352ae9a23a132678e6eec79f3751f6967b0f7
+@
+app/build.gradle,f\4\f4a01d6a4fcb971362ec00a83903fd3902f52164
+i
+9app/src/main/java/com/pyrojewel/ui/home/HomeFragment.java,5\e\5ef9232f43db811553d74e3d84206177fe3c99fa

@@ -10,7 +10,6 @@ import android.widget.ImageView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.ViewModelProvider;
 
 import com.example.myapplication.R;
 import com.example.myapplication.databinding.FragmentSettingsBinding;
@@ -21,15 +20,11 @@ import com.pyrojewel.BaseFuncActivity;
  */
 public class SettingsFragment extends Fragment {
 
-    private SettingsViewModel settingsViewModel;
     private FragmentSettingsBinding binding;
     private ImageView  courseDetail;
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        settingsViewModel =
-                new ViewModelProvider(this).get(SettingsViewModel.class);
-
     binding = FragmentSettingsBinding.inflate(inflater, container, false);
     View root = binding.getRoot();
         return root;
