@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.pyrojewel.ui.settings.SettingsFragment" >
+    tools:context="com.pyrojewel.ui.settings.SettingsFragment">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -77,161 +76,175 @@
                 android:translationY="-2sp" />
         </RelativeLayout>
 
-        <RelativeLayout
+
+        <GridLayout
+            android:id="@+id/grid"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="50dp"
-            android:orientation="vertical">
+            android:columnCount="3"
+            android:rowCount="2">
 
-
-            <ImageButton
-                android:id="@+id/model_21"
-                android:layout_width="90dp"
-                android:layout_height="90dp"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentTop="true"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="150dp"
-                android:background="@drawable/rectangle_13"
-                android:scaleType="center"
-                android:src="@drawable/vector4" />
-
-
-            <ImageButton
-                android:id="@+id/Course_detail"
-                android:layout_width="90dp"
-                android:layout_height="90dp"
-                android:layout_alignParentRight="true"
-                android:background="@drawable/rectangle_13"
-                android:scaleType="center"
-                android:src="@drawable/vector3"
-                tools:layout_marginRight="20dp" />
-
-            <ImageButton
-                android:id="@+id/model_11"
-                android:layout_width="90dp"
-                android:layout_height="90dp"
-                android:layout_alignParentLeft="true"
-                android:layout_marginLeft="20dp"
-                android:background="@drawable/rectangle_13"
-                android:scaleType="center"
-                android:textAlignment="textEnd"
-                tools:src="@drawable/vector1" />
-
-            <ImageButton
-                android:id="@+id/model_23"
-                android:layout_width="90dp"
-                android:layout_height="90dp"
-                android:layout_alignStart="@id/Course_detail"
-                android:layout_alignParentRight="false"
-                android:layout_marginTop="150dp"
-                android:background="@drawable/rectangle_13"
-                android:scaleType="center"
-                android:src="@drawable/vector6" />
-
-            <ImageButton
-                android:id="@+id/Course"
-                android:layout_width="90dp"
-                android:layout_height="90dp"
-                android:layout_alignParentTop="true"
-                android:layout_centerHorizontal="true"
-                android:background="@drawable/rectangle_13"
-                android:onClick="onClickImport"
-                android:scaleType="center"
-                android:src="@drawable/vector2"
-                tools:layout_centerHorizontal="true" />
-
-
-            <ImageButton
-                android:id="@+id/model_22"
-                android:layout_width="90dp"
-                android:layout_height="90dp"
-                android:layout_alignStart="@id/Course"
-                android:layout_marginStart="-3dp"
-                android:layout_marginTop="150dp"
-                android:background="@drawable/rectangle_13"
-                android:scaleType="center"
-                android:src="@drawable/vector5" />
-
-            <TextView
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/model_11"
-                android:layout_alignStart="@id/model_11"
-                android:layout_alignLeft="@id/model_11"
-                android:layout_marginLeft="30dp"
-                android:layout_marginTop="10dp"
-                android:background="@color/white"
-                android:rotationX="0"
-                android:text="@string/text1"
-                android:textColor="@color/black"
-                android:textStyle="bold" />
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:orientation="vertical">
 
-            <TextView
+                <ImageView
+                    android:id="@+id/courseImport"
+                    android:layout_width="90dp"
+                    android:layout_height="90dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/rectangle_13"
+                    android:scaleType="center"
+                    android:src="@drawable/vector4" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:background="@color/white"
+                    android:text="@string/text1"
+                    android:textColor="@color/black"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/Course"
-                android:layout_alignStart="@id/Course"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="10dp"
-                android:background="@color/white"
-                android:rotationX="0"
-                android:text="@string/text2"
-                android:textColor="@color/black"
-                android:textStyle="bold" />
 
-            <TextView
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/Course"
+                    android:layout_width="90dp"
+                    android:layout_height="90dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/rectangle_13"
+                    android:scaleType="center"
+                    android:src="@drawable/vector2" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:background="@color/white"
+                    android:text="@string/text2"
+                    android:textColor="@color/black"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/Course"
-                android:layout_alignStart="@id/Course_detail"
-                android:layout_marginStart="20dp"
-                android:layout_marginLeft="30dp"
-                android:layout_marginTop="9dp"
-                android:background="@color/white"
-                android:rotationX="0"
-                android:text="@string/text3"
-                android:textColor="@color/black"
-                android:textStyle="bold" />
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:orientation="vertical">
 
-            <TextView
+                <ImageView
+                    android:id="@+id/model_11"
+                    android:layout_width="90dp"
+                    android:layout_height="90dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/rectangle_13"
+                    android:scaleType="center"
+                    android:src="@drawable/vector1" />
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:background="@color/white"
+                    android:text="@string/text3"
+                    android:textColor="@color/black"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/model_21"
-                android:layout_alignStart="@id/model_21"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="10dp"
-                android:background="@color/white"
-                android:rotationX="0"
-                android:text="@string/text4"
-                android:textColor="@color/black"
-                android:textStyle="bold" />
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:orientation="vertical">
 
-            <TextView
+                <ImageView
+                    android:id="@+id/model_23"
+                    android:layout_width="90dp"
+                    android:layout_height="90dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/rectangle_13"
+                    android:scaleType="center"
+                    android:src="@drawable/vector6" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:background="@color/white"
+                    android:text="@string/text4"
+                    android:textColor="@color/black"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+
+                android:layout_height="wrap_content"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="90dp"
+                    android:layout_height="90dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/rectangle_13"
+                    android:onClick="onClickImport"
+                    android:scaleType="center"
+                    android:src="@drawable/vector3" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:background="@color/white"
+                    android:text="@string/text5"
+                    android:textColor="@color/black"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/model_22"
-                android:layout_alignStart="@id/model_22"
-                android:layout_marginLeft="35dp"
-                android:layout_marginTop="10dp"
-                android:background="@color/white"
-                android:rotationX="0"
-                android:text="@string/text5"
-                android:textColor="@color/black"
-                android:textStyle="bold" />
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:orientation="vertical">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/model_23"
-                android:layout_alignStart="@id/model_23"
-                android:layout_marginLeft="35dp"
-                android:layout_marginTop="10dp"
-                android:background="@color/white"
-                android:rotationX="0"
-                android:text="@string/text5"
-                android:textColor="@color/black"
-                android:textStyle="bold" />
-        </RelativeLayout>
+                <ImageView
+                    android:id="@+id/model_22"
+                    android:layout_width="90dp"
+                    android:layout_height="90dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/rectangle_13"
+                    android:scaleType="center"
+                    android:src="@drawable/vector5" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:background="@color/white"
+                    android:text="@string/text5"
+                    android:textColor="@color/black"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </GridLayout>
+
+
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

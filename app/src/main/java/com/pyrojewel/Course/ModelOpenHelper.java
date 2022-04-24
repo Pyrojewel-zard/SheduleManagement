@@ -38,24 +38,53 @@ public class ModelOpenHelper extends SQLiteOpenHelper {
      *
      * @param courseModel
      * @return 返回新插入的行的ID，发生错误，插入不成功，则返回-1
+     * 我思考是不是插入新的避免重复是在这里加一个判断？！
+     * 对将每个新的都作为查询条件抖进去查询
      */
     public long insertCourseModel(CourseModel courseModel) {
-        SQLiteDatabase db = this.getWritableDatabase();
-        ContentValues values = new ContentValues();
-        values.put(CourseConfig.COLUMN_NAME, courseModel.getName());
-        values.put(CourseConfig.COLUMN_TEACHER, courseModel.getTeacher());
-        values.put(CourseConfig.COLUMN_WEEKS, courseModel.getWeekStart());
-        values.put(CourseConfig.WEEK_LENGTH, courseModel.getWeekLength());
-        values.put(CourseConfig.COLUMN_PLACE, courseModel.getPlace());
-        values.put(CourseConfig.COLUMN_DAYS, courseModel.getDayOfWeek());
-        values.put(CourseConfig.COLUMN_TIMES, courseModel.getTimeStart());
-        values.put(CourseConfig.TIME_LENGTH, courseModel.getTimeLength());
-        values.put(CourseConfig.COURSE_DIFFICULTY, courseModel.getDiff());
 
-        long id = db.insert(CourseConfig.TABLE_NAME, null, values);
-        db.close();
-        return id;
+        if(!searchExist(courseModel.getName(),courseModel.getTeacher(),courseModel.getDayOfWeek())){
+            SQLiteDatabase db = this.getWritableDatabase();
+            ContentValues values = new ContentValues();
+            values.put(CourseConfig.COLUMN_NAME, courseModel.getName());
+            values.put(CourseConfig.COLUMN_TEACHER, courseModel.getTeacher());
+            values.put(CourseConfig.COLUMN_WEEKS, courseModel.getWeekString());
+            values.put(CourseConfig.COLUMN_PLACE, courseModel.getPlace());
+            values.put(CourseConfig.COLUMN_DAYS, courseModel.getDayOfWeek());
+            values.put(CourseConfig.COLUMN_TIMES, courseModel.getTimeStart());
+            values.put(CourseConfig.COLUMN_TIMELength, courseModel.getTimeLength());
+
+            long id = db.insert(CourseConfig.TABLE_NAME, null, values);
+            db.close();
+            return id;
+        }
+        return -1;
     }
+    public boolean searchExist(String searchName,String searchTeacher,int searchDayOfWeek){
+        CourseModel courseModel = new CourseModel();
+        SQLiteDatabase db = this.getReadableDatabase();
+        String[] columnArray = new String[]{
+                CourseConfig.COLUMN_ID,
+                CourseConfig.COLUMN_NAME,
+                CourseConfig.COLUMN_TEACHER,
+                CourseConfig.COLUMN_WEEKS,
+                CourseConfig.COLUMN_PLACE,
+                CourseConfig.COLUMN_DAYS,
+                CourseConfig.COLUMN_TIMES,
+                CourseConfig.COLUMN_TIMELength
+        };
+        Cursor cursor = db.query(CourseConfig.TABLE_NAME,
+                columnArray,
+                CourseConfig.COLUMN_NAME + "=?"+" AND "+CourseConfig.COLUMN_TEACHER+"=?"+" AND "+CourseConfig.COLUMN_DAYS+"=? ",
+                new String[]{searchName,searchTeacher,Integer.toString(searchDayOfWeek)},
+                null, null, null);
+        if (cursor != null && cursor.moveToNext()) {
+            return true;
+            //表示存在
+        }
+        return false;
+    }
+
     /**
      *
      * @param searchName query database by name
@@ -69,12 +98,10 @@ public class ModelOpenHelper extends SQLiteOpenHelper {
                 CourseConfig.COLUMN_NAME,
                 CourseConfig.COLUMN_TEACHER,
                 CourseConfig.COLUMN_WEEKS,
-                CourseConfig.WEEK_LENGTH,
                 CourseConfig.COLUMN_PLACE,
                 CourseConfig.COLUMN_DAYS,
                 CourseConfig.COLUMN_TIMES,
-                CourseConfig.TIME_LENGTH,
-                CourseConfig.COURSE_DIFFICULTY
+                CourseConfig.COLUMN_TIMELength
         };
         Cursor cursor = db.query(CourseConfig.TABLE_NAME,
                 columnArray,
@@ -85,24 +112,20 @@ public class ModelOpenHelper extends SQLiteOpenHelper {
             int id = cursor.getInt(choose(cursor.getColumnIndex(CourseConfig.COLUMN_ID)));
             String name = cursor.getString(choose(cursor.getColumnIndex(CourseConfig.COLUMN_NAME)));
             String teacher=cursor.getString(choose(cursor.getColumnIndex(CourseConfig.COLUMN_TEACHER)));
-            int weekStart=cursor.getInt(choose(cursor.getColumnIndex(CourseConfig.COLUMN_WEEKS)));
-            int weekLength=cursor.getInt(choose(cursor.getColumnIndex(CourseConfig.WEEK_LENGTH)));
+            String weekString=cursor.getString(choose(cursor.getColumnIndex(CourseConfig.COLUMN_WEEKS)));
             String place=cursor.getString(choose(cursor.getColumnIndex(CourseConfig.COLUMN_PLACE)));
             int dayOfWeek=cursor.getInt(choose(cursor.getColumnIndex(CourseConfig.COLUMN_DAYS)));
             int timeStart=cursor.getInt(choose(cursor.getColumnIndex(CourseConfig.COLUMN_TIMES)));
-            int timeLength=cursor.getInt(choose(cursor.getColumnIndex(CourseConfig.TIME_LENGTH)));
-            int diff=cursor.getInt(choose(cursor.getColumnIndex(CourseConfig.COURSE_DIFFICULTY)));
+            int timeLength=cursor.getInt(choose(cursor.getColumnIndex(CourseConfig.COLUMN_TIMELength)));
 
             courseModel.setId(id);
             courseModel.setName(name);
             courseModel.setTeacher(teacher);
-            courseModel.setWeekStart(weekStart);
-            courseModel.setWeekLength(weekLength);
+            courseModel.setWeekString(weekString);
             courseModel.setPlace(place);
             courseModel.setDayOfWeek(dayOfWeek);
             courseModel.setTimeStart(timeStart);
             courseModel.setTimeLength(timeLength);
-            courseModel.setDiff(diff);
 
             cursor.close();
             return courseModel;
@@ -135,24 +158,20 @@ public class ModelOpenHelper extends SQLiteOpenHelper {
                 int id = cursor.getInt(choose(cursor.getColumnIndex(CourseConfig.COLUMN_ID)));
                 String name = cursor.getString(choose(cursor.getColumnIndex(CourseConfig.COLUMN_NAME)));
                 String teacher=cursor.getString(choose(cursor.getColumnIndex(CourseConfig.COLUMN_TEACHER)));
-                int weekStart=cursor.getInt(choose(cursor.getColumnIndex(CourseConfig.COLUMN_WEEKS)));
-                int weekLength=cursor.getInt(choose(cursor.getColumnIndex(CourseConfig.WEEK_LENGTH)));
+                String weekString=cursor.getString(choose(cursor.getColumnIndex(CourseConfig.COLUMN_WEEKS)));
                 String place=cursor.getString(choose(cursor.getColumnIndex(CourseConfig.COLUMN_PLACE)));
                 int dayOfWeek=cursor.getInt(choose(cursor.getColumnIndex(CourseConfig.COLUMN_DAYS)));
                 int timeStart=cursor.getInt(choose(cursor.getColumnIndex(CourseConfig.COLUMN_TIMES)));
-                int timeLength=cursor.getInt(choose(cursor.getColumnIndex(CourseConfig.TIME_LENGTH)));
-                int diff=cursor.getInt(choose(cursor.getColumnIndex(CourseConfig.COURSE_DIFFICULTY)));
+                int timeLength=cursor.getInt(choose(cursor.getColumnIndex(CourseConfig.COLUMN_TIMELength)));
 
                 courseModel.setId(id);
                 courseModel.setName(name);
                 courseModel.setTeacher(teacher);
-                courseModel.setWeekStart(weekStart);
-                courseModel.setWeekLength(weekLength);
+                courseModel.setWeekString(weekString);
                 courseModel.setPlace(place);
                 courseModel.setDayOfWeek(dayOfWeek);
                 courseModel.setTimeStart(timeStart);
                 courseModel.setTimeLength(timeLength);
-                courseModel.setDiff(diff);
 
                 courseModelsList.add(courseModel);
             }
@@ -186,13 +205,11 @@ public class ModelOpenHelper extends SQLiteOpenHelper {
         ContentValues values = new ContentValues();
         values.put(CourseConfig.COLUMN_NAME, courseModel.getName());
         values.put(CourseConfig.COLUMN_TEACHER, courseModel.getTeacher());
-        values.put(CourseConfig.COLUMN_WEEKS, courseModel.getWeekStart());
-        values.put(CourseConfig.WEEK_LENGTH, courseModel.getWeekLength());
+        values.put(CourseConfig.COLUMN_WEEKS, courseModel.getWeekString());
         values.put(CourseConfig.COLUMN_PLACE, courseModel.getPlace());
         values.put(CourseConfig.COLUMN_DAYS, courseModel.getDayOfWeek());
         values.put(CourseConfig.COLUMN_TIMES, courseModel.getTimeStart());
-        values.put(CourseConfig.TIME_LENGTH, courseModel.getTimeLength());
-        values.put(CourseConfig.COURSE_DIFFICULTY, courseModel.getDiff());
+        values.put(CourseConfig.COLUMN_TIMELength, courseModel.getTimeLength());
 
         int idReturnByUpdate = db.update(CourseConfig.TABLE_NAME, values, CourseConfig.COLUMN_ID + " =? ", new String[]{String.valueOf(id)});
         db.close();

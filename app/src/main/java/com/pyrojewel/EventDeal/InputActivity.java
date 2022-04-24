@@ -12,7 +12,7 @@ import androidx.viewpager.widget.ViewPager;
 
 import com.pyrojewel.ui.input.InputGallery;
 import com.pyrojewel.ui.input.InputText;
-import com.pyrojewel.ui.input.InputVoice;
+import com.pyrojewel.ui.input.InputCamera;
 import com.example.myapplication.R;
 import com.google.android.material.tabs.TabLayout;
 
@@ -33,17 +33,14 @@ public class InputActivity extends AppCompatActivity {
         TabLayout tabLayout=(TabLayout) findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(pager);
     }
-
     private class SectionsPagerAdapter extends FragmentPagerAdapter {
         public SectionsPagerAdapter(FragmentManager fragmentManager) {
             super(fragmentManager,FragmentPagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT);
         }
-
         @Override
         public int getCount() {
             return 3;
         }
-
         @Override
         public Fragment getItem(int position) {
             switch (position) {
@@ -52,7 +49,7 @@ public class InputActivity extends AppCompatActivity {
                 case 1:
                     return new InputGallery();
                 case 2:
-                    return new InputVoice();
+                    return new InputCamera();
             }
             return null;
         }
@@ -65,7 +62,7 @@ public class InputActivity extends AppCompatActivity {
                 case 1:
                     return getResources().getText(R.string.Gallery);
                 case 2:
-                    return getResources().getText(R.string.Voice);
+                    return getResources().getText(R.string.Camera);
             }
             return null;
         }

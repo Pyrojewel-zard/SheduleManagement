@@ -1,100 +1,155 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.pyrojewel.ui.input.InputText">
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="693dp"
         android:orientation="vertical">
-        <include
-            layout="@layout/simple_title_bar"/>
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="Add Business card"
-            android:textColor="@color/black"
-            android:textSize="25sp" />
-        <!--项目名称-->
+
+        <!--DDL时间输入-->
+
+
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="74dp"
             android:gravity="center">
+
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="75dp"
                 android:layout_height="wrap_content"
-                android:text="项目名称:"/>
+                android:text="项目名称" />
+
             <EditText
                 android:id="@+id/name"
-                android:layout_width="wrap_content"
+                android:layout_width="217dp"
                 android:layout_height="wrap_content"
                 android:hint="pls input Name" />
         </LinearLayout>
-        <!--DDL时间输入-->
+
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="66dp"
             android:gravity="center">
+
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="73dp"
                 android:layout_height="wrap_content"
-                android:text="截止时间"            />
+                android:text="截止时间" />
+
             <EditText
                 android:id="@+id/editDDLDate"
-                android:layout_width="wrap_content"
+                android:layout_width="215dp"
                 android:layout_height="wrap_content"
-                android:hint="输入截止日期"/>
+                android:hint="输入截止日期" />
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="66dp"
             android:gravity="center">
+
             <TextView
+                android:id="@+id/difftxt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="任务难度:  "
-                />
-            <RatingBar
-                android:id="@+id/diffLevel"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:isIndicator="false"
-                android:numStars="5"
-                android:rating="0"
-                android:stepSize="1"
-                android:theme="@style/RatingBar"
-                />
+                android:text="任务难度: 0 星" />
+
+
+            <SeekBar
+                android:id="@+id/sbNormal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.491"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.67"
+                android:layout_width="250dp"
+                android:layout_height="71dp"
+                android:max="10"
+                android:progress="0" />
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="71dp"
             android:gravity="center">
-            <EditText
-                android:id="@+id/downTime"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:inputType="number|numberDecimal"
-                android:hint="下限时间"/>
+
             <TextView
+                android:id="@+id/time_txt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="-------"
-                />
-            <EditText
-                android:id="@+id/Uptime"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:inputType="number|numberDecimal"
-                android:hint="上限时间"/>
+                android:text="预计完成时间: 0（h）" />
+
+            <SeekBar
+                android:id="@+id/exTime"
+                android:layout_width="200dp"
+                android:layout_height="48dp"
+                android:max="10"
+                android:progress="0"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.491"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.67" />
 
         </LinearLayout>
 
-        <EditText
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="150dp"
-            android:hint="备注" />
+            android:layout_height="202dp">
+            <TextView
+                android:layout_width="57dp"
+                android:layout_height="wrap_content"
+                android:hint="详细"/>
+
+            <EditText
+                android:id="@+id/mContext_text"
+                android:layout_width="333dp"
+                android:layout_height="185dp"
+                android:hint="输入任务详细说明" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="95dp">
+
+            <TextView
+                android:layout_width="128dp"
+                android:layout_height="51dp"
+                android:text="选择分组" />
+        </LinearLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="202dp">
+
+            <Button
+                android:id="@+id/tvConfirm"
+                android:layout_width="120dp"
+                android:layout_height="50dp"
+                android:layout_marginEnd="68dp"
+                android:text="完成"
+                app:layout_constraintEnd_toEndOf="parent"
+                tools:layout_editor_absoluteY="0dp"
+                tools:ignore="MissingConstraints"></Button>
+
+            <Button
+                android:id="@+id/tvCancel"
+                android:layout_width="120dp"
+                android:layout_height="50dp"
+                android:text="取消"
+                app:layout_constraintEnd_toStartOf="@+id/tvConfirm"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:ignore="MissingConstraints"></Button>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
     </LinearLayout>
 
 </FrameLayout>

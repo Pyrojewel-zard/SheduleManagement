@@ -11,8 +11,7 @@ public class Schedule implements Serializable {
     //true:finished, false:unfinished
     private int isfinished;
     private int diffLevel;
-    private int finishDurationUp;//上限完成预期时间
-    private int finishDurationDown;//下限
+    private int finishtime;//上限完成预期时间
     private int weekDay;// 周几
     private long timeSecond;// 几点
 
@@ -72,21 +71,12 @@ public class Schedule implements Serializable {
         this.diffLevel = diffLevel;
     }
 
-    public int getFinishDurationUp() {
-        return finishDurationUp;
+    public int getFinishtime() {
+        return finishtime;
     }
 
-    public void setFinishDurationUp(int finishDurationUp) {
-        this.finishDurationUp = finishDurationUp;
-
-    }
-
-    public int getFinishDurationDown() {
-        return finishDurationDown;
-    }
-
-    public void setFinishDurationDown(int finishDurationDown) {
-        this.finishDurationDown = finishDurationDown;
+    public void setFinishtime(int finishtime) {
+        this.finishtime = finishtime;
     }
 
     public int Arrange() { // 多长时间
