@@ -148,8 +148,6 @@ STimetableView/src/main/java/com/zhuangfei/timetable/listener/OnDateBuildAapter.
 PTimetableView/src/main/java/com/zhuangfei/timetable/model/ScheduleColorPool.java,d\e\def9ca1d74f4a246ae8e4164403066d47f969a7a
 €
 PTimetableView/src/main/java/com/zhuangfei/timetable/operater/SimpleOperater.java,b\4\b43224682adff9aaf12bcc7e498f44fa96fcff04
-r
-Bapp/src/main/java/com/pyrojewel/ui/settings/SettingsViewModel.java,4\8\489612c8a78f2ddf78c9f0988e22b0cc9ba7bd26
 ~
 NTimetableView/src/main/java/com/zhuangfei/timetable/model/ScheduleSupport.java,b\2\b235ce3de73a16339a3294c29dda3c8c2405ea7a
 y
@@ -162,13 +160,7 @@ v
 FTimetableView/src/main/java/com/zhuangfei/timetable/view/WeekView.java,2\d\2d8fb5847416066f1117d54d9da98c4ff160ab13
 Z
 *TimetableView/src/main/AndroidManifest.xml,4\e\4e6352ae9a23a132678e6eec79f3751f6967b0f7
-i
-9app/src/main/java/com/pyrojewel/ui/home/HomeFragment.java,5\e\5ef9232f43db811553d74e3d84206177fe3c99fa
-J
-TimetableView/build.gradle,0\3\033869c0b44fa1acccd34fa7b53922182287d8f3
-B
-diary/build.gradle,e\f\efbbc5222df934f3e80248b74c22f8c8b45d8820
-C
-common/build.gradle,5\c\5c23a73f3b1be7d6214194048e5ccd4842575f5c
 {
 Kapp/src/main/java/com/pyrojewel/ui/notifications/NotificationsFragment.java,a\a\aa4e85e622084df696b1e761952f645737e334ad
+_
+/app/src/main/java/com/pyrojewel/Course/Csv.java,e\3\e3924bfe830973e40ecb0b904a1020f174503d2e
