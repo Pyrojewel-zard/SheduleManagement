@@ -13,11 +13,7 @@ android {
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
-    sourceSets {
-        main{
-            jniLibs.srcDirs = ['libs']
-        }
-    }
+
     buildTypes {
         release {
             minifyEnabled false
@@ -36,12 +32,9 @@ android {
     lintOptions{
         disable 'MissingTranslation'
     }
-
-
 }
 
 dependencies {
-    implementation files('libs/Msc.jar')
     implementation project(':diary')
     implementation "commons-codec:commons-codec:1.10"
     implementation 'androidx.appcompat:appcompat:1.2.0'
@@ -73,7 +66,6 @@ dependencies {
     implementation files('..\\Resource\\slf4j-log4j12-1.7.23.jar')
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     implementation project(path: ':TimetableView')
-    implementation files('libs\\Msc.jar')
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
