@@ -100,7 +100,7 @@ public class InputGallery extends Fragment {
                     String s = ImageToBase64ByStream(in);
                     System.out.println(s);
 
-                    Credential cred = new Credential("AKIDJSLzMRFn56qJVQ4RaS3MPBgtpVv3uVps", "nKaZGgphIcgTzEExPaZHislPlqeCTHn9");
+                    Credential cred = new Credential("AKIDXx6yf6G9k59xTjhOoxrUquigNnxrVrwk", "YppYz91dy3qMbYEdka9Q2RZR1LOAeuvg");
                     ClientProfile clientProfile = new ClientProfile();
                     HttpProfile httpProfile = new HttpProfile();
                     httpProfile.setEndpoint("ocr.tencentcloudapi.com");

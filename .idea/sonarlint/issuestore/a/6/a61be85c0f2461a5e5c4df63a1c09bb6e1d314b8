@@ -1,4 +1,7 @@
 
+k	java:S117B"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(±Ó‹Ûùÿÿÿÿ
+f	java:S117V"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(½Ñ™Ç
+k	java:S117n"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(à¦õşúÿÿÿÿ
 k	java:S116"VRename this field "ImageBase64" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(çÄ¯
 h	java:S116'"SRename this field "ImageUrl" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ğƒ¬µ
 h	java:S1160"SRename this field "CardSide" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ªŒø–
@@ -8,6 +11,3 @@ java:S2129{" Remove this "String" constructor(´ıÁü
 java:S2129~" Remove this "String" constructor(õ§–şÿÿÿÿ
 <
 java:S2129" Remove this "String" constructor(êôÄ©ùÿÿÿÿ
-k	java:S117B"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(±Ó‹Ûùÿÿÿÿ
-f	java:S117V"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(½Ñ™Ç
-k	java:S117n"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(à¦õşúÿÿÿÿ

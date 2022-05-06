@@ -47,6 +47,7 @@ public class CvmRoleCredential extends Credential {
         expiredTime = ((Double) maps.get("ExpiredTime")).intValue();
     }
 
+    @Override
     public String getSecretId() {
         if (secretId == null || needRefresh()) {
             try {
@@ -58,6 +59,7 @@ public class CvmRoleCredential extends Credential {
         return secretId;
     }
 
+    @Override
     public String getSecretKey() {
         if (secretKey == null || needRefresh()) {
             try {
@@ -69,6 +71,7 @@ public class CvmRoleCredential extends Credential {
         return secretKey;
     }
 
+    @Override
     public String getToken() {
         if (token == null || needRefresh()) {
             try {

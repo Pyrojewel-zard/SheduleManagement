@@ -29,6 +29,7 @@ public class STSCredential extends Credential {
         this.roleSessionName = roleSessionName;
     }
 
+    @Override
     public String getSecretId() {
         if (tmpSecretId == null || needRefresh()) {
             try {
@@ -40,6 +41,7 @@ public class STSCredential extends Credential {
         return tmpSecretId;
     }
 
+    @Override
     public String getSecretKey() {
         if (tmpSecretKey == null || needRefresh()) {
             try {
@@ -51,6 +53,7 @@ public class STSCredential extends Credential {
         return tmpSecretKey;
     }
 
+    @Override
     public String getToken() {
         if (token == null || needRefresh()) {
             try {
