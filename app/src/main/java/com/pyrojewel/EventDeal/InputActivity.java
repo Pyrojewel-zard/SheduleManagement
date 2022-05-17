@@ -10,11 +10,11 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
+import com.pyrojewel.ui.input.InputGallery;
+import com.pyrojewel.ui.input.InputText;
 import com.example.myapplication.R;
 import com.google.android.material.tabs.TabLayout;
 import com.pyrojewel.ui.input.InputVoice;
-import com.pyrojewel.ui.input.InputGallery;
-import com.pyrojewel.ui.input.InputText;
 
 /**
  * @author Pyrojewel
