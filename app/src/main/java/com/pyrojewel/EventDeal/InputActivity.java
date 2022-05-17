@@ -12,9 +12,9 @@ import androidx.viewpager.widget.ViewPager;
 
 import com.pyrojewel.ui.input.InputGallery;
 import com.pyrojewel.ui.input.InputText;
-import com.pyrojewel.ui.input.InputCamera;
 import com.example.myapplication.R;
 import com.google.android.material.tabs.TabLayout;
+import com.pyrojewel.ui.input.InputVoice;
 
 /**
  * @author Pyrojewel
@@ -49,7 +49,7 @@ public class InputActivity extends AppCompatActivity {
                 case 1:
                     return new InputGallery();
                 case 2:
-                    return new InputCamera();
+                    return new InputVoice();
             }
             return null;
         }

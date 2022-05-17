@@ -2,16 +2,18 @@ package com.example.common.bean;
 
 import java.io.Serializable;
 
+/**
+ * @author 28956
+ */
 public class Schedule implements Serializable {
     private int id;
-    private String name;
+    private String Title;
     private int year;
     private int month;
     private int day;
-    //true:finished, false:unfinished
-    private int isfinished;
+    private int isFinished;
     private int diffLevel;
-    private int finishtime;//上限完成预期时间
+    private int finishTime;//完成预期时间
     private int weekDay;// 周几
     private long timeSecond;// 几点
 
@@ -39,8 +41,8 @@ public class Schedule implements Serializable {
         this.year = year;
     }
 
-    public String getName() {
-        return name;
+    public String getTitle() {
+        return Title;
     }
 
     public int getDay() {
@@ -51,16 +53,16 @@ public class Schedule implements Serializable {
         this.day = day;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setTitle(String title) {
+        this.Title = title;
     }
 
     public int getFinished() {
-        return isfinished;
+        return isFinished;
     }
 
-    public void setFinish(int isfinished) {
-        this.isfinished = isfinished;
+    public void setFinish(int isFinished) {
+        this.isFinished = isFinished;
     }
 
     public int getDiffLevel() {
@@ -71,18 +73,28 @@ public class Schedule implements Serializable {
         this.diffLevel = diffLevel;
     }
 
-    public int getFinishtime() {
-        return finishtime;
+    public int getFinishTime() {
+        return finishTime;
     }
 
-    public void setFinishtime(int finishtime) {
-        this.finishtime = finishtime;
+    public void setFinishTime(int finishTime) {
+        this.finishTime = finishTime;
     }
 
     public int Arrange() { // 多长时间
         return 5000;
     }
+    public Schedule ( int id,String Title,int year,int month,int day,int diffLevel,int finishTime){
+        this.id=id;
+        this.Title=Title;
+        this.year=year;
+        this.month=month;
+        this.day=day;
+        this.diffLevel=diffLevel;
+        this.finishTime=finishTime;
 
+    }
+    public Schedule(){}
     public void setWeekDayAndTime(int day, long time) {
         this.weekDay = day; // FIXME: 需要在这里从周适配到年月日
         this.timeSecond = time;

@@ -176,13 +176,13 @@ public class InputText extends Fragment {
             return false;
         } else {
             Schedule schedule=new Schedule();
-            schedule.setName(nameEt.getText().toString());
+            schedule.setTitle(nameEt.getText().toString());
             schedule.setYear(mYear);
             schedule.setMonth(mMonth);
             schedule.setDay(mDay);
             schedule.setFinish(0);
             schedule.setDiffLevel((int)sbNormal.getProgress());
-            schedule.setFinishtime((int)exTime.getProgress());
+            schedule.setFinishTime((int)exTime.getProgress());
             ScheduleDao scheduleDao=new ScheduleDao(getActivity());
             long id=scheduleDao.addSchedule(schedule);
             System.out.println(id);

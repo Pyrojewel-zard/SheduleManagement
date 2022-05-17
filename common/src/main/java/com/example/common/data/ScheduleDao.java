@@ -25,13 +25,14 @@ public class ScheduleDao {
     public static ScheduleDao getInstance(Context context) {
         return new ScheduleDao(context);
     }
+
     public int addSchedule(Schedule schedule) {
         SQLiteDatabase db = mHelper.getWritableDatabase();
         ContentValues values = new ContentValues();
-        values.put(JeekDBConfig.COLUMN_NAME, schedule.getName());
+        values.put(JeekDBConfig.COLUMN_NAME, schedule.getTitle());
         values.put(JeekDBConfig.COLUMN_FINISH, schedule.getFinished());
         values.put(JeekDBConfig.COLUMN_LEVEL, schedule.getDiffLevel());
-        values.put(JeekDBConfig.COLUMN_DURATION, schedule.getFinishtime());
+        values.put(JeekDBConfig.COLUMN_DURATION, schedule.getFinishTime());
         values.put(JeekDBConfig.COLUMN_DDL_YEAR, schedule.getYear());
         values.put(JeekDBConfig.COLUMN_DDL_MONTH, schedule.getMonth());
         values.put(JeekDBConfig.COLUMN_DDL_DAY, schedule.getDay());
@@ -52,7 +53,7 @@ public class ScheduleDao {
         return id;
     }
     public List<Schedule> getScheduleByDate(int year, int month, int day) {
-        List<Schedule> schedules = new ArrayList<>();
+        ArrayList<Schedule> schedules = new ArrayList<>();
         SQLiteDatabase db = mHelper.getReadableDatabase();
         Cursor cursor = db.query(JeekDBConfig.TABLE_NAME, null,
                 String.format("%s=? and %s=? and %s=?", JeekDBConfig.COLUMN_DDL_YEAR,
@@ -61,13 +62,13 @@ public class ScheduleDao {
         while (cursor.moveToNext()) {
             schedule = new Schedule();
             schedule.setId(cursor.getInt(choose(cursor.getColumnIndex(JeekDBConfig.COLUMN_ID))));
-            schedule.setName(cursor.getString(choose(cursor.getColumnIndex(JeekDBConfig.COLUMN_NAME))));
+            schedule.setTitle(cursor.getString(choose(cursor.getColumnIndex(JeekDBConfig.COLUMN_NAME))));
             schedule.setYear(cursor.getInt(choose(cursor.getColumnIndex(JeekDBConfig.COLUMN_DDL_YEAR))));
             schedule.setMonth(cursor.getInt(choose(cursor.getColumnIndex(JeekDBConfig.COLUMN_DDL_MONTH))));
             schedule.setDay(cursor.getInt(choose(cursor.getColumnIndex(JeekDBConfig.COLUMN_DDL_DAY))));
             schedule.setFinish(cursor.getInt(choose(cursor.getColumnIndex(JeekDBConfig.COLUMN_FINISH))));
             schedule.setDiffLevel(cursor.getInt(choose(cursor.getColumnIndex(JeekDBConfig.COLUMN_LEVEL))));
-            schedule.setFinishtime(cursor.getInt(choose(cursor.getColumnIndex(JeekDBConfig.COLUMN_DURATION))));
+            schedule.setFinishTime(cursor.getInt(choose(cursor.getColumnIndex(JeekDBConfig.COLUMN_DURATION))));
             schedules.add(schedule);
         }
         cursor.close();
@@ -120,14 +121,21 @@ public class ScheduleDao {
         mHelper.close();
         return row != 0;
     }
-
+    public boolean removeSchedule(Schedule schedule) {
+        long id=schedule.getId();
+        SQLiteDatabase db = mHelper.getWritableDatabase();
+        int row = db.delete(JeekDBConfig.TABLE_NAME, String.format("%s=?", JeekDBConfig.COLUMN_ID), new String[]{String.valueOf(id)});
+        db.close();
+        mHelper.close();
+        return row != 0;
+    }
     public boolean updateSchedule(Schedule schedule) {
         SQLiteDatabase db = mHelper.getWritableDatabase();
         ContentValues values = new ContentValues();
-        values.put(JeekDBConfig.COLUMN_NAME, schedule.getName());
+        values.put(JeekDBConfig.COLUMN_NAME, schedule.getTitle());
         values.put(JeekDBConfig.COLUMN_FINISH, schedule.getFinished());
         values.put(JeekDBConfig.COLUMN_LEVEL, schedule.getDiffLevel());
-        values.put(JeekDBConfig.COLUMN_DURATION, schedule.getFinishtime());
+        values.put(JeekDBConfig.COLUMN_DURATION, schedule.getFinishTime());
         values.put(JeekDBConfig.COLUMN_DDL_YEAR, schedule.getYear());
         values.put(JeekDBConfig.COLUMN_DDL_MONTH, schedule.getMonth());
         values.put(JeekDBConfig.COLUMN_DDL_DAY, schedule.getDay());

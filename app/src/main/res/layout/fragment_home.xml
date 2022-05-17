@@ -1,75 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context="com.pyrojewel.ui.home.HomeFragment">
+    android:background="@android:color/white"
+    android:orientation="vertical"
+    tools:context="com.piechart.MainActivity">
 
-
-    <ScrollView
-
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:fillViewport="true"
-        tools:layout_editor_absoluteX="181dp"
-        tools:layout_editor_absoluteY="33dp">
+        android:layout_height="222dp"
+        android:gravity="center">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
+        <TextClock
+            android:id="@+id/textClock"
+            android:layout_width="wrap_content"
+            android:layout_height="146dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_gravity="center"
+            android:layout_marginStart="125dp"
+            android:layout_marginEnd="120dp"
+            android:format12Hour="HH : mm"
+            android:format24Hour="HH : mm"
+            android:textColor="@android:color/black"
+            android:textSize="50sp"
+            android:textStyle="bold" />
 
-            <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                android:layout_width="match_parent"
-                android:layout_height="54dp"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentRight="true"
-                android:background="@drawable/frame_1"
-                android:clipToOutline="true">
+    </RelativeLayout>
 
-                <TextView
-                    android:layout_width="48dp"
-                    android:layout_height="20dp"
-                    android:layout_centerHorizontal="true"
-                    android:layout_centerVertical="true"
-                    android:gravity="center_horizontal|top"
-                    android:text="@string/today"
-                    android:textAppearance="@style/today" />
-            </RelativeLayout>
+    <com.piechart.PieChartView
+        android:id="@+id/assets_pie_chart_now"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
 
-            <RelativeLayout
-                android:layout_width="wrap_content"
-                android:layout_height="79dp"
-                android:layout_centerHorizontal="true"
-                android:layout_centerVertical="true"
-                android:layout_gravity="center"
-                android:layout_marginTop="10dp"
-                android:background="@drawable/frame_3" />
-            <RelativeLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                >
+</LinearLayout>
 
-                <TextView
-                    android:id="@+id/taksout"
-                    android:layout_width="wrap_content"
-                    android:layout_height="47dp"
-                    android:autoLink="phone"
-                    android:gravity="center"
-                    android:hint="time"
-                    android:textColor="#F87461"
-                    android:textSize="25sp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintHorizontal_bias="0.59"
-                    app:layout_constraintLeft_toLeftOf="parent"
-                    app:layout_constraintRight_toRightOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.269" />
-            </RelativeLayout>
-
-        </LinearLayout>
-    </ScrollView>
-</androidx.constraintlayout.widget.ConstraintLayout>

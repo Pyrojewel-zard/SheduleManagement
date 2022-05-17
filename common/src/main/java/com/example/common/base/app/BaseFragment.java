@@ -9,6 +9,9 @@ import android.view.ViewGroup;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+/**
+ * @author 28956
+ */
 public abstract class BaseFragment extends Fragment {
     protected Activity mActivity;
     protected View mView;

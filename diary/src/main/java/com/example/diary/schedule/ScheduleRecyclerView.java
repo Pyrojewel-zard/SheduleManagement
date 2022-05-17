@@ -24,6 +24,7 @@ public class ScheduleRecyclerView extends RecyclerView {
         return computeVerticalScrollOffset() == 0;
     }
 
+    @Override
     public void requestChildFocus(View child, View focused) {
         super.requestChildFocus(child, focused);
         if (getOnFocusChangeListener() != null) {
