@@ -7,6 +7,8 @@ import java.io.Serializable;
  */
 public class Schedule implements Serializable {
     private int id;
+    private int state;//表示完成状态
+    private int color;
     private String Title;
     private int year;
     private int month;
@@ -16,6 +18,29 @@ public class Schedule implements Serializable {
     private int finishTime;//完成预期时间
     private int weekDay;// 周几
     private long timeSecond;// 几点
+    private long time;
+    public int getColor() {
+        return color;
+    }
+
+    public void setColor(int color) {
+        this.color = color;
+    }
+    public int getState() {
+        return state;
+    }
+
+    public long getTime() {
+        return time;
+    }
+
+    public void setTime(long time) {
+        this.time = time;
+    }
+
+    public void setState(int state) {
+        this.state = state;
+    }
 
     public int getId() {
         return id;
@@ -84,8 +109,9 @@ public class Schedule implements Serializable {
     public int Arrange() { // 多长时间
         return 5000;
     }
-    public Schedule ( int id,String Title,int year,int month,int day,int diffLevel,int finishTime){
+    public Schedule ( int id,String Title,int State,int year,int month,int day,int diffLevel,int finishTime){
         this.id=id;
+        this.state=State;
         this.Title=Title;
         this.year=year;
         this.month=month;

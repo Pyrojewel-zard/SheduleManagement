@@ -23,6 +23,8 @@
     <string name="Course">课程名称</string>
     <string name="place">上课地点</string>
     <string name="diff">课程难度</string>
+    <string name="schedule_show_finish_task">Show completed</string>
+    <string name="finished">Finished</string>
 
     <!--Input界面的String-->
     <string name="Text">文字</string>
@@ -86,4 +88,7 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="courses">课程表</string>
     <string name="Camera">相机</string>
+    <string name="start">start</string>
+    <string name="schedule_hide_finish_task">Hide completed</string>
+    <string name="schedule_delete_this_schedule">Delete the schedule?</string>
 </resources>
