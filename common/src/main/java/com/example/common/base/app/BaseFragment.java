@@ -20,9 +20,9 @@ public abstract class BaseFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        mActivity=getActivity();
-        mView=initContentView(inflater,container);
-        if(mView==null){
+        mActivity = getActivity();
+        mView = initContentView(inflater, container);
+        if (mView == null) {
             throw new NullPointerException("Fragment content is null.");
         }
         return mView;
