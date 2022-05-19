@@ -88,6 +88,7 @@ public class AsyncRecognitionTaskInfo extends AbstractModel{
     /**
      * Internal implementation, normal users should not use it.
      */
+    @Override
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "TaskId", this.TaskId);
         this.setParamSimple(map, prefix + "Url", this.Url);
