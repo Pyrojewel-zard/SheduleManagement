@@ -1,7 +1,6 @@
 package com.pyrojewel.ui.home;
 
 import android.annotation.SuppressLint;
-import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -9,13 +8,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.RelativeLayout;
-import android.widget.TextClock;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.example.common.base.app.BaseFragment;
 import com.example.common.bean.Schedule;
@@ -23,7 +20,6 @@ import com.example.common.listener.OnTaskFinishedListener;
 import com.example.diary.schedule.ScheduleRecyclerView;
 import com.example.myapplication.R;
 import com.example.myapplication.databinding.FragmentHomeBinding;
-import com.pyrojewel.MainActivity;
 import com.pyrojewel.adapter.ScheduleAdapter;
 import com.pyrojewel.schedule.LoadScheduleTask;
 
@@ -65,10 +61,10 @@ public class HomeFragment extends BaseFragment implements OnTaskFinishedListener
         rLHomeNoTask = getActivity().findViewById(R.id.rlHomeNoTask);
         rvScheduleList = getActivity().findViewById(R.id.rvHomeScheduleList);
         refreshCtx = getActivity().findViewById(R.id.refreshCtx);
+
+        rvScheduleList.setLayoutManager(new LinearLayoutManager(getActivity()));
         mScheduleAdapter = new ScheduleAdapter(getActivity(), this);
         rvScheduleList.setAdapter(mScheduleAdapter);
-
-
         refreshCtx.setOnClickListener(this::onClick);
 
     }
