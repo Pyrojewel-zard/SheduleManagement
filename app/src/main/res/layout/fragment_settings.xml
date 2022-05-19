@@ -204,7 +204,6 @@
                     android:layout_height="90dp"
                     android:layout_gravity="center"
                     android:background="@drawable/rectangle_13"
-                    android:onClick="onClickImport"
                     android:scaleType="center"
                     android:src="@drawable/vector3" />
 

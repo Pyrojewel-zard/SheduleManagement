@@ -90,9 +90,12 @@
         <entry key="..\:/Users/28956/StudioProjects/SheduleManagement/app/src/main/res/drawable/finish_schedule_hint.xml" value="0.1" />
         <entry key="..\:/Users/28956/StudioProjects/SheduleManagement/app/src/main/res/drawable/grey_schedule_left_block.xml" value="0.1" />
         <entry key="..\:/Users/28956/StudioProjects/SheduleManagement/app/src/main/res/drawable/start_schedule_hint.xml" value="0.1" />
+        <entry key="..\:/Users/28956/StudioProjects/SheduleManagement/app/src/main/res/layout/activity_main.xml" value="0.21458333333333332" />
+        <entry key="..\:/Users/28956/StudioProjects/SheduleManagement/app/src/main/res/layout/fragment_home.xml" value="0.12604166666666666" />
         <entry key="..\:/Users/28956/StudioProjects/SheduleManagement/app/src/main/res/layout/fragment_input_gallery.xml" value="0.1" />
         <entry key="..\:/Users/28956/StudioProjects/SheduleManagement/app/src/main/res/layout/fragment_input_text.xml" value="0.264" />
         <entry key="..\:/Users/28956/StudioProjects/SheduleManagement/app/src/main/res/layout/fragment_notifications.xml" value="0.1" />
+        <entry key="..\:/Users/28956/StudioProjects/SheduleManagement/app/src/main/res/layout/fragment_settings.xml" value="0.21458333333333332" />
         <entry key="..\:/Users/28956/StudioProjects/SheduleManagement/app/src/main/res/layout/item_schedule.xml" value="0.264" />
         <entry key="..\:/Users/28956/StudioProjects/SheduleManagement/app/src/main/res/layout/item_schedule_bottom.xml" value="0.182518115942029" />
         <entry key="..\:/Users/28956/StudioProjects/SheduleManagement/app/src/main/res/layout/item_schedule_center.xml" value="0.182518115942029" />
