@@ -45,13 +45,16 @@
         <com.example.diary.schedule.ScheduleRecyclerView
             android:id="@+id/rvHomeScheduleList"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_alignParentLeft="true"
+            android:layout_height="464dp"
             android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
+            android:layout_marginStart="0dp"
+            android:layout_marginLeft="0dp"
+            android:layout_marginTop="45dp"
             android:orientation="vertical"
             android:overScrollMode="never"
-            android:paddingTop="6dp"/>
+            android:paddingTop="6dp" />
 
 
         <Button
@@ -70,7 +73,7 @@
         <RelativeLayout
             android:id="@+id/rlHomeNoTask"
             android:layout_width="match_parent"
-            android:layout_height="462dp"
+            android:layout_height="458dp"
             android:layout_alignParentBottom="true"
             android:background="@color/colorBackground">
 
